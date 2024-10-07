@@ -26,15 +26,12 @@ public class IKTargetFollowVRRig : MonoBehaviour
     public Vector3 headBodyOffset;
 
     public int turnSmoothness;
-    void Start()
-    {
-        headBodyOffset = transform.position - headConstraint.position;
-    }
+
 
     private void Update()
     {
         transform.position = headConstraint.position + headBodyOffset;
-        transform.forward = Vector3.Lerp(transform.forward, Vector3.ProjectOnPlane(headConstraint.up, Vector3.up).normalized, Time.deltaTime * turnSmoothness);
+        transform.forward = Vector3.Lerp(transform.forward, Vector3.ProjectOnPlane(headConstraint.forward, Vector3.up).normalized, Time.deltaTime * turnSmoothness);
         
         head.Map();
         leftHand.Map();
