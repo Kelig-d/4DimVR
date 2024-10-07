@@ -9,6 +9,7 @@ public class HandAnimatedController : MonoBehaviour
 
     public InputActionProperty pinchAnimationAction;
     public InputActionProperty gripAnimationAction;
+
     public Animator handAnimator;
 
     void Update()
@@ -20,6 +21,7 @@ public class HandAnimatedController : MonoBehaviour
         // grip 
         float gripValue = gripAnimationAction.action.ReadValue<float>();
         handAnimator.SetFloat("Grip", gripValue);
+
     }
 
 }
