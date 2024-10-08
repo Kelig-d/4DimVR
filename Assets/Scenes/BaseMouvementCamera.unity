@@ -3080,6 +3080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounceBall: {fileID: 7778928303071110148, guid: 13d6c4fa4d7e2485288daf4fc79d67a7,
     type: 3}
+  upwardForce: 500
 --- !u!114 &1850264290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3592,12 +3593,12 @@ PrefabInstance:
     - target: {fileID: 210783886110590637, guid: 13d6c4fa4d7e2485288daf4fc79d67a7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.66
+      value: 3.55
       objectReference: {fileID: 0}
     - target: {fileID: 210783886110590637, guid: 13d6c4fa4d7e2485288daf4fc79d67a7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.87
+      value: 3.43
       objectReference: {fileID: 0}
     - target: {fileID: 210783886110590637, guid: 13d6c4fa4d7e2485288daf4fc79d67a7,
         type: 3}

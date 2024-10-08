@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a7f7658-0d27-4ba2-b3e0-e5f4b74cefd3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.4DimVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.4DimVR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BallInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BallInteraction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BaseMouvementCamera.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BaseMouvementCamera.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,6 +85,7 @@
       <workItem from="1728325751105" duration="21000" />
       <workItem from="1728326307653" duration="714000" />
       <workItem from="1728368508218" duration="451000" />
+      <workItem from="1728419702193" duration="88000" />
     </task>
     <servers />
   </component>
