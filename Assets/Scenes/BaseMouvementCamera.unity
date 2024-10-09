@@ -2073,6 +2073,12 @@ MonoBehaviour:
     m_Reference: {fileID: -6447266317303757838, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
+--- !u!54 &1543070873 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3619190054226218178, guid: 13d6c4fa4d7e2485288daf4fc79d67a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136626319851719201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1567274603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,7 +3002,7 @@ SphereCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
@@ -3078,8 +3084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b994ac20aff50a5686ceb3ac2438b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceBall: {fileID: 7778928303071110148, guid: 13d6c4fa4d7e2485288daf4fc79d67a7,
-    type: 3}
+  bounceBall: {fileID: 1543070873}
   upwardForce: 500
 --- !u!114 &1850264290
 MonoBehaviour:
@@ -3638,6 +3643,11 @@ PrefabInstance:
     - target: {fileID: 210783886110590637, guid: 13d6c4fa4d7e2485288daf4fc79d67a7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690440476026231832, guid: 13d6c4fa4d7e2485288daf4fc79d67a7,
+        type: 3}
+      propertyPath: m_ProvidesContacts
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7778928303071110148, guid: 13d6c4fa4d7e2485288daf4fc79d67a7,
