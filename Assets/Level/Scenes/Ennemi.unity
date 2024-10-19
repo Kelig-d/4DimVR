@@ -408,6 +408,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -24.572, z: 0}
+--- !u!4 &80992413 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4078979655099923153, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 313055248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &246548289
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +878,7 @@ PrefabInstance:
     - target: {fileID: 2232626857275709062, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
         type: 3}
       propertyPath: speed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2232626857275709062, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
         type: 3}
@@ -985,12 +991,6 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!4 &313055251 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-    type: 3}
-  m_PrefabInstance: {fileID: 313055248}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &358980285 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1965420317389818684, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
@@ -1195,8 +1195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49d4a2bcf8762240af85105d6e38fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ennemi: {fileID: 839324806}
-  player: {fileID: 313055251}
+  player: {fileID: 80992413}
+  distancePoursuite: 6
 --- !u!195 &839324806
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1207,11 +1207,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
-  m_Acceleration: 6
+  m_Speed: 1
+  m_Acceleration: 1
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 5
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
