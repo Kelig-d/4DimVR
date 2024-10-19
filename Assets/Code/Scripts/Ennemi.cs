@@ -13,12 +13,12 @@ using UnityEngine.AI;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ennemi = gameObject.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ennemi.SetDestination(player.position);
+        ennemi.destination = player.position;
     }
 }
