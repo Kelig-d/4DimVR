@@ -9,6 +9,8 @@ using UnityEngine.AI;
 
   [SerializeField]
   private Transform player;
+  [SerializeField]
+  private Transform placeEnnemi;
 
   private float Distance; 
   public float distancePoursuite = 10;
@@ -24,11 +26,10 @@ using UnityEngine.AI;
         Distance = Vector3.Distance(player.position, transform.position);
         Debug.LogWarning("Distance : "+Distance);
         // ennemi loin, pas dans le perimetre 
-        /*
         if(Distance > distancePoursuite){
-          // a voir si l'ennemi doit boouger où rester immobile 
+          ennemi.destination = placeEnnemi.position;
         }
-        */
+        
         // ennemi dans le perimetre
         if (Distance < distancePoursuite){
           ennemi.destination = player.position;
