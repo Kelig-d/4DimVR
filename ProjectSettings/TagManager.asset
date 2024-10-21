@@ -3,12 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CommonObject
+  - DimensionObject
+  - ZimmaBlue
+  - Mi7
+  - ChronoPhagos
+  - Berceau
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - grabable
   - Water
   - UI
   - 
