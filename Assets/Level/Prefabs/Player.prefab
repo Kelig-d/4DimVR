@@ -2519,11 +2519,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183674585aabbfb4688e277d804aaab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Player
+  playerName: Player
   health: 100
   speed: 2
   damage: 1
   rightHanded: 1
+  xOrigin: {fileID: 1965420317389818684}
 --- !u!1 &5742440037990954268
 GameObject:
   m_ObjectHideFlags: 0
