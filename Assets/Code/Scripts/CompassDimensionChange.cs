@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Code.Scripts;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -39,7 +38,7 @@ public class CompassDimensionChange : MonoBehaviour
             yield return null; // Attendre la prochaine frame
         }
 
-        ObjectManager.Instance.persistObjects();
+        
         // Passer à la dimension suivante
         currentDimensionIndex = (currentDimensionIndex + 1) % dimensionNames.Length;
 
