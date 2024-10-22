@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotation : MonoBehaviour
+public class RotateSystem : MonoBehaviour
 {
     public GameObject objectToRotate;
     public float rotationX = 0;
