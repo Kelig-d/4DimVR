@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         }
         if (xOrigin.transform.position.y < -10)
         {
-            xOrigin.transform.position = new Vector3(0, 5, 0);
+            xOrigin.transform.position = new Vector3(10, 15, 10);
         }
     }
     
