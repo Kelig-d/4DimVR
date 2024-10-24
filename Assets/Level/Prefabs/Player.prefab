@@ -2556,11 +2556,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Player
-  health: 100
   speed: 2
   damage: 1
   rightHanded: 1
-  xOrigin: {fileID: 0}
+  xOrigin: {fileID: 1965420317389818684}
+  healthBar: {fileID: 7888042163205345499}
 --- !u!114 &6465832636028322844
 MonoBehaviour:
   m_ObjectHideFlags: 0
