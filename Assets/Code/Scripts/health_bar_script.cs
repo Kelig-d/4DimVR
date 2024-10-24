@@ -5,22 +5,19 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private float _maxHealth = 100;
+    private float _maxHealth;
     private float _currentHealth;
-
     [SerializeField] private Image _healthBarFill;
     [SerializeField] private float _fillSpeed;
     [SerializeField] private Gradient _colorGradient;
 
-    void Start()
-    {
-        _currentHealth = _maxHealth;
-    }
+    
 
-    public void UpdateHealth(float amount)
+    public void UpdateHealth(float health)
     {
-        _currentHealth += amount;
-        _currentHealth = Mathf.Clamp(_currentHealth, 0f, _maxHealth);
+        Debug.Log(health);
+        if(_maxHealth == 0) _maxHealth = health;
+        _currentHealth = Mathf.Clamp(health, 0f, _maxHealth);
         UpdateHealthBar();
     }
 

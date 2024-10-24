@@ -1197,12 +1197,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 80992413}
   placeEnnemi: {fileID: 1364684160}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   Target: {fileID: 0}
   distancePoursuite: 6
   attackRange: 2.2
   attackRepeatTime: 1
   TheDammage: 0
   enemyHealth: 0
+  detectionRange: 10
 --- !u!195 &839324806
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1819,12 +1823,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 80992413}
   placeEnnemi: {fileID: 1224184814}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
   Target: {fileID: 80992413}
   distancePoursuite: 10
   attackRange: 2.2
   attackRepeatTime: 1
-  TheDammage: 0
+  TheDammage: 10
   enemyHealth: 0
+  detectionRange: 10
 --- !u!195 &1617928527
 NavMeshAgent:
   m_ObjectHideFlags: 0

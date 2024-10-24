@@ -1,25 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
   public class Ennemi : MonoBehaviour
 {
   private NavMeshAgent ennemi;
-
-  [SerializeField]
-  private Transform player;
+  
   [SerializeField]
   private Transform placeEnnemi;
+  
+  public LayerMask playerLayer;
 
   //Distance entre le joueur et l'ennemi
   private float Distance;
   //Distance entre le joueur et l'ennemi
   private float DistanceDuSpawn;
   // Cible de l'ennemi
-  public Transform Target;
+  public GameObject Target = null;
   //Distance de poursuite
-  public float distancePoursuite = 10;
   // Portée des attaques
   public float attackRange = 2.2f;
   // Cooldown des attaques
@@ -32,7 +33,10 @@ using UnityEngine.AI;
   // Vie de l'ennemi
   public float enemyHealth;
   private bool isDead = false;
+  public float detectionRange = 10f;
+  public float checkInterval = 0.5f; // Intervalle entre les vérifications
 
+  private float nextCheckTime;
   //Animations
   //private static readonly int MoveState = Animator.StringToHash("Base Layer.move");
   //private static readonly int SurprisedState = Animator.StringToHash("Base Layer.surprised");
@@ -49,22 +53,25 @@ using UnityEngine.AI;
     // Update is called once per frame
     void Update()
     {
-       if (!isDead)
+        
+        findPlayer();
+        if (!isDead)
         {
-          Distance = Vector3.Distance(player.position, transform.position);
           DistanceDuSpawn = Vector3.Distance(placeEnnemi.position, transform.position);
           //Debug.LogWarning("Distance : "+Distance);
           
           // ennemi dans le perimetre
-          if (Distance < distancePoursuite){
-            //animations.Play("ghost_run");
-            ennemi.destination = player.position;
-            animator.SetBool("isMoving", true);
-            animator.SetBool("isAttacking", false);
-            if(Distance < attackRange){
-              attack();
-            }
-          }else if(Distance > distancePoursuite && DistanceDuSpawn > 2){
+          if (Target)
+          {
+              ennemi.destination = Target.transform.position;
+              animator.SetBool("isMoving", true);
+              animator.SetBool("isAttacking", false);
+              if (Distance < attackRange)
+              {
+                  attack();
+              }
+          }
+          else if(Distance > detectionRange && DistanceDuSpawn > 2){
             // ennemi loin, pas dans le perimetre
             animator.SetBool("isMoving", true);
             animator.SetBool("isAttacking", false);
@@ -87,8 +94,9 @@ using UnityEngine.AI;
         animator.SetBool("isAttacking", true);
  
         //Si pas de cooldown
-        if (Time.time > attackTime) {
-            //Target.GetComponent<PlayerInventory>().ApplyDamage(TheDammage);
+        if (Time.time > attackTime)
+        {
+            Target.transform.parent.GetComponent<Player>().TakeDamage(TheDammage);
             Debug.LogWarning("L'ennemi a envoyé " + TheDammage + " points de dégâts");
             Debug.Log("L'ennemi a envoyé " + TheDammage + " points de dégâts");
             attackTime = Time.time + attackRepeatTime;
@@ -117,4 +125,53 @@ using UnityEngine.AI;
         animator.SetBool("isDead", true);
         Destroy(transform.gameObject, 5);
     }
+    private void findPlayer()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        float[] playerDistance = new float[players.Length];
+        if (Time.time >= nextCheckTime)
+        {
+            nextCheckTime = Time.time + checkInterval;
+            int index = 0;
+            foreach (GameObject p in players)
+            {
+                // Calculer la direction vers le joueur
+                Vector3 directionToPlayer = p.transform.position - transform.position;
+
+                // Envoyer un raycast pour vérifier la visibilité
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, directionToPlayer.normalized, out hit, detectionRange,
+                        playerLayer))
+                {
+                    if (hit.transform.CompareTag("Player"))
+                    {
+                        // Le joueur est visible, maintenant calculons la distance
+                        playerDistance[index] = directionToPlayer.magnitude;
+                    }
+                }
+                else
+                {
+                    playerDistance[index] = -1;
+                }
+
+                index++;
+            }
+
+            if (playerDistance.Max() == -1)
+            {
+                Target = null;
+            }
+            else
+            {
+                int minDistanceIndex = Array.IndexOf(playerDistance, playerDistance.Min());
+                Target = players[minDistanceIndex];
+                Distance = playerDistance[minDistanceIndex];
+
+            }
+           
+        }
+    }
+    
 }
+
+  
