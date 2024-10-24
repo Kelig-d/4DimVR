@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using UnityEngine.AI;
   public class Ennemi : MonoBehaviour
 {
   private NavMeshAgent ennemi;
-  
+
   [SerializeField]
   private Transform placeEnnemi;
   
@@ -40,7 +41,6 @@ using UnityEngine.AI;
   //Animations
   //private static readonly int MoveState = Animator.StringToHash("Base Layer.move");
   //private static readonly int SurprisedState = Animator.StringToHash("Base Layer.surprised");
-
 
     // Start is called before the first frame update
     void Start()

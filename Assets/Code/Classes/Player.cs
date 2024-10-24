@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         if (dead)
         {
             Revive();
+
         }
     }
 
