@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/ChronoPhagos.unity
     guid: 57123c6776c97ed428417b6d407a95f6
+  - enabled: 1
+    path: Assets/Level/Scenes/Ennemi.unity
+    guid: 2f96701894d7fdc4b9e26232e4fc80e0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fab568eedd5b1604fb6bb75db6482638,
       type: 2}
