@@ -5,7 +5,7 @@ using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, 
 {
     public string playerName = "Player";
 
