@@ -26,4 +26,9 @@ public class ObjectManager : Singleton<ObjectManager>
         _registeredObjects.TryGetValue(objectName, out GameObject obj);
         return obj;
     }
+
+    public void Save()
+    {
+        
+    }
 }
