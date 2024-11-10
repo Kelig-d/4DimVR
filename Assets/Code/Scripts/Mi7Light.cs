@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class Mi7Light : MonoBehaviour
     /// </summary>
 
     public GameObject Prefab;
+    public float smooth;
 
 
     // Effet sombre
@@ -43,16 +45,18 @@ public class Mi7Light : MonoBehaviour
         public Light Light;
         public Vector3 Position;
         float dep;
+        float smooth;
         int x, y, z;
         bool move;
 
-        public LightBuble(Light l, float DepMasque, int x = 0, int y = 0, int z = 0)
+        public LightBuble(Light l, float DepMasque, float smooth = 0.5f, int x = 0, int y = 0, int z = 0)
         {
             this.x = x; this.y = y; this.z = z;
             Position = l.transform.position;
             dep = DepMasque;
             Light = l;
             move = true;
+            this.smooth = smooth;
         }
 
         public void deplacement()
@@ -92,13 +96,9 @@ public class Mi7Light : MonoBehaviour
             if (this.CheckLight())
             {
                 //double dist = distance(Vector3.zero, Masque.transform.localScale);// Math.Sqrt(3.0f) * .x;
-                print(Masque.transform.localScale.x);
                 double dist2 = distance(Masque.transform.position,this.Light.transform.position);
-                print("dist 1 : " + Masque.transform.localScale.x);
-                print("dist2 : " + dist2);
-                if (Masque.transform.localScale.x /2 >= dist2)
+                if (( Masque.transform.localScale.x /2 ) + smooth >= dist2)
                 {
-                    print("Light toutch");
                     this.Light.intensity = 0;
 
                 }
@@ -127,13 +127,10 @@ public class Mi7Light : MonoBehaviour
         LightRight = new LightBuble(lightRight, DepLight, x: 1);
 
         MasqueScale = Vector3.zero;
+        print("Masque : " + Masque.transform.position);
 
     }
-    private void OnTriggerEnter(Collider other) { print("test"); }
-    private void OnCollisionEnter(Collision collision)
-    {
-        print("Collision !");
-    }
+
 
     private void Update()
     {
@@ -173,6 +170,7 @@ public class Mi7Light : MonoBehaviour
             !LightBack.CheckLight())
         {
             Destroy(Prefab);
+            print("destroy");
         }
 
 
