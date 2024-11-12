@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Code.Classes;
 using UnityEngine;
 using UnityEngine.AI;
 

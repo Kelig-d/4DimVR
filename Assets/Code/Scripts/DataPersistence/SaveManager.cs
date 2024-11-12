@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Reflection;
 using UnityEngine;
 using System.IO;
+using Code.Classes;
 using Code.Scripts;
+using Code.Scripts.DataPersistence.Data;
+using Newtonsoft.Json;
 
 public class SaveManager : MonoBehaviour
 {
@@ -27,36 +31,15 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public void SavePlayer(Player player)
+    public void saveData(GameData data)
     {
-        Dictionary<string, object> saveData = new Dictionary<string, object>();
-
-        FieldInfo[] fields = typeof(Player).GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-
-        foreach (FieldInfo field in fields)
+        if (data.isPlayerData)
         {
-            if (Attribute.IsDefined(field, typeof(SaveAttribute)))
-            {
-                var fieldValue = field.GetValue(player);
+            // Créer le JSON avec les données sérialisées
+            string json = JsonUtility.ToJson(data, true);
+            File.WriteAllText(Application.persistentDataPath + "/playerSave.json", json);
 
-                // Si le champ est une position (Vector3) ou une rotation (Quaternion)
-                if (field.FieldType == typeof(Vector3) || field.FieldType == typeof(Quaternion))
-                {
-                    string serializedValue = JsonUtility.ToJson(fieldValue);
-                    saveData.Add(field.Name, serializedValue);
-                }
-                else
-                {
-                    saveData.Add(field.Name, fieldValue);
-                }
-            }
         }
-
-        // Créer le JSON avec les données sérialisées
-        string json = JsonUtility.ToJson(new SerializationHelper(saveData), true);
-        Debug.Log(json);
-        // Sauvegarde dans un fichier
-        File.WriteAllText(Application.persistentDataPath + "/playerSave.json", json);
     }
 
     public void LoadPlayer(Player player)
@@ -65,48 +48,17 @@ public class SaveManager : MonoBehaviour
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
-            SerializationHelper loadedData = JsonUtility.FromJson<SerializationHelper>(json);
+            Debug.Log(json);
+            PlayerData loadedData = JsonUtility.FromJson<PlayerData>(json);
 
-            foreach (var entry in loadedData.data)
-            {
-                FieldInfo field = typeof(Player).GetField(entry.key, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-                if (field != null)
-                {
-                    // Désérialiser la valeur du champ
-                    object fieldValue = JsonUtility.FromJson(entry.value, field.FieldType);
-                    field.SetValue(player, fieldValue);
-                }
-            }
+            player.playerName = loadedData.playerName;
+            player.rightHanded = loadedData.rightHanded;
+            player.xOrigin.transform.position = new Vector3(loadedData.position[0], loadedData.position[1], loadedData.position[2]);
+            
+            player.health = loadedData.health;
+            
         }
     }
-    
-    [System.Serializable]
-    public class SaveDataEntry
-    {
-        public string key;
-        public string value;
-
-        public SaveDataEntry(string key, string value)
-        {
-            this.key = key;
-            this.value = value;
-        }
-    }
-
-    [System.Serializable]
-    public class SerializationHelper
-    {
-        public List<SaveDataEntry> data;
-
-        public SerializationHelper(Dictionary<string, object> saveData)
-        {
-            data = new List<SaveDataEntry>();
-
-            foreach (var kvp in saveData)
-            {
-                string serializedValue = JsonUtility.ToJson(kvp.Value);
-                data.Add(new SaveDataEntry(kvp.Key, serializedValue));
-            }
-        }
-    }
+   
+   
 }

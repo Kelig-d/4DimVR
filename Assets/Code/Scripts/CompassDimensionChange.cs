@@ -7,8 +7,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class CompassDimensionChange : MonoBehaviour
 {
-    private int currentDimensionIndex = 0;
-    private string[] dimensionNames = { "Berceau", "ZimmaBlue", "Mi7", "ChronoPhagos" };
+    private static int currentDimensionIndex = 0;
+    private static string[] dimensionNames = { "Berceau", "ZimmaBlue", "Mi7", "ChronoPhagos" };
     
     private HashSet<int> existingObjectIDs = new HashSet<int>(); // Pour suivre les IDs d'instance des objets
 
@@ -23,13 +23,21 @@ public class CompassDimensionChange : MonoBehaviour
     // Update is called once per frame
     public void ChangeDimension(ActivateEventArgs args)
     {
-        StartCoroutine(LoadNewDimension());
+        StartCoroutine(LoadNewDimension(null));
     }
-    
-    private IEnumerator LoadNewDimension()
+
+    internal static IEnumerator LoadNewDimension(string dimension)
     {
         string currentWorldKey = dimensionNames[currentDimensionIndex];
-        string newWorldKey = dimensionNames[(currentDimensionIndex + 1) % dimensionNames.Length];
+        string newWorldKey="";
+        if (dimension!=null)
+        {
+            newWorldKey = dimension;
+        }
+        else
+        {
+            newWorldKey = dimensionNames[(currentDimensionIndex + 1) % dimensionNames.Length];
+        }
 
         // Charger la nouvelle scène de manière asynchrone
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(newWorldKey, LoadSceneMode.Additive);
