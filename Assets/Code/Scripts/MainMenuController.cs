@@ -19,7 +19,7 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayGarage()
     {
-        SceneManager.LoadScene("Garage 0");
+        SceneManager.LoadScene("Garage0");
     }
 
     public void PlayZimmaBlue()
