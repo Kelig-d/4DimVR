@@ -27,39 +27,29 @@ public class ZimmaBlueArtefact : MonoBehaviour
     }
 
     public void Shoot(ActivateEventArgs arg){
-        // if GameObject
-        /*
-        GameObject spawProjectile = Instantiate(projectile);
-        spawProjectile.transform.position = spawnPoint.position;
-        spawProjectile.GetComponent<Rigidbody>().velocity = spawnPoint.forward * fireDistance;
-        Destroy(spawProjectile.gameObject,5.0f);
-        */
-
-        // if LineRenderer
+        
+        LineRenderer spawProjectile = Instantiate(projectile);
         RaycastHit hit;
         bool hasHit = Physics.Raycast(spawnPoint.position, spawnPoint.forward,out hit, layerMask);
         Vector3 endPoint = Vector3.zero;
         if(hasHit){
             EffetZimmaBlue target = hit.transform.GetComponent<EffetZimmaBlue>();
             if (target != null){
-                target.ChangeColor();
+                target.ChangeColor(spawProjectile.startColor);
                 endPoint = hit.point;
-                Debug.Log("AHH");
+                Debug.Log("cible atteinte");
             }else{
                 endPoint = spawnPoint.position + spawnPoint.forward * fireDistance;
-                Debug.Log("DDS");
+                Debug.Log("cible non atteinte");
             }
         } else {
             endPoint = spawnPoint.position + spawnPoint.forward * fireDistance;
-            Debug.Log("DDS");
+            Debug.Log("cible non atteinte");
         }
-
-        LineRenderer spawProjectile = Instantiate(projectile);
         spawProjectile.positionCount = 2;
         spawProjectile.SetPosition(0,spawnPoint.position);
         spawProjectile.SetPosition(1,endPoint);
         Destroy(spawProjectile.gameObject,projectileShow);
     }
-
     
 }

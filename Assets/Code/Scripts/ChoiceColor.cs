@@ -28,29 +28,9 @@ public class ChoiceColor : MonoBehaviour
         SetSingleColor2(spawProjectile,color);
     }
 
-    public void SetSingleColor(LineRenderer lineRenderer, Color newcolor){
+    public void SetSingleColor2(LineRenderer lineRenderer, Color newcolor){
         lineRenderer.startColor = newcolor;
         lineRenderer.endColor = newcolor;
-    }
-
-    public void SetSingleColor2(LineRenderer lineRenderer, Color newcolor){
-        
-        Gradient gradient = new Gradient();
-        GradientColorKey[] colorKeys = new GradientColorKey[2];
-        colorKeys[0] = new GradientColorKey(newcolor,0);
-        colorKeys[1] = new GradientColorKey(newcolor,1);
-
-        gradient.colorKeys = colorKeys;
-
-        lineRenderer.colorGradient = gradient;
-        
-    }
-
-    public void Released()
-    {/*
-        _isPressed = false;
-        onReleased.Invoke();
-        Debug.Log("Released");*/
     }
 
 }

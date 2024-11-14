@@ -43,5 +43,5 @@ Material:
     - _QueueControl: 0
     - _ShaderX: 0
     m_Colors:
-    - _Color: {r: 0.93962264, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.9411765, g: 0.720615, b: 0, a: 1}
   m_BuildTextureStacks: []
