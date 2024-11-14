@@ -2,176 +2,259 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
-  public class Ennemi : MonoBehaviour
+public class Ennemi : MonoBehaviour
 {
+<<<<<<< Updated upstream
   private NavMeshAgent ennemi;
 
   [SerializeField]
   private Transform placeEnnemi;
   
   public LayerMask playerLayer;
+=======
+    public NavMeshAgent ennemi;
+    private Animator animator;
+    public LayerMask playerLayer;
+    public GameObject Target = null;
+    public SpawnerZone spawnerzone;
+    
+    public float attackRange = 1.0f;
+    public float attackRepeatTime = 1;
+    public float TheDammage;
+    public float enemyHealth;
+    public float detectionRange = 10f;
+    public float checkInterval = 0.5f;
+    
+    private float Distance;
+    private float attackTime;
+    private float nextCheckTime;
+    private bool isDead = false;
+    
+    private static readonly int IdleState = Animator.StringToHash("Base Layer.idle");
+    private static readonly int MoveState = Animator.StringToHash("Base Layer.move");
+    private static readonly int AttackState = Animator.StringToHash("Base Layer.attack_shift");
+    private static readonly int DissolveState = Animator.StringToHash("Base Layer.dissolve");
+    private static readonly int SurprisedState = Animator.StringToHash("Base Layer.surprised");
+    private static readonly int AttackTag = Animator.StringToHash("Attack");
+>>>>>>> Stashed changes
 
-  //Distance entre le joueur et l'ennemi
-  private float Distance;
-  //Distance entre le joueur et l'ennemi
-  private float DistanceDuSpawn;
-  // Cible de l'ennemi
-  public GameObject Target = null;
-  //Distance de poursuite
-  // Portée des attaques
-  public float attackRange = 2.2f;
-  // Cooldown des attaques
-  public float attackRepeatTime = 1;
-  private float attackTime;
-  // Montant des dégâts infligés
-  public float TheDammage;
-  // Animations de l'ennemi
-  private Animator animator;
-  // Vie de l'ennemi
-  public float enemyHealth;
-  private bool isDead = false;
-  public float detectionRange = 10f;
-  public float checkInterval = 0.5f; // Intervalle entre les vérifications
+    private const int Dissolve = 1;
+    private const int Attack = 2;
+    private const int Surprised = 3;
+    
+    private Dictionary<int, bool> EnemyStatus = new Dictionary<int, bool>
+    {
+        { Dissolve, false },
+        { Attack, false },
+        { Surprised, false },
+    };
 
-  private float nextCheckTime;
-  //Animations
-  //private static readonly int MoveState = Animator.StringToHash("Base Layer.move");
-  //private static readonly int SurprisedState = Animator.StringToHash("Base Layer.surprised");
+    private float dissolveValue = 1f;
+    [SerializeField] private SkinnedMeshRenderer[] meshRenderers;
+    public bool IsAttacking => EnemyStatus[Attack];
+    public bool IsTakingDamages => EnemyStatus[Surprised];
+    public bool IsDead => EnemyStatus[Dissolve];
 
+<<<<<<< Updated upstream
     // Start is called before the first frame update
+=======
+>>>>>>> Stashed changes
     void Start()
     {
-        ennemi = gameObject.GetComponent<NavMeshAgent>();
-        animator = this.GetComponent<Animator>();
+        ennemi = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
         attackTime = Time.time;
+        StartCoroutine(EnnemiBehavior());
     }
-    
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        
-        findPlayer();
-        if (!isDead)
+        UpdateStatus();
+        //HandleDissolve();
+        StartCoroutine(EnnemiBehavior());
+
+        /* Test de dégat
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-          DistanceDuSpawn = Vector3.Distance(placeEnnemi.position, transform.position);
-          //Debug.LogWarning("Distance : "+Distance);
-          
-          // ennemi dans le perimetre
-          if (Target)
-          {
-              ennemi.destination = Target.transform.position;
-              animator.SetBool("isMoving", true);
-              animator.SetBool("isAttacking", false);
-              if (Distance < attackRange)
-              {
-                  attack();
-              }
-          }
-          else if(Distance > detectionRange && DistanceDuSpawn > 2){
-            // ennemi loin, pas dans le perimetre
-            animator.SetBool("isMoving", true);
-            animator.SetBool("isAttacking", false);
-            ennemi.destination = placeEnnemi.position;
-          }else{
-            //retour au spawn
-            animator.SetBool("isMoving", false);
-            animator.SetBool("isAttacking", false);
-            ennemi.destination = ennemi.destination;
-          }
+            ApplyDammage(1);
+        }
+        */
+    }
+
+    private void UpdateStatus()
+    {
+        if (isDead && enemyHealth <= 0)
+        {
+            EnemyStatus[Dissolve] = true;
+        }
+        else if (!isDead)
+        {
+            EnemyStatus[Dissolve] = false;
+        }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).tagHash == AttackTag)
+        {
+            EnemyStatus[Attack] = true;
+        }
+        else
+        {
+            EnemyStatus[Attack] = false;
+        }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).fullPathHash == SurprisedState)
+        {
+            EnemyStatus[Surprised] = true;
+        }
+        else
+        {
+            EnemyStatus[Surprised] = false;
         }
     }
 
-    //attaque
-    void attack()
+    private void HandleDissolve()
     {
-        // empeche l'ennemi de traverser le joueur
-        ennemi.destination = transform.position;
-        animator.SetBool("isMoving", false);
-        animator.SetBool("isAttacking", true);
- 
-        //Si pas de cooldown
-        if (Time.time > attackTime)
+        if (EnemyStatus[Dissolve])
         {
-            Target.transform.parent.GetComponent<Player>().TakeDamage(TheDammage);
-            Debug.LogWarning("L'ennemi a envoyé " + TheDammage + " points de dégâts");
-            Debug.Log("L'ennemi a envoyé " + TheDammage + " points de dégâts");
-            attackTime = Time.time + attackRepeatTime;
-        }
-    }
-
-    public void ApplyDammage(float TheDammage)
-    {
-        if (!isDead)
-        {
-            enemyHealth = enemyHealth - TheDammage;
-            animator.SetBool("isTakingDamages", true);
-            print(gameObject.name + "a subit " + TheDammage + " points de dégâts.");
- 
-            if(enemyHealth <= 0)
+            dissolveValue -= Time.deltaTime;
+            foreach (var renderer in meshRenderers)
             {
-                Dead();
+                renderer.material.SetFloat("_Dissolve", dissolveValue);
+            }
+            if (dissolveValue <= 0)
+            {
+                ennemi.enabled = false;
             }
         }
     }
 
-    public void Dead()
+    IEnumerator EnnemiBehavior()
     {
-        Debug.LogWarning("Mort de l'ennemie");
-        isDead = true;
-        animator.SetBool("isDead", true);
-        Destroy(transform.gameObject, 5);
-    }
-    private void findPlayer()
-    {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        float[] playerDistance = new float[players.Length];
-        if (Time.time >= nextCheckTime)
+        while (!isDead)
         {
-            nextCheckTime = Time.time + checkInterval;
-            int index = 0;
-            foreach (GameObject p in players)
-            {
-                // Calculer la direction vers le joueur
-                Vector3 directionToPlayer = p.transform.position - transform.position;
+            findPlayer();
 
-                // Envoyer un raycast pour vérifier la visibilité
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, directionToPlayer.normalized, out hit, detectionRange,
-                        playerLayer))
+            if (Target)
+            {
+                Debug.LogWarning(Distance + " " + attackRange);
+
+                //Debug.LogWarning(Target);
+                if(Distance > attackRange)
                 {
-                    if (hit.transform.CompareTag("Player"))
+                    ennemi.destination = Target.transform.position;
+                    animator.SetBool("isMoving", true);
+                    animator.SetBool("isWaiting", false);
+                }else if (Distance < attackRange)
+                {
+                    ennemi.destination = ennemi.transform.position;
+                    if (Time.time > attackTime)
                     {
-                        // Le joueur est visible, maintenant calculons la distance
-                        playerDistance[index] = directionToPlayer.magnitude;
+                        attack();
                     }
                 }
-                else
-                {
-                    playerDistance[index] = -1;
-                }
-
-                index++;
-            }
-
-            if (playerDistance.Max() == -1)
-            {
-                Target = null;
             }
             else
             {
-                int minDistanceIndex = Array.IndexOf(playerDistance, playerDistance.Min());
-                Target = players[minDistanceIndex];
-                Distance = playerDistance[minDistanceIndex];
-
+                animator.SetBool("isMoving", false);
+                animator.SetBool("isWaiting", true);
+            
             }
-           
+
+            yield return new WaitForSeconds(0.2f);
         }
     }
-    
-}
 
-  
+    void attack()
+    {
+        ennemi.destination = transform.position;
+        animator.SetBool("isMoving", false);
+        animator.SetBool("isAttacking", true);
+        Target.transform.parent.GetComponent<Player>().TakeDamage(TheDammage);
+        attackTime = Time.time + attackRepeatTime;
+        StartCoroutine(ResetAttackAnimation(0.4f));
+    }
+
+    void ApplyDammage(float damage)
+    {
+        if (!isDead)
+        {
+            enemyHealth -= damage;
+            animator.SetBool("isTakingDamages", true);
+            StartCoroutine(ResetDamageAnimation(0.2f));
+            if (enemyHealth <= 0) Dead();
+        }
+    }
+
+    private IEnumerator ResetDamageAnimation(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        animator.SetBool("isTakingDamages", false);
+        animator.SetBool("isMoving", true);
+    }
+    private IEnumerator ResetAttackAnimation(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        animator.SetBool("isAttacking", false);
+        if(Target && (Target != null))
+        {
+            animator.SetBool("isMoving", true); 
+        }else{
+            animator.SetBool("isMoving", false);
+        }
+    }
+
+    private void Dead()
+    {
+        isDead = true;
+        animator.SetBool("isDead", true);
+        spawnerzone.nbEnnemies -=1;
+        Destroy(gameObject, 1);
+    }
+
+    void findPlayer()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        float minDistance = detectionRange;
+        GameObject closestPlayer = null;
+
+        foreach (GameObject player in players)
+        {
+            if(player == GameObject.Find("XR Origin (XR Rig)"))
+            {
+                float distance = Vector3.Distance(transform.position, player.transform.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestPlayer = player;
+                }
+            }
+        }
+
+        Target = closestPlayer;
+        //Debug.LogWarning(Target);
+        Distance = minDistance;
+    }
+    /*
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Vérifie si le collider avec lequel on est en collision a le tag "Enemy"
+        if (collision.gameObject.CompareTag("Arme"))
+        {
+            // Affiche dans la console si l'objet en collision est un ennemi
+            //Debug.LogWarning("Collision détectée entre le tuyau et un ennemi : " + collision.gameObject.name);
+            ApplyDammage(1);
+        }
+    }
+    */
+    private void OnTriggerEnter(Collider other)
+    {
+        // Alternative si tu utilises des triggers au lieu de colliders normaux
+        if (other.CompareTag("Arme"))
+        {
+            ApplyDammage(1);
+        }
+    }
+
+}

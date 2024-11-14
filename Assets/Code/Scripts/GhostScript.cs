@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+// test de kill de fantome
+using UnityEngine.XR;
 
 namespace Sample {
 public class GhostScript : MonoBehaviour
@@ -24,6 +26,9 @@ public class GhostScript : MonoBehaviour
     private int HP = maxHP;
     private Text HP_text;
 
+    // test de kill de fantome
+    private InputDevice rightController;
+
     // moving speed
     [SerializeField] private float Speed = 4;
 
@@ -33,10 +38,41 @@ public class GhostScript : MonoBehaviour
         Ctrl = this.GetComponent<CharacterController>();
         HP_text = GameObject.Find("Canvas/HP").GetComponent<Text>();
         HP_text.text = "HP " + HP.ToString();
+
+        //test de kill du fantome
+         // Obtenir le contrôleur de la main droite (Meta Quest 2)
+        var rightHandDevices = new List<InputDevice>();
+        InputDevices.GetDevicesAtXRNode(XRNode.RightHand, rightHandDevices);
+        
+        if (rightHandDevices.Count > 0)
+        {
+            rightController = rightHandDevices[0];
+        }
+        else
+        {
+            Debug.LogError("Aucun contrôleur détecté pour la main droite.");
+        }
     }
 
     void Update()
     {
+        // Vérifier que le contrôleur est bien détecté
+        if (rightController.isValid)
+        {
+            // Vérifie si le bouton A est pressé
+            if (rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool isPressed) && isPressed)
+            {
+                Debug.Log("Le bouton A est pressé sur le Meta Quest 2 !");
+                // Place ici le code à exécuter quand le bouton A est pressé
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Contrôleur de la main droite non valide. Tentative de reconnection...");
+            Start();
+        }
+
+    /////
         STATUS();
         GRAVITY();
         Respawn();
