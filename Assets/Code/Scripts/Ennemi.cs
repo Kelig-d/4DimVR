@@ -7,14 +7,7 @@ using UnityEngine.AI;
 
 public class Ennemi : MonoBehaviour
 {
-<<<<<<< Updated upstream
-  private NavMeshAgent ennemi;
 
-  [SerializeField]
-  private Transform placeEnnemi;
-  
-  public LayerMask playerLayer;
-=======
     public NavMeshAgent ennemi;
     private Animator animator;
     public LayerMask playerLayer;
@@ -39,7 +32,6 @@ public class Ennemi : MonoBehaviour
     private static readonly int DissolveState = Animator.StringToHash("Base Layer.dissolve");
     private static readonly int SurprisedState = Animator.StringToHash("Base Layer.surprised");
     private static readonly int AttackTag = Animator.StringToHash("Attack");
->>>>>>> Stashed changes
 
     private const int Dissolve = 1;
     private const int Attack = 2;
@@ -58,10 +50,7 @@ public class Ennemi : MonoBehaviour
     public bool IsTakingDamages => EnemyStatus[Surprised];
     public bool IsDead => EnemyStatus[Dissolve];
 
-<<<<<<< Updated upstream
-    // Start is called before the first frame update
-=======
->>>>>>> Stashed changes
+
     void Start()
     {
         ennemi = GetComponent<NavMeshAgent>();
