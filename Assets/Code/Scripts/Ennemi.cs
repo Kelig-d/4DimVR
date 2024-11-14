@@ -127,7 +127,7 @@ public class Ennemi : MonoBehaviour
 
             if (Target)
             {
-                Debug.LogWarning(Distance + " " + attackRange);
+                //Debug.LogWarning(Distance + " " + attackRange);
 
                 //Debug.LogWarning(Target);
                 if(Distance > attackRange)
