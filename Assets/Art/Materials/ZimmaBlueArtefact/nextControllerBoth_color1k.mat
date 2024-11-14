@@ -21,9 +21,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: nextControllerBoth_color1k
-  m_Shader: {fileID: -6465566751694194690, guid: bf4be62f48659f547b67cba65cd52698,
+  m_Shader: {fileID: -6465566751694194690, guid: 82144703491b81240bdb4e0933c3fa2a,
     type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: bf4be62f48659f547b67cba65cd52698,
+  m_Parent: {fileID: -876546973899608171, guid: 82144703491b81240bdb4e0933c3fa2a,
     type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
