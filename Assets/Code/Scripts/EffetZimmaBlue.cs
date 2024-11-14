@@ -33,14 +33,14 @@ public class EffetZimmaBlue : MonoBehaviour
         if(myMaterial.GetFloat("_ShaderX") == 0.0f){
             myMaterial.color = newcolor;
             myMaterial.SetFloat("_ShaderX",0.25f);
-            timeColor= 15f;
+            timeColor= 5f;
             StartCoroutine(timerColor());
         }else if (myMaterial.GetFloat("_ShaderX") == 0.25f && myMaterial.color == newcolor){
             myMaterial.SetFloat("_ShaderX",0.5f);
-            timeColor += 15f ; 
+            timeColor += 5f ; 
         }else if (myMaterial.GetFloat("_ShaderX") == 0.50f && myMaterial.color == newcolor){
             myMaterial.SetFloat("_ShaderX",0.75f);
-            timeColor += 15f ; 
+            timeColor += 35f ; 
         }
     }
 
