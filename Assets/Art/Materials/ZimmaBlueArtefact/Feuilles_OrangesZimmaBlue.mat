@@ -28,6 +28,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _QueueControl: 0
+    - _ShaderX: 0
     m_Colors:
     - _Color: {r: 0.9056604, g: 0.4470588, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
