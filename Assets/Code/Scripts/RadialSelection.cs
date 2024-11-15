@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class RadialSelection : MonoBehaviour
 {
-    public OVRInput.Button.One spawnButton;
+    public InputActionReference spawnButton;
 
     [Range(2,10)]
     public int numberOfRadialPart;
@@ -19,16 +20,33 @@ public class RadialSelection : MonoBehaviour
 
     private List<GameObject> spawnedParts = new List<GameObject>();
     private int currentSelectedRadialPart = -1;
+
+    private bool select;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnButton.action.started += ButtonWasPressed;
+        spawnButton.action.canceled += ButtonWasReleased;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(select == true){
+            GetSelectedRadialPart();
+        }
         
+    }
+
+    public void ButtonWasPressed(InputAction.CallbackContext context){
+        SpawnRadialPart();
+        select = true;
+
+    }
+
+    public void ButtonWasReleased(InputAction.CallbackContext context){
+        HideAndTriggerSelected();
+        select = false;
     }
 
     public void HideAndTriggerSelected(){
@@ -61,6 +79,10 @@ public class RadialSelection : MonoBehaviour
     }
 
     public void SpawnRadialPart(){
+        radialPartCanvas.gameObject.SetActive(true);
+        radialPartCanvas.position = handTransform.position;
+        radialPartCanvas.rotation = handTransform.rotation;
+
         foreach (var item in spawnedParts){
             Destroy(item);
         }
