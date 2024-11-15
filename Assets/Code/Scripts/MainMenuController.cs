@@ -19,6 +19,7 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayGarage()
     {
+        
         SceneManager.LoadScene("Garage0");
     }
 

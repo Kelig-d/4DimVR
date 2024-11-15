@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class RadialSelection : MonoBehaviour
 {
@@ -21,29 +22,38 @@ public class RadialSelection : MonoBehaviour
     private List<GameObject> spawnedParts = new List<GameObject>();
     private int currentSelectedRadialPart = -1;
 
+    private List<string> TextMenue;
     private bool select;
     // Start is called before the first frame update
     void Start()
     {
         spawnButton.action.started += ButtonWasPressed;
-        spawnButton.action.canceled += ButtonWasReleased;
+        // spawnButton.action.canceled += ButtonWasReleased;
+        /*
+        TextMenue = new List<string>();
+        TextMenue.Add("Menu");
+        TextMenue.Add("Param");
+        TextMenue.Add("XXX");
+       */
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if(select == true){
             GetSelectedRadialPart();
         }
-        
+        */
     }
-
+    
     public void ButtonWasPressed(InputAction.CallbackContext context){
-        SpawnRadialPart();
+        SceneManager.LoadScene("MenuScene");
+        //SpawnRadialPart();
         select = true;
 
     }
-
+    /*
     public void ButtonWasReleased(InputAction.CallbackContext context){
         HideAndTriggerSelected();
         select = false;
@@ -96,10 +106,21 @@ public class RadialSelection : MonoBehaviour
             GameObject spawnedRadialPart = Instantiate(radialPartPrefab,radialPartCanvas);
             spawnedRadialPart.transform.position = radialPartCanvas.position;
             spawnedRadialPart.transform.localEulerAngles = radialPartEulerAngle;
+            
+//            TextMesh test = TextMesh. GameObject.FindGameObjectWithTag("txtMenu");
+
+           //Destroy(spawnedRadialPart.GetComponent(TextMesh));
+  //          print(test.text);
+
+            //test.text = "Hello";//TextMenue[i];
 
             spawnedRadialPart.GetComponent<Image>().fillAmount = (1 / (float)numberOfRadialPart) - (angleBetweenPart/360);
 
+
             spawnedParts.Add(spawnedRadialPart);
         }
-    }
+
+        TextMesh test = FindAnyObjectByType<TextMesh>();
+        test.bool();
+    }*/
 }

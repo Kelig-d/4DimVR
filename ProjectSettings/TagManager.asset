@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Arme
   - Ennemy
+  - txtMenu
   layers:
   - Default
   - TransparentFX
