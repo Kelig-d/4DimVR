@@ -477,7 +477,7 @@ Transform:
   m_GameObject: {fileID: 10534572}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.21279159, z: 0, w: 0.97709763}
-  m_LocalPosition: {x: 5.15, y: 1.203, z: 4.929}
+  m_LocalPosition: {x: 5.142, y: 1.203, z: 4.929}
   m_LocalScale: {x: 0.25833297, y: 0.25833297, z: 0.25833297}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14516,10 +14516,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 435302003}
     m_Modifications:
+    - target: {fileID: 271534924120069479, guid: ef66c4aef6897794ba6b40d7ecc94142,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550170380935635052, guid: ef66c4aef6897794ba6b40d7ecc94142,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.49
+      objectReference: {fileID: 0}
     - target: {fileID: 7140385836367731929, guid: ef66c4aef6897794ba6b40d7ecc94142,
         type: 3}
       propertyPath: m_Name
       value: Lampadaire
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486478750948547248, guid: ef66c4aef6897794ba6b40d7ecc94142,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.19
       objectReference: {fileID: 0}
     - target: {fileID: 7520008325365073507, guid: ef66c4aef6897794ba6b40d7ecc94142,
         type: 3}
