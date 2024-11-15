@@ -131,7 +131,7 @@ public class ArtefactTourne : MonoBehaviour
 
         if( Activer0 && Activator1 && Activer2 && Activer3)
         {
-            StartCoroutine(SetTp());
+           // StartCoroutine(SetTp());
         }
     }
 }
