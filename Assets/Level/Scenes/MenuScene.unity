@@ -885,6 +885,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252596181}
   m_CullTransparentMesh: 1
+--- !u!4 &316667124 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 231119049850670352, guid: b66cc00109bb98c4cb2a9eca8d60bd67,
+    type: 3}
+  m_PrefabInstance: {fileID: 1510342176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &378431369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -897,6 +903,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player SANS BUG
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909485934937262030, guid: d5d14a1e73ea2674bbed73dab0580991,
+        type: 3}
+      propertyPath: radialPartCanvas
+      value: 
+      objectReference: {fileID: 316667124}
+    - target: {fileID: 6439076879055905164, guid: d5d14a1e73ea2674bbed73dab0580991,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572267265248239623, guid: d5d14a1e73ea2674bbed73dab0580991,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8279900620067783110, guid: d5d14a1e73ea2674bbed73dab0580991,
         type: 3}
