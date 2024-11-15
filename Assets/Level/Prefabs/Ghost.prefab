@@ -94,6 +94,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 46f311046d2104da8b56be3d0a49a119,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ennemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -113,15 +118,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f311046d2104da8b56be3d0a49a119,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4524755726158905661}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f311046d2104da8b56be3d0a49a119,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1500384592229430246}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f311046d2104da8b56be3d0a49a119,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1130501792578921313}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f311046d2104da8b56be3d0a49a119,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 709058394320613991}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f311046d2104da8b56be3d0a49a119,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9034737840570635556}
   m_SourcePrefab: {fileID: 100100000, guid: 46f311046d2104da8b56be3d0a49a119, type: 3}
 --- !u!1 &19588385245968726 stripped
 GameObject:
@@ -176,21 +185,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4524755726158905661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19588385245968726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57bdc949fce340f8968c5bc86276031, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MeshR:
-  - {fileID: 839705036205447455}
-  Speed: 4
 --- !u!195 &1500384592229430246
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -225,26 +219,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49d4a2bcf8762240af85105d6e38fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placeEnnemi: {fileID: 3419719831882791895}
+  ennemi: {fileID: 0}
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
   Target: {fileID: 0}
-  attackRange: 2.2
+  spawnerzone: {fileID: 0}
+  attackRange: 1
   attackRepeatTime: 1
   TheDammage: 10
-  enemyHealth: 0
+  enemyHealth: 3
   detectionRange: 10
   checkInterval: 0.5
+  meshRenderers:
+  - {fileID: 0}
+--- !u!114 &709058394320613991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19588385245968726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e48ed158ee2e5bd4694ddd860b4b4ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &9034737840570635556
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19588385245968726}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!4 &796652407307068396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 46f311046d2104da8b56be3d0a49a119,
-    type: 3}
-  m_PrefabInstance: {fileID: 902125486744929287}
-  m_PrefabAsset: {fileID: 0}
---- !u!137 &839705036205447455 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 514471462265150744, guid: 46f311046d2104da8b56be3d0a49a119,
     type: 3}
   m_PrefabInstance: {fileID: 902125486744929287}
   m_PrefabAsset: {fileID: 0}
