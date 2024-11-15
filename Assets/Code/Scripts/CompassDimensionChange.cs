@@ -32,7 +32,7 @@ public class CompassDimensionChange : MonoBehaviour
         string newWorldKey = dimensionNames[(currentDimensionIndex + 1) % dimensionNames.Length];
 
         // Charger la nouvelle scène de manière asynchrone
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BerceauUpgrade", LoadSceneMode.Additive);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(newWorldKey, LoadSceneMode.Additive);
         while (!asyncLoad.isDone)
         {
             yield return null; // Attendre la prochaine frame
