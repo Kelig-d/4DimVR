@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,11 +6,14 @@ using UnityEngine.AI;
 
 public class Ennemi : MonoBehaviour
 {
-
+    public GameObject redMarker;
+    private float durationTimeRedMarker;
+    public GameObject sonEnnemi;
     public NavMeshAgent ennemi;
     private Animator animator;
     public LayerMask playerLayer;
     public GameObject Target = null;
+    public GameObject _Target = null;
     public SpawnerZone spawnerzone;
     
     public float attackRange = 1.0f;
@@ -55,6 +57,10 @@ public class Ennemi : MonoBehaviour
     {
         ennemi = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        redMarker = transform.Find("redMarker").gameObject;
+        redMarker.SetActive(false);
+        sonEnnemi = transform.Find("SonEnnemi").gameObject;
+        sonEnnemi.SetActive(false);
         attackTime = Time.time;
         StartCoroutine(EnnemiBehavior());
     }
@@ -124,10 +130,11 @@ public class Ennemi : MonoBehaviour
         while (!isDead)
         {
             findPlayer();
+            SeePlayer();
 
             if (Target)
             {
-                //Debug.LogWarning(Distance + " " + attackRange);
+                sonEnnemi.SetActive(true);
 
                 //Debug.LogWarning(Target);
                 if(Distance > attackRange)
@@ -148,6 +155,7 @@ public class Ennemi : MonoBehaviour
             {
                 animator.SetBool("isMoving", false);
                 animator.SetBool("isWaiting", true);
+                sonEnnemi.SetActive(false);
             
             }
 
@@ -243,6 +251,46 @@ public class Ennemi : MonoBehaviour
         if (other.CompareTag("Arme"))
         {
             ApplyDammage(1);
+        }
+    }
+    public void ShowRedMarker()
+    {
+        if (redMarker != null)
+        {
+            redMarker.SetActive(true); // Affiche le point rouge
+        }
+    }
+
+    public void HideRedMarker()
+    {
+        if (redMarker != null)
+        {
+            redMarker.SetActive(false); // Cache le point rouge
+        }
+    }
+
+    public void SeePlayer()
+    {
+        // reset de _Target
+        if(Target == null && _Target != null)
+        {
+            _Target = null;
+        }
+
+        // Si l'ennemie voit le joueur pour le "première" fois
+        if(Target != null && _Target == null)
+        {
+            if(!redMarker.activeSelf)
+            {
+                
+                ShowRedMarker();
+                _Target = Target;
+                durationTimeRedMarker = Time.time;
+            }
+        }
+        if(redMarker.activeSelf && (Time.time - durationTimeRedMarker > 1))
+        {
+            HideRedMarker();
         }
     }
 
