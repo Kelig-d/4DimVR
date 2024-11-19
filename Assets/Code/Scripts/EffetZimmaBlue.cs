@@ -10,6 +10,7 @@ public class EffetZimmaBlue : MonoBehaviour
     private Rigidbody myRigidbody;
 
     private float timeColor;
+    private Color colorBlue;
 
     // Start is called before the first frame update
     void Start()
@@ -44,15 +45,16 @@ public class EffetZimmaBlue : MonoBehaviour
         }else if (myMaterial.GetFloat("_ShaderX") == 0.50f && myMaterial.color == newcolor){
             myMaterial.SetFloat("_ShaderX",0.75f);
             timeColor += 35f ; 
-            if ( myMaterial.color == new Color(21,5,255))
-            {
+
                 myRigidbody.isKinematic = false;
-            }
+                Debug.Log("COLOR : "+newcolor);
+                Debug.Log(" MYCOLOR : "+myMaterial.color);
             // Modif here
 
 
         }
     }
+
 
     IEnumerator timerColor(){
         while(timeColor>= 0){
