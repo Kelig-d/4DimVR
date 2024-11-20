@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Garage0.unity
     guid: 007dbd1efe897d844a4c77546045f94e
+  - enabled: 1
+    path: Assets/Level/Scenes/Artefact-tp.unity
+    guid: 30ffc652e2a0f244c8c356513034bd0c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fab568eedd5b1604fb6bb75db6482638,
       type: 2}
