@@ -14,7 +14,6 @@ public class HealthBar : MonoBehaviour
 
     public void UpdateHealth(float health)
     {
-        Debug.Log(health);
         if(_maxHealth == 0) _maxHealth = health;
         _currentHealth = Mathf.Clamp(health, 0f, _maxHealth);
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shader : MonoBehaviour
+public class ajusterArmeALaMain : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

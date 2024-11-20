@@ -139,8 +139,11 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.1.0
-  preloadedAssets: []
+  bundleVersion: 0.2.0
+  preloadedAssets:
+  - {fileID: 7470356006798088824, guid: ddb435ce0cfc80b47933567055b0e3e7, type: 2}
+  - {fileID: 11400000, guid: fab568eedd5b1604fb6bb75db6482638, type: 2}
+  - {fileID: 964423513253964712, guid: 45486d1380f42fb44a368cfb5f1684da, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -162,7 +165,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.FoolQuantum.fourDimVR
-    Standalone: com.Unity-Technologies.com.unity.template.urp-blank
+    Standalone: com.FoolQuantum.fourDimVR
     iPhone: com.Unity-Technologies.com.unity.template.urp-blank
   buildNumber:
     Standalone: 0
@@ -826,7 +829,8 @@ PlayerSettings:
     tvOS: DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Standalone: 0
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
   managedStrippingLevel:
