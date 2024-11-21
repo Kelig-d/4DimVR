@@ -44,35 +44,45 @@ public class Mi7Light : MonoBehaviour
 
         public Light Light;
         public Vector3 Position;
-        float dep;
-        float smooth;
-        int x, y, z;
-        bool move;
+        readonly float dep;
+        readonly float smooth;
+        readonly int x, y, z;
 
-        public LightBuble(Light l, float DepMasque, float smooth = 0.5f, int x = 0, int y = 0, int z = 0)
+        readonly float velocity;
+
+        public LightBuble(Light l, float DepMasque, float velocity, float smooth = 0.5f, int x = 0, int y = 0, int z = 0)
         {
             this.x = x; this.y = y; this.z = z;
             Position = l.transform.position;
             dep = DepMasque;
             Light = l;
-            move = true;
             this.smooth = smooth;
+            this.velocity = velocity;
         }
 
-        public void deplacement()
+        public void deplacement(GameObject Masque)
         {
-            if (this.CheckLightDep())
+            double dist2 = distance(Masque.transform.position, this.Light.transform.position);
+
+            print("dist :" + dist2 + " velo : " + velocity);
+            if (this.CheckLightDep() && dist2 <= this.velocity)
             {
                 this.Position.x += dep * x;
                 this.Position.y += dep * y;
                 this.Position.z += dep * z;
                 this.Light.transform.position = Position;
             }
-
-
         }
 
-       
+       public void updateIntensity(Vector3 positionSombre, double ScaleItem )
+        {
+            if (CheckLight())
+            {
+                double dist0 = distance(positionSombre, this.Light.transform.position);
+                float teta = (float)((100 * ScaleItem) / dist0);
+                this.Light.intensity = 5- teta/20;
+            }
+        }
 
         private double distance(Vector3 objet1, Vector3 objet2)
         {
@@ -105,6 +115,24 @@ public class Mi7Light : MonoBehaviour
             }
 
         }
+
+        public void updateLight(GameObject Masque)
+        {
+            if (this.CheckLight())
+            {
+                /* Déplacement des lumière */
+
+                this.deplacement(Masque);
+
+                /* Check if inside bububle */
+
+                this.CheckArea(Masque);
+
+                /* Update the intensity in function of distance */
+
+                this.updateIntensity(Masque.transform.position, Masque.transform.localScale.x / 2);
+            }
+        }
     }
 
 
@@ -116,21 +144,27 @@ public class Mi7Light : MonoBehaviour
     LightBuble LightLeft;
     LightBuble LightRight;
 
+    float impactSpeed;
+
 
     public void Start()
     {
-        LightFront = new LightBuble(lightFront, DepLight, z: -1);
-        LightBack = new LightBuble(lightBack, DepLight, z: 1);
-        LightTop = new LightBuble(lightTop, DepLight, y: 1);
-        LightBottom = new LightBuble(lightBottom, DepLight, y: -1);
-        LightLeft = new LightBuble(lightLeft, DepLight, x: -1);
-        LightRight = new LightBuble(lightRight, DepLight, x: 1);
+        print("ImpactSpeed" + this.impactSpeed);
+        LightFront = new LightBuble(lightFront, DepLight,impactSpeed, z: -1);
+        LightBack = new LightBuble(lightBack, DepLight, impactSpeed, z: 1);
+        LightTop = new LightBuble(lightTop, DepLight,impactSpeed, y: 1);
+        LightBottom = new LightBuble(lightBottom, DepLight, impactSpeed, y: -1);
+        LightLeft = new LightBuble(lightLeft, DepLight, impactSpeed, x: -1);
+        LightRight = new LightBuble(lightRight, DepLight, impactSpeed, x: 1);
 
         MasqueScale = Vector3.zero;
-        print("Masque : " + Masque.transform.position);
 
     }
 
+    public void updateVitesse(float impactSpeed)
+    {
+        this.impactSpeed = impactSpeed*2;
+    }
 
     private void Update()
     {
@@ -142,23 +176,12 @@ public class Mi7Light : MonoBehaviour
 
         Masque.transform.localScale = MasqueScale;
 
-        /* Déplacement des lumière */
-        LightTop.deplacement();
-        LightBottom.deplacement();
-        LightLeft.deplacement();
-        LightRight.deplacement();
-        LightFront.deplacement();
-        LightBack.deplacement();
-
-
-        /* Check if inside bububle */
-
-        LightTop.CheckArea(Masque);
-        LightBottom.CheckArea(Masque);
-        LightLeft.CheckArea(Masque);
-        LightRight.CheckArea(Masque);
-        LightFront.CheckArea(Masque);
-        LightBack.CheckArea(Masque);
+        LightTop.updateLight(Masque);
+        LightBottom.updateLight(Masque);
+        LightLeft.updateLight(Masque);
+        LightRight.updateLight(Masque);
+        LightFront.updateLight(Masque);
+        LightBack.updateLight(Masque);
 
         /* check if detroy item */
 
@@ -172,9 +195,6 @@ public class Mi7Light : MonoBehaviour
             Destroy(Prefab);
             print("destroy");
         }
-
-
-
 
     }
 
