@@ -64,7 +64,6 @@ public class Mi7Light : MonoBehaviour
         {
             double dist2 = distance(Masque.transform.position, this.Light.transform.position);
 
-            print("dist :" + dist2 + " velo : " + velocity);
             if (this.CheckLightDep() && dist2 <= this.velocity)
             {
                 this.Position.x += dep * x;
@@ -149,7 +148,6 @@ public class Mi7Light : MonoBehaviour
 
     public void Start()
     {
-        print("ImpactSpeed" + this.impactSpeed);
         LightFront = new LightBuble(lightFront, DepLight,impactSpeed, z: -1);
         LightBack = new LightBuble(lightBack, DepLight, impactSpeed, z: 1);
         LightTop = new LightBuble(lightTop, DepLight,impactSpeed, y: 1);
@@ -193,7 +191,6 @@ public class Mi7Light : MonoBehaviour
             !LightBack.CheckLight())
         {
             Destroy(Prefab);
-            print("destroy");
         }
 
     }
