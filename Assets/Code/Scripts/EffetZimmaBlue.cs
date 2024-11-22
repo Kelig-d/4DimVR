@@ -7,13 +7,15 @@ public class EffetZimmaBlue : MonoBehaviour
     [SerializeField]
     private Material myMaterial;
 
-    public float positionY;
-
     private Rigidbody myRigidbody;
+    private BoxCollider myObject;
+    public float targetMin = 0.5f;
+    public float targetHeight = 5f;  // Hauteur cible à laquelle le cube doit monter
+    public float moveSpeed = 1f; 
+    private Vector3 originalScale; // Nouvelle taille lorsqu'il est violet
 
     private float timeColor;
-    private Vector3 positionHaute;  // Position cible
-    public float speed = 1.0f;
+
     private Color colorBlue = new Color(0.082f,0.004f,1.0f,1.0f);
     private Color colorYellow = new Color(0.996f,1.0f,0.004f,1.0f);
     private Color colorGreen = new Color(0.133f,1.0f,0.004f,1.0f);
@@ -27,11 +29,15 @@ public class EffetZimmaBlue : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
         myMaterial = GetComponent<Renderer>().material;
         myMaterial.SetFloat("_ShaderX",0.0f);
+        myObject = GetComponent<BoxCollider>();
+        Renderer renderer = GetComponent<Renderer>();
+        originalScale = transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
+        EffetColor();
         RetourNormalColor();
     }
 
@@ -54,47 +60,57 @@ public class EffetZimmaBlue : MonoBehaviour
         // si objet même couleur que le laser et si il est remplis à 0.50
         else if (myMaterial.GetFloat("_ShaderX") == 0.50f && myMaterial.color == newcolor){
             myMaterial.SetFloat("_ShaderX",0.75f);
-            EffetColor();
             // ajoute du temps supplementaire 
             timeColor += 35f ; 
         }
     }
 
     public void EffetColor(){
-        if (myMaterial.color.ToString() == colorBlue.ToString()){
-            // objet tombe
-            myRigidbody.isKinematic = false;
-        }else if(myMaterial.color.ToString() == colorYellow.ToString()){
-            // objet monte 
-            // definir à quelle hauteur l'objet pet monter au maximum
-            positionHaute = new Vector3(transform.position.x, positionY, transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, positionHaute, speed * Time.deltaTime);
-            Debug.Log(Vector3.Distance(transform.position, positionHaute));
-        }else if(myMaterial.color.ToString() == colorGreen.ToString()){
-            
-        }else if(myMaterial.color.ToString() == colorPurple.ToString()){
-            
-        }else if(myMaterial.color.ToString() == colorRed.ToString()){
-            
-        }else if(myMaterial.color.ToString() == colorWhite.ToString()){
-            gameObject.SetActive(false);
+        if (myMaterial.GetFloat("_ShaderX") == 0.75f){
+            if (myMaterial.color.ToString() == colorBlue.ToString()){
+                // Déplace le cube progressivement vers le BAS en fonction de la vitesse
+                float step = moveSpeed * Time.deltaTime;
+                transform.position = new Vector3(transform.position.x, Mathf.MoveTowards(transform.position.y, targetMin, step), transform.position.z);
+        
+            }else if(myMaterial.color.ToString() == colorYellow.ToString() && transform.position.y < targetHeight){
+                // Déplace le cube progressivement vers le haut en fonction de la vitesse
+                float step = moveSpeed * Time.deltaTime;
+                transform.position = new Vector3(transform.position.x, Mathf.MoveTowards(transform.position.y, targetHeight, step), transform.position.z);
+                
+            }else if(myMaterial.color.ToString() == colorGreen.ToString()){
+                
+            }else if(myMaterial.color.ToString() == colorPurple.ToString()){
+                // Change la taille du cube
+                transform.localScale = Vector3.Lerp(transform.localScale, originalScale / 2f, Time.deltaTime * 2f);   
+            }else if(myMaterial.color.ToString() == colorRed.ToString()){
+                
+            }else if(myMaterial.color.ToString() == colorWhite.ToString()){
+                renderer.enabled = false;  // Cache le cube
+            }
+            Debug.Log("ERROR COLOR");
         }
-        Debug.Log("ERROR COLOR");
     }
 
     //La couleur de l'objet redevient à sa couleur d'orignie en fonction du temps qui passe
     public void RetourNormalColor(){
-        if(myMaterial.GetFloat("_ShaderX") == 0.75f && timeColor == 30.0f ){
-            gameObject.SetActive(true);
+        if( timeColor == 30.0f ){
+            renderer.enabled = true;
+            //myObject.enabled=true;
             myMaterial.SetFloat("_ShaderX",0.5f);
         }else if (myMaterial.GetFloat("_ShaderX") == 0.5f && timeColor == 15.0f ){
             myMaterial.SetFloat("_ShaderX",0.25f);
         }else if (myMaterial.GetFloat("_ShaderX") == 0.25f && timeColor == 0.0f ){
             myMaterial.SetFloat("_ShaderX",0.0f);
+            ResetSize();
         }
     }
-    
 
+    private void ResetSize()
+    {
+        // Réinitialise la taille du cube à sa taille d'origine
+        transform.localScale = originalScale;
+    }
+  
     IEnumerator timerColor(){
         while(timeColor>= 0){
             timeColor --;
