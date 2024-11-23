@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 using UnityEngine;
+using Unity;
 
 public class EffetZimmaBlue : MonoBehaviour
 {
@@ -15,6 +18,7 @@ public class EffetZimmaBlue : MonoBehaviour
     private Vector3 originalScale; // Nouvelle taille lorsqu'il est violet
 
     private float timeColor;
+    public float pushForce = 10f; 
 
     private Color colorBlue = new Color(0.082f,0.004f,1.0f,1.0f);
     private Color colorYellow = new Color(0.996f,1.0f,0.004f,1.0f);
@@ -22,6 +26,10 @@ public class EffetZimmaBlue : MonoBehaviour
     private Color colorPurple = new Color(0.761f,0.004f,1.0f,1.0f);
     private Color colorRed = new Color(1.0f,0.004f,0.004f,1.0f);
     private Color colorWhite = new Color(1.0f,1.0f,1.0f,1.0f);
+    private InputActionReference targetDevice;   // Périphérique de la manette
+    private bool isPushing = false;     // Indicateur si le joueur appuie sur la gâchette
+
+    public InputActionReference pushButton;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +40,8 @@ public class EffetZimmaBlue : MonoBehaviour
         myObject = GetComponent<BoxCollider>();
         Renderer renderer = GetComponent<Renderer>();
         originalScale = transform.localScale;
+        pushButton.action.started += ButtonWasPressed;
+        pushButton.action.canceled += ButtonWasReleased;
     }
 
     // Update is called once per frame
@@ -77,15 +87,13 @@ public class EffetZimmaBlue : MonoBehaviour
                 float step = moveSpeed * Time.deltaTime;
                 transform.position = new Vector3(transform.position.x, Mathf.MoveTowards(transform.position.y, targetHeight, step), transform.position.z);
                 
-            }else if(myMaterial.color.ToString() == colorGreen.ToString()){
-                
             }else if(myMaterial.color.ToString() == colorPurple.ToString()){
                 // Change la taille du cube
                 transform.localScale = Vector3.Lerp(transform.localScale, originalScale / 2f, Time.deltaTime * 2f);   
             }else if(myMaterial.color.ToString() == colorRed.ToString()){
                 
             }else if(myMaterial.color.ToString() == colorWhite.ToString()){
-                renderer.enabled = false;  // Cache le cube
+                GetComponent<Renderer>().enabled = false;  // Cache le cube
             }
             Debug.Log("ERROR COLOR");
         }
@@ -94,7 +102,7 @@ public class EffetZimmaBlue : MonoBehaviour
     //La couleur de l'objet redevient à sa couleur d'orignie en fonction du temps qui passe
     public void RetourNormalColor(){
         if( timeColor == 30.0f ){
-            renderer.enabled = true;
+            GetComponent<Renderer>().enabled = true;
             //myObject.enabled=true;
             myMaterial.SetFloat("_ShaderX",0.5f);
         }else if (myMaterial.GetFloat("_ShaderX") == 0.5f && timeColor == 15.0f ){
@@ -103,6 +111,21 @@ public class EffetZimmaBlue : MonoBehaviour
             myMaterial.SetFloat("_ShaderX",0.0f);
             ResetSize();
         }
+    }
+
+    public void ButtonWasPressed(InputAction.CallbackContext context)
+    {
+        Debug.Log("Bouton pressé !");
+        if (myMaterial.color.ToString() == colorGreen.ToString())
+        {
+            PushCube();
+            
+        }
+    }
+
+    public void ButtonWasReleased(InputAction.CallbackContext context)
+    {
+        myRigidbody.isKinematic = true;
     }
 
     private void ResetSize()
@@ -118,5 +141,16 @@ public class EffetZimmaBlue : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
-    
+
+    private void PushCube()
+    {
+        myRigidbody.isKinematic = false;
+        // Applique une force pour pousser le cube
+        // Direction de la poussée en fonction de la manette
+        Vector3 pushDirection = transform.position - Camera.main.transform.position; // Direction du joueur vers l'objet
+        pushDirection.y = 0; // Ignore la hauteur pour éviter de pousser en l'air
+        myRigidbody.AddForce(pushDirection.normalized * pushForce, ForceMode.Force);
+
+    }
+
 }
