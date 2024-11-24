@@ -11,6 +11,9 @@ public class MessagereiBtn : MonoBehaviour
     public Color colorBase;
     public Color colorNotif;
 
+    public AudioClip song;
+    public AudioSource tel;
+
     bool Active= true;
     int time = 0;
 
@@ -37,6 +40,8 @@ public class MessagereiBtn : MonoBehaviour
     private void OnGrab(SelectEnterEventArgs args)
     {
         Active = false;
+        tel.clip = song;
+        tel.Play();
     }
 
 
