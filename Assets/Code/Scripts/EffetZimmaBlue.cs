@@ -18,7 +18,7 @@ public class EffetZimmaBlue : MonoBehaviour
     private Vector3 originalScale; // Nouvelle taille lorsqu'il est violet
 
     private float timeColor;
-    public float pushForce = 10f; 
+    public float pushForce = 50f; 
 
     private Color colorBlue = new Color(0.082f,0.004f,1.0f,1.0f);
     private Color colorYellow = new Color(0.996f,1.0f,0.004f,1.0f);
