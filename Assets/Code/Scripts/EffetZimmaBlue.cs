@@ -26,10 +26,12 @@ public class EffetZimmaBlue : MonoBehaviour
     private Color colorPurple = new Color(0.761f,0.004f,1.0f,1.0f);
     private Color colorRed = new Color(1.0f,0.004f,0.004f,1.0f);
     private Color colorWhite = new Color(1.0f,1.0f,1.0f,1.0f);
+    /*
     private InputActionReference targetDevice;   // Périphérique de la manette
     private bool isPushing = false;     // Indicateur si le joueur appuie sur la gâchette
 
     public InputActionReference pushButton;
+    */
 
     // Start is called before the first frame update
     void Start()
