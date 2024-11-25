@@ -40,8 +40,8 @@ public class EffetZimmaBlue : MonoBehaviour
         myObject = GetComponent<BoxCollider>();
         Renderer renderer = GetComponent<Renderer>();
         originalScale = transform.localScale;
-        pushButton.action.started += ButtonWasPressed;
-        pushButton.action.canceled += ButtonWasReleased;
+        //pushButton.action.started += ButtonWasPressed;
+        //pushButton.action.canceled += ButtonWasReleased;
     }
 
     // Update is called once per frame
@@ -90,12 +90,12 @@ public class EffetZimmaBlue : MonoBehaviour
             }else if(myMaterial.color.ToString() == colorPurple.ToString()){
                 // Change la taille du cube
                 transform.localScale = Vector3.Lerp(transform.localScale, originalScale / 2f, Time.deltaTime * 2f);   
-            }else if(myMaterial.color.ToString() == colorRed.ToString()){
-                
-            }else if(myMaterial.color.ToString() == colorWhite.ToString()){
+            }/*else if(myMaterial.color.ToString() == colorRed.ToString()){
+                Debug.Log("rouge");
+            }*/
+            else if(myMaterial.color.ToString() == colorWhite.ToString()){
                 GetComponent<Renderer>().enabled = false;  // Cache le cube
             }
-            Debug.Log("ERROR COLOR");
         }
     }
 
@@ -113,20 +113,25 @@ public class EffetZimmaBlue : MonoBehaviour
         }
     }
 
-    public void ButtonWasPressed(InputAction.CallbackContext context)
+    /*public void ButtonWasPressed(InputAction.CallbackContext context)
     {
         Debug.Log("Bouton pressé !");
         if (myMaterial.color.ToString() == colorGreen.ToString())
         {
             PushCube();
-            
         }
     }
 
     public void ButtonWasReleased(InputAction.CallbackContext context)
     {
         myRigidbody.isKinematic = true;
-    }
+        myRigidbody.constraints &= ~RigidbodyConstraints.FreezePosition;
+        myRigidbody.constraints &= ~RigidbodyConstraints.FreezeRotation;
+        myRigidbody.constraints = ~RigidbodyConstraints.FreezePositionX;
+        myRigidbody.constraints = ~RigidbodyConstraints.FreezePositionZ;
+        myRigidbody.constraints = ~RigidbodyConstraints.FreezeRotationX;
+        myRigidbody.constraints = ~RigidbodyConstraints.FreezeRotationZ;
+    }*/
 
     private void ResetSize()
     {
@@ -142,15 +147,22 @@ public class EffetZimmaBlue : MonoBehaviour
         }
     }
 
+    /*
+     * permet de au joueur de pousser le cube 
     private void PushCube()
     {
         myRigidbody.isKinematic = false;
+        myRigidbody.constraints &= ~RigidbodyConstraints.FreezePosition;
+        myRigidbody.constraints &= ~RigidbodyConstraints.FreezeRotation;
+        myRigidbody.constraints = ~RigidbodyConstraints.FreezePositionY;
+        myRigidbody.constraints = ~RigidbodyConstraints.FreezeRotationY;
+
         // Applique une force pour pousser le cube
         // Direction de la poussée en fonction de la manette
-        Vector3 pushDirection = transform.position - Camera.main.transform.position; // Direction du joueur vers l'objet
+        Vector3 pushDirection = transform.position + Camera.main.transform.position; // Direction du joueur vers l'objet
         pushDirection.y = 0; // Ignore la hauteur pour éviter de pousser en l'air
         myRigidbody.AddForce(pushDirection.normalized * pushForce, ForceMode.Force);
-
     }
+    */
 
 }
