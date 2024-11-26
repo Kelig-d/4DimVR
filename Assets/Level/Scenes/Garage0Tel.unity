@@ -2207,28 +2207,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 413719049}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1407844924
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3929156607131383642}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6401997921742198869, guid: 41deba7e86302554fb87c58852884be3, type: 3}
 --- !u!64 &1498290473
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2618,28 +2596,6 @@ MonoBehaviour:
   colorNotif: {r: 1, g: 0, b: 0, a: 0}
   song: {fileID: 8300000, guid: dec941522d2e40e45bbe7229f1ac1756, type: 3}
   tel: {fileID: 8884751253871780085}
---- !u!64 &1931514678
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40379393622422265}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7704444132540360217, guid: 41deba7e86302554fb87c58852884be3, type: 3}
 --- !u!1 &2012397626
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,10 +2778,10 @@ GameObject:
   - component: {fileID: 1725916829461008985}
   - component: {fileID: 3135980627459532412}
   - component: {fileID: 1931514675}
-  - component: {fileID: 1931514678}
+  - component: {fileID: 3135980627459532415}
   - component: {fileID: 3135980627459532414}
   - component: {fileID: 3135980627459532413}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SocleTelephone.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3711,11 +3667,32 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &3135980627459532415
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40379393622422265}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1695053, y: 0.16690874, z: 0.08778519}
+  m_Center: {x: 0.7729905, y: 0.8075108, z: -0.36528283}
 --- !u!33 &3141382928659017165
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3983,7 +3960,6 @@ GameObject:
   - component: {fileID: 7160397502582510948}
   - component: {fileID: 2994956554677572400}
   - component: {fileID: 7490018293164893584}
-  - component: {fileID: 1407844924}
   m_Layer: 0
   m_Name: SocleTelephone.001
   m_TagString: Untagged
