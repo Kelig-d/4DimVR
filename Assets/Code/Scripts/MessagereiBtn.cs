@@ -39,6 +39,7 @@ public class MessagereiBtn : MonoBehaviour
     // Méthode appelée lorsque l'objet est saisi
     private void OnGrab(SelectEnterEventArgs args)
     {
+        Touche.GetComponent<Renderer>().material.color = colorBase;
         Active = false;
         tel.clip = song;
         tel.Play();
