@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class ArtefactdeTp : MonoBehaviour
@@ -25,6 +26,7 @@ public class ArtefactdeTp : MonoBehaviour
     public GameObject CaillouART3;
     public GameObject CaillouCER3;
     public GameObject Grab3;
+    
 
 
     private XRGrabInteractable grabInteractable;
@@ -40,16 +42,27 @@ public class ArtefactdeTp : MonoBehaviour
         grabInteractable = GetComponent<XRGrabInteractable>();
         
         
-        FragBerceau = false;
-        FragZima = false;
-        FragMi = false;
-        FragChronos = false;
-        
+        FragBerceau = true;
+        FragZima = true;
+        FragMi = true;
+        FragChronos = true;
+        CaillouART0.SetActive(false);
+        CaillouCER0.SetActive(false);
+        Grab0.SetActive(false);
+        CaillouART1.SetActive(false);
+        CaillouCER1.SetActive(false);
+        Grab1.SetActive(false);
+        CaillouART2.SetActive(false);
+        CaillouCER2.SetActive(false);
+        Grab2.SetActive(false);
+        CaillouART3.SetActive(false);
+        CaillouCER3.SetActive(false);
+        Grab3.SetActive(false);
         
         
         if (grabInteractable != null)
         {
-            // S'abonner aux événements
+            // S'abonner aux ï¿½vï¿½nements
             grabInteractable.selectEntered.AddListener(OnGrab);
             grabInteractable.selectExited.AddListener(OnRelease);
         }
@@ -60,36 +73,10 @@ public class ArtefactdeTp : MonoBehaviour
 
     }
 
-    public void GetFrag(string name)
-    {
-
-        switch(name)
-        {
-            case "berceau":
-                FragBerceau = true;
-                break;
-
-            case "mi7":
-                FragMi = true;
-                break;
-
-            case "chronos":
-                FragChronos = true;
-                break;
-
-            case "zima":
-                FragZima = true;
-                break;
-
-
-        }
-
-    }
-
-    // Méthode appelée lorsque l'objet est saisi
+    // Mï¿½thode appelï¿½e lorsque l'objet est saisi
     private void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log($"{gameObject.name} a été saisi !");
+        Debug.Log($"{gameObject.name} a ï¿½tï¿½ saisi !");
         Cercle.SetActive(true);
 
         if ( FragBerceau )
@@ -127,10 +114,10 @@ public class ArtefactdeTp : MonoBehaviour
 
     }
 
-    // Méthode appelée lorsque l'objet est relâché
+    // Mï¿½thode appelï¿½e lorsque l'objet est relï¿½chï¿½
     private void OnRelease(SelectExitEventArgs args)
     {
-        Debug.Log($"{gameObject.name} a été relâché !");
+        Debug.Log($"{gameObject.name} a ï¿½tï¿½ relï¿½chï¿½ !");
         Cercle.SetActive(false);
 
         CaillouART0.SetActive(false);
@@ -152,10 +139,24 @@ public class ArtefactdeTp : MonoBehaviour
 
 
     }
-
-    // Update is called once per frame
-    void Update()
+    public void ChangeDimension(string dimensionName)
     {
-        
+        StartCoroutine(LoadNewDimension(dimensionName));
+    }
+    
+    private IEnumerator LoadNewDimension(string dimensionName)
+    {
+        Debug.Log("Loading new dimension...");
+        string currentWorldKey = SceneManager.GetActiveScene().name;
+
+        // Charger la nouvelle scÃ¨ne de maniÃ¨re asynchrone
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(dimensionName, LoadSceneMode.Additive);
+        while (asyncLoad != null && !asyncLoad.isDone)
+        {
+            yield return null; // Attendre la prochaine frame
+        }
+        // DÃ©sactiver l'ancienne scÃ¨ne
+        SceneManager.UnloadSceneAsync(currentWorldKey);
+        Debug.Log("Loaded new dimension !");
     }
 }

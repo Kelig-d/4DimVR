@@ -7,7 +7,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class grabFrag : MonoBehaviour
 {
-    public enum Name { berceau, mi7, chronos, zima};
+
+    public enum Name { Berceau, ZimmaBlue, Mi7, ChronoPhagos };
     public Name Dimension;
     private XRGrabInteractable grabInteractable;
     public ArtefactdeTp script;
@@ -18,7 +19,7 @@ public class grabFrag : MonoBehaviour
 
         if (grabInteractable != null)
         {
-            // S'abonner aux événements
+            // S'abonner aux ï¿½vï¿½nements
             grabInteractable.selectEntered.AddListener(OnGrab);
         }
         else
@@ -27,12 +28,12 @@ public class grabFrag : MonoBehaviour
         }
     }
 
-    // Méthode appelée lorsque l'objet est saisi
+    // Mï¿½thode appelï¿½e lorsque l'objet est saisi
     private void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log($"{gameObject.name} a été saisi !");
+        Debug.Log($"{gameObject.name} a ï¿½tï¿½ saisi !");
         
-        script.GetFrag(Dimension.ToString() );
+        script.ChangeDimension(Dimension.ToString() );
     }
 
 
