@@ -129,36 +129,39 @@ public class Ennemi : MonoBehaviour
     {
         while (!isDead)
         {
-            findPlayer();
-            SeePlayer();
+            if(animator.GetBool("isTakingDamages") == false){
+                findPlayer();
+                SeePlayer();
 
-            if (Target)
-            {
-                sonEnnemi.SetActive(true);
+                if (Target)
+                {
+                    sonEnnemi.SetActive(true);
 
-                //Debug.LogWarning(Target);
-                if(Distance > attackRange)
-                {
-                    ennemi.destination = Target.transform.position;
-                    animator.SetBool("isMoving", true);
-                    animator.SetBool("isWaiting", false);
-                }else if (Distance < attackRange)
-                {
-                    ennemi.destination = ennemi.transform.position;
-                    if (Time.time > attackTime)
+                    //Debug.LogWarning(Target);
+                    if(Distance > attackRange)
                     {
-                        attack();
+                        ennemi.destination = Target.transform.position;
+                        animator.SetBool("isMoving", true);
+                        animator.SetBool("isWaiting", false);
+                    }else if (Distance < attackRange)
+                    {
+                        ennemi.destination = ennemi.transform.position;
+                        if (Time.time > attackTime)
+                        {
+                            attack();
+                        }
                     }
                 }
+                else
+                {
+                    animator.SetBool("isMoving", false);
+                    animator.SetBool("isWaiting", true);
+                    sonEnnemi.SetActive(false);
+                
+                }
+            }else{
+                ennemi.destination = ennemi.transform.position;
             }
-            else
-            {
-                animator.SetBool("isMoving", false);
-                animator.SetBool("isWaiting", true);
-                sonEnnemi.SetActive(false);
-            
-            }
-
             yield return new WaitForSeconds(0.2f);
         }
     }
@@ -205,6 +208,7 @@ public class Ennemi : MonoBehaviour
     private void Dead()
     {
         isDead = true;
+        ennemi.destination = ennemi.transform.position;
         animator.SetBool("isDead", true);
         spawnerzone.nbEnnemies -=1;
         Destroy(gameObject, 1);
