@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,16 +47,26 @@ public class Script_ponéglyphe : MonoBehaviour
         Active7 = checkActivation(Activator7) == res[7];
         Active8 = checkActivation(Activator8) == res[8];
         Active9 = checkActivation(Activator9) == res[9];
+        Debug.Log("Active 0 : " + Active0);
+        Debug.Log("Active 1 : " + Active1);
+        Debug.Log("Active 2 : " + Active2);
+        Debug.Log("Active 3 : " + Active3);
+        Debug.Log("Active 4 : " + Active4);
+        Debug.Log("Active 5 : " + Active5);
+        Debug.Log("Active 6 : " + Active6);
+        Debug.Log("Active 7 : " + Active7);
+        Debug.Log("Active 8 : " + Active8);
+        Debug.Log("Active 9 : " + Active9);
 
         if (Active0 && Active1 && Active2 && Active3 && Active4 && Active5 && Active6 && Active7 && Active8 && Active9)
         {
-            Destroy(gameObject); // La porte
+            Destroy(gameObject);
+            Debug.Log("Objet détruit");
         }
     }
 
     int checkActivation(GameObject Activator)
     {
-
         if (Activator.transform.eulerAngles.x > 270 && Activator.transform.eulerAngles.x < 315)
         {
             return 1;
