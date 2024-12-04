@@ -42,10 +42,10 @@ public class ArtefactdeTp : MonoBehaviour
         grabInteractable = GetComponent<XRGrabInteractable>();
         
         
-        FragBerceau = true;
-        FragZima = true;
-        FragMi = true;
-        FragChronos = true;
+        FragBerceau = false;
+        FragZima = false;
+        FragMi = false;
+        FragChronos = false;
         CaillouART0.SetActive(false);
         CaillouCER0.SetActive(false);
         Grab0.SetActive(false);
@@ -139,6 +139,30 @@ public class ArtefactdeTp : MonoBehaviour
 
 
     }
+
+
+    public void AddDimension(string dimensionName)
+    {
+       switch(dimensionName)
+        {
+            case "Berceau":
+                FragBerceau = true;
+                break;
+
+            case "ZimmaBlue":
+                FragZima = true;
+                break;
+
+            case "Mi7":
+                FragMi = true;
+                break;
+
+            case "ChronoPhagos":
+                FragChronos = true;
+                break;
+        }
+    }
+
     public void ChangeDimension(string dimensionName)
     {
         StartCoroutine(LoadNewDimension(dimensionName));
