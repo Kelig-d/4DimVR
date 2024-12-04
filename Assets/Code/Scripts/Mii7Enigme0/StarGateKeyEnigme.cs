@@ -118,9 +118,10 @@ public class StarGateKeyEnigme : MonoBehaviour
 
     private void OnGrab(SelectEnterEventArgs args)
     {
+
         if (checkValue())
         {
-            Destroy(Door);  // MOVE DOOR
+            Destroy(GameObject.Find("PorteEnigme0"));
         }
     }
 

@@ -8,7 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class grabFrag : MonoBehaviour
 {
 
-    public enum Name { Berceau, ZimmaBlue, Mi7, ChronoPhagos };
+    public enum Name { Berceau, ZimmaBlue, Mi7, ChronoPhagos , BerceauMI7TEST , Mi7MI7TEST };
     public Name Dimension;
     public GameObject anchor;
     private XRGrabInteractable grabInteractable;
