@@ -193,6 +193,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &320327985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320327986}
+  m_Layer: 3
+  m_Name: Berceau
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &320327986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320327985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2709532088918163150}
+  - {fileID: 9198441705706260184}
+  - {fileID: 5620194015917936096}
+  m_Father: {fileID: 543450652883423037}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &378431369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -430,6 +464,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &611790469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 611790470}
+  m_Layer: 3
+  m_Name: ZimaBlue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &611790470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611790469}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 425176352681373757}
+  - {fileID: 4761011115317426723}
+  - {fileID: 2438656852151565500}
+  m_Father: {fileID: 543450652883423037}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &826748969
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +552,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 03701d7477841744e87bc92cca1c5fa4, type: 2}
+  - {fileID: 2100000, guid: 5f637f02e520b374abf4220d8e106c15, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -642,6 +710,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1708858262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708858263}
+  m_Layer: 3
+  m_Name: ChronosPhagos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1708858263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708858262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3878072839015584745}
+  - {fileID: 5951265925016087079}
+  - {fileID: 5669787335898485007}
+  m_Father: {fileID: 543450652883423037}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1904002804
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +862,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &2028443567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028443568}
+  m_Layer: 3
+  m_Name: Mi7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2028443568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028443567}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 756610034981300607}
+  - {fileID: 3027536949994915}
+  - {fileID: 5944756551736168219}
+  m_Father: {fileID: 543450652883423037}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2113506817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,10 +1227,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.92082596, y: -0.02534914, z: 1.1620588}
-  m_LocalScale: {x: 0.08428039, y: 0.08428037, z: 0.08428037}
+  m_LocalScale: {x: 0.08428039, y: 0.08428035, z: 0.08428035}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 2028443568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112535526314449910
 GameObject:
@@ -1130,7 +1266,7 @@ GameObject:
   - component: {fileID: 4636069368735952083}
   - component: {fileID: 4636069368735952084}
   m_Layer: 3
-  m_Name: Pierre1Grab
+  m_Name: ArtefactGrabZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1148,7 +1284,7 @@ GameObject:
   - component: {fileID: 8475989969842463321}
   - component: {fileID: 3727240920659130417}
   m_Layer: 3
-  m_Name: Pierre0Artefact
+  m_Name: ArtefactStoneBerceau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1167,7 +1303,7 @@ Transform:
   m_LocalScale: {x: 0.13881409, y: 0.13881409, z: 0.13881409}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 611790470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &449862561713905373
 MeshRenderer:
@@ -1189,7 +1325,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 03701d7477841744e87bc92cca1c5fa4, type: 2}
+  - {fileID: 2100000, guid: f9931667c6f329f4e980be4f64285fdf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1231,7 +1367,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9a2766e7d5a2d740a7b7406bd81cf97, type: 2}
+  - {fileID: 2100000, guid: 353dbd842f21d934184c6a4c4314ae78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1268,18 +1404,10 @@ Transform:
   m_Children:
   - {fileID: 2007277907662063278}
   - {fileID: 423920164}
-  - {fileID: 5951265925016087079}
-  - {fileID: 2709532088918163150}
-  - {fileID: 3027536949994915}
-  - {fileID: 756610034981300607}
-  - {fileID: 9198441705706260184}
-  - {fileID: 5944756551736168219}
-  - {fileID: 3878072839015584745}
-  - {fileID: 5669787335898485007}
-  - {fileID: 5620194015917936096}
-  - {fileID: 425176352681373757}
-  - {fileID: 4761011115317426723}
-  - {fileID: 2438656852151565500}
+  - {fileID: 320327986}
+  - {fileID: 2028443568}
+  - {fileID: 1708858263}
+  - {fileID: 611790470}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &756610034981300607
@@ -1295,7 +1423,7 @@ Transform:
   m_LocalScale: {x: 0.13881409, y: 0.13881409, z: 0.13881409}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 2028443568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919132148896781703
 GameObject:
@@ -1601,7 +1729,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa797bad6cb645a4fbfea5fb0727b993, type: 2}
+  - {fileID: 2100000, guid: f36c252d865c9954b8645ff27298e0a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1643,7 +1771,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 353dbd842f21d934184c6a4c4314ae78, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1753,7 +1881,7 @@ Transform:
   m_LocalScale: {x: 0.1914712, y: 0.19147122, z: 0.19147122}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 611790470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2538317437762003601
 MeshFilter:
@@ -1792,7 +1920,7 @@ Transform:
   m_LocalScale: {x: 0.13881409, y: 0.13881409, z: 0.13881409}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 320327986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2716584024427873816
 MeshRenderer:
@@ -1814,7 +1942,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 353dbd842f21d934184c6a4c4314ae78, type: 2}
+  - {fileID: 2100000, guid: c9a2766e7d5a2d740a7b7406bd81cf97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1856,7 +1984,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f36c252d865c9954b8645ff27298e0a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1906,7 +2034,7 @@ GameObject:
   - component: {fileID: 2919478667015094071}
   - component: {fileID: 1336963440377546548}
   m_Layer: 3
-  m_Name: Pierre0Cercle
+  m_Name: ArtefactStoneCercleMi7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1990,7 +2118,7 @@ GameObject:
   - component: {fileID: 5487322561403929374}
   - component: {fileID: 2716584024427873816}
   m_Layer: 3
-  m_Name: Pierre1Cercle
+  m_Name: ArtefactStoneCercleBerceau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2008,7 +2136,7 @@ GameObject:
   - component: {fileID: 3141382929366135409}
   - component: {fileID: 5686654296701194552}
   m_Layer: 3
-  m_Name: Pierre2Artefact
+  m_Name: ArtefactStoneCp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2026,7 +2154,7 @@ GameObject:
   - component: {fileID: 5584603921752725055}
   - component: {fileID: 9009241822154443550}
   m_Layer: 3
-  m_Name: Pierre2Cercle
+  m_Name: ArtefactStoneCercleCp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2129,7 +2257,7 @@ Transform:
   m_LocalScale: {x: 0.13881409, y: 0.13881409, z: 0.13881409}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 1708858263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4076438785546265900
 MeshFilter:
@@ -2155,7 +2283,7 @@ GameObject:
   - component: {fileID: 6652253181832999337}
   - component: {fileID: 6652253181832999338}
   m_Layer: 3
-  m_Name: Pierre0Grab
+  m_Name: ArtefactGrabCp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2287,7 +2415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5c8d61e9fc03b4683306cb42c5d7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dimension: 3
+  Dimension: 1
   anchor: {fileID: 6468562656899577952}
   script: {fileID: 919132148896781707}
 --- !u!114 &4636069368735952084
@@ -2452,10 +2580,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 0.84916663, y: -0.02534914, z: 1.2480774}
-  m_LocalScale: {x: 0.08428039, y: 0.08428037, z: 0.08428037}
+  m_LocalScale: {x: 0.08428039, y: 0.084280364, z: 0.084280364}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 611790470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4961177295402428138
 Transform:
@@ -2599,7 +2727,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c9a2766e7d5a2d740a7b7406bd81cf97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2642,7 +2770,7 @@ Transform:
   m_LocalScale: {x: 0.19147122, y: 0.19147122, z: 0.19147122}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 320327986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5627354453478450312
 MeshFilter:
@@ -2662,10 +2790,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.02738133, y: -0.9067776, z: 1.1620588}
-  m_LocalScale: {x: 0.08428039, y: 0.08428037, z: 0.08428037}
+  m_LocalScale: {x: 0.08428039, y: 0.084280364, z: 0.084280364}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 1708858263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &5686654296701194552
 MeshRenderer:
@@ -2722,7 +2850,7 @@ Transform:
   m_LocalScale: {x: 0.19147122, y: 0.19147122, z: 0.19147122}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 2028443568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5951265925016087079
 Transform:
@@ -2737,7 +2865,7 @@ Transform:
   m_LocalScale: {x: 0.19147122, y: 0.19147122, z: 0.19147122}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 1708858263}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6443852219152948459
 GameObject:
@@ -2755,7 +2883,7 @@ GameObject:
   - component: {fileID: 6443852219152948464}
   - component: {fileID: 6443852219152948465}
   m_Layer: 3
-  m_Name: Pierre2Grab
+  m_Name: ArtefactGrabMi7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2822,7 +2950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5c8d61e9fc03b4683306cb42c5d7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dimension: 1
+  Dimension: 2
   anchor: {fileID: 3161183593539301836}
   script: {fileID: 919132148896781707}
 --- !u!114 &6443852219152948465
@@ -2989,7 +3117,7 @@ GameObject:
   - component: {fileID: 2538317437762003601}
   - component: {fileID: 494862202692175975}
   m_Layer: 3
-  m_Name: Pierre3Cercle
+  m_Name: ArtefactStoneCercleZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3098,7 +3226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5c8d61e9fc03b4683306cb42c5d7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dimension: 0
+  Dimension: 3
   anchor: {fileID: 3709590891433890010}
   script: {fileID: 919132148896781707}
 --- !u!114 &6652253181832999338
@@ -3382,7 +3510,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 83d2aed2c7a3aed44958d97edb76b378, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3416,7 +3544,7 @@ GameObject:
   - component: {fileID: 9059673375106022432}
   - component: {fileID: 3736159623353261902}
   m_Layer: 3
-  m_Name: Pierre1Artefact
+  m_Name: ArtefactStoneMi7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3442,7 +3570,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: fa797bad6cb645a4fbfea5fb0727b993, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3546,7 +3674,7 @@ GameObject:
   - component: {fileID: 8582293574059267759}
   - component: {fileID: 8582293574059267760}
   m_Layer: 3
-  m_Name: Pierre3Grab
+  m_Name: ArtefactGrabBerceau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3613,7 +3741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5c8d61e9fc03b4683306cb42c5d7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dimension: 2
+  Dimension: 0
   anchor: {fileID: 3615792684570647603}
   script: {fileID: 919132148896781707}
 --- !u!114 &8582293574059267760
@@ -3854,7 +3982,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9a2766e7d5a2d740a7b7406bd81cf97, type: 2}
+  - {fileID: 2100000, guid: fa797bad6cb645a4fbfea5fb0727b993, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3894,10 +4022,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.041829675, y: 0.85350204, z: 1.1620588}
-  m_LocalScale: {x: 0.08428039, y: 0.08428037, z: 0.08428037}
+  m_LocalScale: {x: 0.08428039, y: 0.084280364, z: 0.084280364}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 543450652883423037}
+  m_Father: {fileID: 320327986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9220043601786239560
 GameObject:
@@ -3911,7 +4039,7 @@ GameObject:
   - component: {fileID: 2565190781959984688}
   - component: {fileID: 6935117354670865834}
   m_Layer: 3
-  m_Name: Pierre3Artefact
+  m_Name: ArtefactStoneZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
