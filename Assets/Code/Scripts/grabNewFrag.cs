@@ -5,12 +5,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class grabFrag : MonoBehaviour
+public class grabNewFrag : MonoBehaviour
 {
 
     public enum Name { Berceau, ZimmaBlue, Mi7, ChronoPhagos };
     public Name Dimension;
-    public GameObject anchor;
     private XRGrabInteractable grabInteractable;
     public ArtefactdeTp script;
 
@@ -22,7 +21,6 @@ public class grabFrag : MonoBehaviour
         {
             // S'abonner aux �v�nements
             grabInteractable.selectEntered.AddListener(OnGrab);
-            grabInteractable.selectExited.AddListener(OnRelease);
         }
         else
         {
@@ -35,13 +33,9 @@ public class grabFrag : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} tp a ete saisi !");
         
-        script.ChangeDimension(Dimension.ToString() );
+        script.AddDimension(Dimension.ToString() );
     }
 
-    private void OnRelease(SelectExitEventArgs args)
-    { 
-        this.transform.position = anchor.transform.position;
-    }
 
         // Update is called once per frame
         void Update()

@@ -11,21 +11,21 @@ public class ArtefactdeTp : MonoBehaviour
     public GameObject Coeur;
     public GameObject Cercle;
     
-    public GameObject CaillouART0;
-    public GameObject CaillouCER0;
-    public GameObject Grab0;
+    public GameObject CaillouARTMi7;
+    public GameObject CaillouCERMi7;
+    public GameObject GrabMi7;
 
-    public GameObject CaillouART1;
-    public GameObject CaillouCER1;
-    public GameObject Grab1;
+    public GameObject CaillouARTZima;
+    public GameObject CaillouCERZima;
+    public GameObject GrabZima;
 
-    public GameObject CaillouART2;
-    public GameObject CaillouCER2;
-    public GameObject Grab2;
+    public GameObject CaillouARTCp;
+    public GameObject CaillouCERCp;
+    public GameObject GrabCp;
 
-    public GameObject CaillouART3;
-    public GameObject CaillouCER3;
-    public GameObject Grab3;
+    public GameObject CaillouARTBerceau;
+    public GameObject CaillouCERBearcea;
+    public GameObject GrabBerceau;
     
 
 
@@ -41,23 +41,24 @@ public class ArtefactdeTp : MonoBehaviour
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
         
-        
+        Cercle.SetActive(false);
+
         FragBerceau = false;
         FragZima = false;
         FragMi = false;
         FragChronos = false;
-        CaillouART0.SetActive(false);
-        CaillouCER0.SetActive(false);
-        Grab0.SetActive(false);
-        CaillouART1.SetActive(false);
-        CaillouCER1.SetActive(false);
-        Grab1.SetActive(false);
-        CaillouART2.SetActive(false);
-        CaillouCER2.SetActive(false);
-        Grab2.SetActive(false);
-        CaillouART3.SetActive(false);
-        CaillouCER3.SetActive(false);
-        Grab3.SetActive(false);
+        CaillouARTMi7.SetActive(false);
+        CaillouCERMi7.SetActive(false);
+        GrabMi7.SetActive(false);
+        CaillouARTZima.SetActive(false);
+        CaillouCERZima.SetActive(false);
+        GrabZima.SetActive(false);
+        CaillouARTCp.SetActive(false);
+        CaillouCERCp.SetActive(false);
+        GrabCp.SetActive(false);
+        CaillouARTBerceau.SetActive(false);
+        CaillouCERBearcea.SetActive(false);
+        GrabBerceau.SetActive(false);
         
         
         if (grabInteractable != null)
@@ -76,37 +77,36 @@ public class ArtefactdeTp : MonoBehaviour
     // M�thode appel�e lorsque l'objet est saisi
     private void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log($"{gameObject.name} a �t� saisi !");
         Cercle.SetActive(true);
 
         if ( FragBerceau )
         {
-            CaillouART0.SetActive(true);
-            CaillouCER0.SetActive(true);
-            Grab0.SetActive(true);
+            CaillouARTMi7.SetActive(true);
+            CaillouCERMi7.SetActive(true);
+            GrabMi7.SetActive(true);
         }
 
         if ( FragChronos )
         {
-            CaillouART1.SetActive(true);
-            CaillouCER1.SetActive(true);
-            Grab1.SetActive(true);
+            CaillouARTZima.SetActive(true);
+            CaillouCERZima.SetActive(true);
+            GrabZima.SetActive(true);
 
         }
 
         if ( FragMi )
         {
-            CaillouART2.SetActive(true);
-            CaillouCER2.SetActive(true);
-            Grab2.SetActive(true);
+            CaillouARTCp.SetActive(true);
+            CaillouCERCp.SetActive(true);
+            GrabCp.SetActive(true);
 
         }
 
         if ( FragZima )
         {
-            CaillouART3.SetActive(true);
-            CaillouCER3.SetActive(true);
-            Grab3.SetActive(true);
+            CaillouARTBerceau.SetActive(true);
+            CaillouCERBearcea.SetActive(true);
+            GrabBerceau.SetActive(true);
 
         }
 
@@ -117,25 +117,24 @@ public class ArtefactdeTp : MonoBehaviour
     // M�thode appel�e lorsque l'objet est rel�ch�
     private void OnRelease(SelectExitEventArgs args)
     {
-        Debug.Log($"{gameObject.name} a �t� rel�ch� !");
         Cercle.SetActive(false);
 
-        CaillouART0.SetActive(false);
-        CaillouCER0.SetActive(false);
-        Grab0.SetActive(false);
+        CaillouARTMi7.SetActive(false);
+        CaillouCERMi7.SetActive(false);
+        GrabMi7.SetActive(false);
 
-        CaillouART1.SetActive(false);
-        CaillouCER1.SetActive(false);
-        Grab1.SetActive(false);
+        CaillouARTZima.SetActive(false);
+        CaillouCERZima.SetActive(false);
+        GrabZima.SetActive(false);
 
 
-        CaillouART2.SetActive(false);
-        CaillouCER2.SetActive(false);
-        Grab2.SetActive(false);
+        CaillouARTCp.SetActive(false);
+        CaillouCERCp.SetActive(false);
+        GrabCp.SetActive(false);
 
-        CaillouART3.SetActive(false);
-        CaillouCER3.SetActive(false);
-        Grab3.SetActive(false);
+        CaillouARTBerceau.SetActive(false);
+        CaillouCERBearcea.SetActive(false);
+        GrabBerceau.SetActive(false);
 
 
     }
