@@ -43,10 +43,10 @@ public class ArtefactdeTp : MonoBehaviour
         
         Cercle.SetActive(false);
 
-        FragBerceau = false;
-        FragZima = false;
-        FragMi = false;
-        FragChronos = false;
+        FragBerceau = true;
+        FragZima = true;
+        FragMi = true;
+        FragChronos = true;
         CaillouARTMi7.SetActive(false);
         CaillouCERMi7.SetActive(false);
         GrabMi7.SetActive(false);

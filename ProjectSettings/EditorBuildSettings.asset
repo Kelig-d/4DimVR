@@ -35,6 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Artefact-tp.unity
     guid: 30ffc652e2a0f244c8c356513034bd0c
+  - enabled: 1
+    path: Assets/Level/Scenes/Mi7/Mi7MI7TEST.unity
+    guid: be516262eb924c248920112d80493998
+  - enabled: 1
     path: Assets/Level/Scenes/Mi7/BerceauMI7TEST.unity
     guid: d5fc9bdb6ae88c04e9d99a9cbd7e46de
   m_configObjects:
