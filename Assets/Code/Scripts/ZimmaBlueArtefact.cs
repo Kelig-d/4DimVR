@@ -34,11 +34,18 @@ public class ZimmaBlueArtefact : MonoBehaviour
         Vector3 endPoint = Vector3.zero;
         if(hasHit){
             EffetZimmaBlue target = hit.transform.GetComponent<EffetZimmaBlue>();
-            if (target != null){
+            ZimmaBlueJustColor target2 = hit.transform.GetComponent<ZimmaBlueJustColor>();
+            if (target != null)
+            {
                 target.ChangeColor(spawProjectile.startColor);
                 endPoint = hit.point;
+                Debug.Log("cible atteinte speciale");
+            }else if(target2 != null){
+                target2.ChangeColor(spawProjectile.startColor);
+                endPoint = hit.point;
                 Debug.Log("cible atteinte");
-            }else{
+            }
+            else{
                 endPoint = spawnPoint.position + spawnPoint.forward * fireDistance;
                 Debug.Log("cible non atteinte");
             }
