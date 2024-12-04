@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 899a7a6a75f2e5147b547a153789b406, type: 3}
-  m_Name: Grass ZimmaBlue
+  m_Name: Grass Settings zimmaBlue
   m_EditorClassIdentifier: 
-  shaderToUse: {fileID: 0}
-  materialToUse: {fileID: 0}
+  shaderToUse: {fileID: 7200000, guid: ae7abd68f82897d48ae76e7c4d3efcf7, type: 3}
+  materialToUse: {fileID: 2100000, guid: 8bece94b9c10b4b41a1a292e5511b51a, type: 2}
   grassRandomHeightMin: 0
   grassRandomHeightMax: 0
   bladeRadius: 0.2
@@ -24,12 +24,12 @@ MonoBehaviour:
   MinHeight: 0.01
   MaxWidth: 1
   MaxHeight: 1
-  windSpeed: 10
-  windStrength: 0.05
+  windSpeed: 0
+  windStrength: 0.01
   allowedBladesPerVertex: 4
   allowedSegmentsPerBlade: 4
   affectStrength: 1
-  topTint: {r: 1, g: 1, b: 1, a: 1}
+  topTint: {r: 1, g: 0.995283, b: 0.995283, a: 1}
   bottomTint: {r: 0, g: 0, b: 0, a: 1}
   drawBounds: 0
   minFadeDistance: 40
