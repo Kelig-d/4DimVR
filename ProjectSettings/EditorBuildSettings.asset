@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Level/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Level/Scenes/MenuScene.unity
+    guid: 4dfbd67154947694ca0e45234d7293c1
+  - enabled: 1
     path: Assets/Level/Scenes/Berceau.unity
     guid: d73ebbbe4bb660c48b16c98a41da9236
   - enabled: 1
@@ -23,8 +26,23 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Ennemi.unity
     guid: 2f96701894d7fdc4b9e26232e4fc80e0
+  - enabled: 1
+    path: Assets/Level/Scenes/Garage0.unity
+    guid: 007dbd1efe897d844a4c77546045f94e
+  - enabled: 1
+    path: Assets/Level/Scenes/TestNote.unity
+    guid: 42ea1405e2cb51a468bf0b1d71a0bcfd
+  - enabled: 1
+    path: Assets/Level/Scenes/Artefact-tp.unity
+    guid: 30ffc652e2a0f244c8c356513034bd0c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fab568eedd5b1604fb6bb75db6482638,
       type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 9a2101c519888f447a7a6cc832614827,
+      type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c16441f8f7ce44840acab1b062a47da2,
+      type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ddb435ce0cfc80b47933567055b0e3e7,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 45486d1380f42fb44a368cfb5f1684da,
       type: 2}

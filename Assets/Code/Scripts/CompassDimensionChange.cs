@@ -33,7 +33,7 @@ public class CompassDimensionChange : MonoBehaviour
 
         // Charger la nouvelle scène de manière asynchrone
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(newWorldKey, LoadSceneMode.Additive);
-        while (!asyncLoad.isDone)
+        while (asyncLoad != null && !asyncLoad.isDone)
         {
             yield return null; // Attendre la prochaine frame
         }
