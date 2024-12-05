@@ -2,68 +2,86 @@ using UnityEngine;
 
 public class PlaqueTrigger : MonoBehaviour
 {
-    public GameObject sphere1; // Sphère 1 affectée
-    public GameObject sphere2; // Sphère 2 affectée
+    /// <summary>
+    /// The first sphere affected by the plaque trigger.
+    /// </summary>
+    public GameObject sphere1;
+
+    /// <summary>
+    /// The second sphere affected by the plaque trigger.
+    /// </summary>
+    public GameObject sphere2;
 
     private Renderer rendererSphere1;
     private Renderer rendererSphere2;
 
+    /// <summary>
+    /// The player object that will interact with the plaque trigger.
+    /// </summary>
     public GameObject joueur;
 
-    private bool isYellow1;
-    private bool isYellow2;
+    private bool isYellow1; ///< Tracks if the first sphere is yellow.
+    private bool isYellow2; ///< Tracks if the second sphere is yellow.
 
-    private bool isActivated = false; // Indique si la plaque est déjà activée
+    private bool isActivated = false; ///< Indicates if the plaque is activated.
 
-    private Color Yellow;
-    private Color Black;
-
+    private Color Yellow; ///< Color for the yellow state of the spheres.
+    private Color Black;  ///< Color for the black state of the spheres.
 
     void Start()
     {
+        // Get the renderers of the spheres to change their material colors
         rendererSphere1 = sphere1.GetComponent<Renderer>();
         rendererSphere2 = sphere2.GetComponent<Renderer>();
 
-        // Crée les couleurs correctement (valeurs entre 0 et 1)
-        Yellow = Color.yellow; // Jaune
-        Black = Color.black; // Noir
+        // Initialize color values
+        Yellow = Color.yellow; // Yellow color
+        Black = Color.black; // Black color
     }
 
-    // Cette méthode est appelée quand un objet entre dans le trigger
+    /// <summary>
+    /// Called when an object enters the trigger zone.
+    /// </summary>
+    /// <param name="other">The collider that entered the trigger zone.</param>
     private void OnTriggerEnter(Collider other)
     {
-        // Vérifie si l'objet qui entre est bien le joueur et que la plaque n'est pas déjà activée
+        // Check if the player entered and the plaque is not already activated
         if (other.CompareTag("Player") && !isActivated)
         {
-            isActivated = true; // Marquer la plaque comme activée
-            isYellow1 = rendererSphere1.material.color == Yellow;
-            isYellow2 = rendererSphere2.material.color == Yellow;
-            ChangeSpheresColor();
+            isActivated = true; // Mark the plaque as activated
+            isYellow1 = rendererSphere1.material.color == Yellow; // Check if the first sphere is yellow
+            isYellow2 = rendererSphere2.material.color == Yellow; // Check if the second sphere is yellow
+            ChangeSpheresColor(); // Change the color of the spheres
         }
     }
 
-    // Méthode appelée quand le joueur quitte la plaque pour réactiver le trigger si nécessaire
+    /// <summary>
+    /// Called when the player exits the trigger zone.
+    /// </summary>
+    /// <param name="other">The collider that exited the trigger zone.</param>
     private void OnTriggerExit(Collider other)
     {
-        // Quand le joueur quitte la plaque, réinitialiser la plaque
+        // When the player exits the plaque, deactivate the plaque
         if (other.CompareTag("Player"))
         {
             isActivated = false;
         }
     }
 
-    // Cette méthode alterne la couleur des sphères
+    /// <summary>
+    /// Alternates the color of the spheres between yellow and black.
+    /// </summary>
     void ChangeSpheresColor()
     {
-        // Alterner la couleur de la première sphère
+        // Toggle the color of the first sphere
         isYellow1 = !isYellow1;
         rendererSphere1.material.color = isYellow1 ? Yellow : Black;
 
-        // Alterner la couleur de la deuxième sphère
+        // Toggle the color of the second sphere
         isYellow2 = !isYellow2;
         rendererSphere2.material.color = isYellow2 ? Yellow : Black;
 
-        // Vérifie si toutes les sphères sont jaunes
+        // Check if all spheres are yellow and trigger an event in the GameManager
         GameManager.Instance.CheckAllSpheres();
     }
 }

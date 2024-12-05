@@ -4,30 +4,92 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Controls the behavior of an enemy in the game. The enemy detects and reacts to players within a certain range, attacks when close, and takes damage.
+/// </summary>
 public class Ennemi : MonoBehaviour
 {
+    /// <summary>
+    /// Reference to the red marker object that highlights the enemy’s target.
+    /// </summary>
     public GameObject redMarker;
+    
+    /// <summary>
+    /// Duration for how long the red marker stays visible.
+    /// </summary>
     private float durationTimeRedMarker;
+
+    /// <summary>
+    /// Reference to the enemy's sound emitter (used for emitting sound when the enemy is active).
+    /// </summary>
     public GameObject sonEnnemi;
+
+    /// <summary>
+    /// The NavMeshAgent component responsible for moving the enemy.
+    /// </summary>
     public NavMeshAgent ennemi;
+
+    /// <summary>
+    /// Animator that handles the enemy's animations.
+    /// </summary>
     private Animator animator;
+
+    /// <summary>
+    /// LayerMask used for detecting the player in the environment.
+    /// </summary>
     public LayerMask playerLayer;
+
+    /// <summary>
+    /// The current target the enemy is pursuing (usually the player).
+    /// </summary>
     public GameObject Target = null;
+
+    /// <summary>
+    /// A backup target used in certain situations.
+    /// </summary>
     public GameObject _Target = null;
+
+    /// <summary>
+    /// Reference to the SpawnerZone which controls enemy spawning.
+    /// </summary>
     public SpawnerZone spawnerzone;
-    
+
+    /// <summary>
+    /// Range within which the enemy will attack.
+    /// </summary>
     public float attackRange;
+
+    /// <summary>
+    /// Time interval between consecutive attacks.
+    /// </summary>
     public float attackRepeatTime = 1;
+
+    /// <summary>
+    /// The amount of damage the enemy does when attacking.
+    /// </summary>
     public float TheDammage;
+
+    /// <summary>
+    /// The health of the enemy.
+    /// </summary>
     public float enemyHealth;
+
+    /// <summary>
+    /// Range within which the enemy can detect the player.
+    /// </summary>
     public float detectionRange;
+
+    /// <summary>
+    /// Interval time for periodic checks during enemy behavior execution.
+    /// </summary>
     public float checkInterval;
-    
+
     private float Distance;
     private float attackTime;
     private float nextCheckTime;
     private bool isDead = false;
-    
+
+    // Animator states and tags for different enemy actions
     private static readonly int IdleState = Animator.StringToHash("Base Layer.idle");
     private static readonly int MoveState = Animator.StringToHash("Base Layer.move");
     private static readonly int AttackState = Animator.StringToHash("Base Layer.attack_shift");
@@ -38,7 +100,10 @@ public class Ennemi : MonoBehaviour
     private const int Dissolve = 1;
     private const int Attack = 2;
     private const int Surprised = 3;
-    
+
+    /// <summary>
+    /// Dictionary to store the enemy’s current status (whether it is attacking, surprised, or dissolving).
+    /// </summary>
     private Dictionary<int, bool> EnemyStatus = new Dictionary<int, bool>
     {
         { Dissolve, false },
@@ -47,11 +112,26 @@ public class Ennemi : MonoBehaviour
     };
 
     private float dissolveValue = 1f;
-    [SerializeField] private SkinnedMeshRenderer[] meshRenderers;
-    public bool IsAttacking => EnemyStatus[Attack];
-    public bool IsTakingDamages => EnemyStatus[Surprised];
-    public bool IsDead => EnemyStatus[Dissolve];
 
+    /// <summary>
+    /// Array of mesh renderers for the enemy, used for visual effects like dissolving.
+    /// </summary>
+    [SerializeField] private SkinnedMeshRenderer[] meshRenderers;
+
+    /// <summary>
+    /// Property to check if the enemy is attacking.
+    /// </summary>
+    public bool IsAttacking => EnemyStatus[Attack];
+
+    /// <summary>
+    /// Property to check if the enemy is taking damage.
+    /// </summary>
+    public bool IsTakingDamages => EnemyStatus[Surprised];
+
+    /// <summary>
+    /// Property to check if the enemy is dead.
+    /// </summary>
+    public bool IsDead => EnemyStatus[Dissolve];
 
     void Start()
     {
@@ -65,12 +145,9 @@ public class Ennemi : MonoBehaviour
         StartCoroutine(EnnemiBehavior());
     }
 
-    private void Update()
-    {
-        UpdateStatus();
-        StartCoroutine(EnnemiBehavior());
-    }
-
+    /// <summary>
+    /// Updates the enemy's status, checking for attack, death, and damage conditions.
+    /// </summary>
     private void UpdateStatus()
     {
         if (isDead && enemyHealth <= 0)
@@ -101,6 +178,9 @@ public class Ennemi : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine that handles the enemy’s behavior, including moving towards the player and attacking.
+    /// </summary>
     IEnumerator EnnemiBehavior()
     {
         while (!isDead)
@@ -114,13 +194,12 @@ public class Ennemi : MonoBehaviour
                 {
                     sonEnnemi.SetActive(true);
 
-                    //Debug.LogWarning(Target);
                     if(Distance > attackRange)
                     {
                         ennemi.destination = Target.transform.position;
                         animator.SetBool("isMoving", true);
                         animator.SetBool("isWaiting", false);
-                    }else if (Distance < attackRange)
+                    } else if (Distance < attackRange)
                     {
                         ennemi.destination = ennemi.transform.position;
                         if (Time.time > attackTime)
@@ -134,26 +213,33 @@ public class Ennemi : MonoBehaviour
                     animator.SetBool("isMoving", false);
                     animator.SetBool("isWaiting", true);
                     sonEnnemi.SetActive(false);
-                
                 }
-            }else{
+            }
+            else
+            {
                 ennemi.destination = ennemi.transform.position;
             }
             yield return new WaitForSeconds(0.2f);
         }
     }
 
+    /// <summary>
+    /// Executes an attack on the player if within range.
+    /// </summary>
     void attack()
     {
         ennemi.destination = transform.position;
         animator.SetBool("isMoving", false);
         animator.SetBool("isAttacking", true);
-        //Debug.LogWarning("Degat");
         Target.transform.parent.GetComponent<Player>().TakeDamage(TheDammage);
         attackTime = Time.time + attackRepeatTime;
         StartCoroutine(ResetAttackAnimation(0.4f));
     }
 
+    /// <summary>
+    /// Applies damage to the enemy, and checks for death.
+    /// </summary>
+    /// <param name="damage">Amount of damage dealt to the enemy.</param>
     void ApplyDammage(float damage)
     {
         if (!isDead)
@@ -165,12 +251,21 @@ public class Ennemi : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resets the damage animation after a delay.
+    /// </summary>
+    /// <param name="delay">Time to wait before resetting the animation.</param>
     private IEnumerator ResetDamageAnimation(float delay)
     {
         yield return new WaitForSeconds(delay);
         animator.SetBool("isTakingDamages", false);
         animator.SetBool("isMoving", true);
     }
+
+    /// <summary>
+    /// Resets the attack animation after a delay.
+    /// </summary>
+    /// <param name="delay">Time to wait before resetting the animation.</param>
     private IEnumerator ResetAttackAnimation(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -178,7 +273,9 @@ public class Ennemi : MonoBehaviour
         if(Target && (Target != null))
         {
             animator.SetBool("isMoving", true); 
-        }else{
+        }
+        else
+        {
             animator.SetBool("isMoving", false);
         }
     }
@@ -188,6 +285,10 @@ public class Ennemi : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Destroy(gameObject, 1);
     }
+    
+    /// <summary>
+    /// Handles the enemy's death process, including animation and destruction.
+    /// </summary>
     private void Dead()
     {
         isDead = true;
@@ -199,6 +300,9 @@ public class Ennemi : MonoBehaviour
         StartCoroutine(DelayOfDeath(2));     
     }
 
+    /// <summary>
+    /// Finds the closest player to the enemy within the detection range.
+    /// </summary>
     void findPlayer()
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
@@ -219,47 +323,58 @@ public class Ennemi : MonoBehaviour
         }
 
         Target = closestPlayer;
-        //Debug.LogWarning(Target);
         Distance = minDistance;
     }
+
+    /// <summary>
+    /// Trigger event to apply damage to the enemy when hit by a weapon.
+    /// </summary>
+    /// <param name="other">Collider that collided with the enemy.</param>
     private void OnTriggerEnter(Collider other)
     {
-        // Alternative si tu utilises des triggers au lieu de colliders normaux
         if (other.CompareTag("Arme"))
         {
             ApplyDammage(1);
         }
     }
+
+    /// <summary>
+    /// Displays the red marker to indicate the target's position.
+    /// </summary>
     public void ShowRedMarker()
     {
         if (redMarker != null)
         {
-            redMarker.SetActive(true); // Affiche le point rouge
+            redMarker.SetActive(true); // Show the red marker
         }
     }
 
+    /// <summary>
+    /// Hides the red marker when the enemy is no longer focused on the player.
+    /// </summary>
     public void HideRedMarker()
     {
         if (redMarker != null)
         {
-            redMarker.SetActive(false); // Cache le point rouge
+            redMarker.SetActive(false); // Hide the red marker
         }
     }
 
+    /// <summary>
+    /// Detects when the enemy sees the player for the first time and activates the red marker.
+    /// </summary>
     public void SeePlayer()
     {
-        // reset de _Target
         if(Target == null && _Target != null)
         {
             _Target = null;
         }
 
-        // Si l'ennemie voit le joueur pour le "première" fois
+        // If the enemy sees the player for the "first" time
         if(Target != null && _Target == null)
         {
             if(!redMarker.activeSelf)
             {
-                
                 ShowRedMarker();
                 _Target = Target;
                 durationTimeRedMarker = Time.time;

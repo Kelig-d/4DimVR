@@ -1,57 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// This script allows interaction with an object using XR (Virtual Reality) grab functionality.
+/// When the object is grabbed, a TextMeshPro text and a Canvas are displayed. When the object is released, 
+/// the text and canvas are hidden.
+/// </summary>
 public class NoteGrab : MonoBehaviour
 {
-    public TextMeshPro txt;
-    public Canvas canvas;
-    private XRGrabInteractable grabInteractable;
+    public TextMeshPro txt; ///< Reference to the TextMeshPro component to display text.
+    public Canvas canvas; ///< Reference to the Canvas that holds the UI elements.
+    private XRGrabInteractable grabInteractable; ///< Reference to the XRGrabInteractable component used for grabbing interactions.
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initializes the script by setting up event listeners for the grab and release actions.
+    /// </summary>
     void Start()
     {
-        // Récupérer le composant XRGrabInteractable
+        // Get the XRGrabInteractable component attached to this GameObject
         grabInteractable = GetComponent<XRGrabInteractable>();
 
         if (grabInteractable != null)
         {
-            // S'abonner aux événements
+            // Subscribe to the grab and release events
             grabInteractable.selectEntered.AddListener(OnGrab);
             grabInteractable.selectExited.AddListener(OnRelease);
         }
         else
         {
-            Debug.LogError("XRGrabInteractable manquant sur cet objet !");
+            // Log an error if the XRGrabInteractable component is missing
+            Debug.LogError("XRGrabInteractable missing on this object!");
         }
-
     }
 
-    // Méthode appelée lorsque l'objet est saisi
+    /// <summary>
+    /// Method called when the object is grabbed.
+    /// Enables the display of the text and canvas.
+    /// </summary>
+    /// <param name="args">Event arguments containing details about the grab action.</param>
     private void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log($"{gameObject.name} a été saisi !");
+        // Log the event of grabbing the object
+        Debug.Log($"{gameObject.name} has been grabbed!");
+        
+        // Enable the TextMeshPro and Canvas
         txt.gameObject.SetActive(true);
         canvas.gameObject.SetActive(true);
     }
 
-    // Méthode appelée lorsque l'objet est relâché
+    /// <summary>
+    /// Method called when the object is released.
+    /// Disables the display of the text and canvas.
+    /// </summary>
+    /// <param name="args">Event arguments containing details about the release action.</param>
     private void OnRelease(SelectExitEventArgs args)
     {
-        Debug.Log($"{gameObject.name} a été relâché !");
+        // Log the event of releasing the object
+        Debug.Log($"{gameObject.name} has been released!");
+
+        // Disable the TextMeshPro and Canvas
         txt.gameObject.SetActive(false);
         canvas.gameObject.SetActive(false);
-
-
-
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Updates every frame (currently not used in this script).
+    /// </summary>
     void Update()
     {
-        
+        // Logic for updating the object can be added here if needed
     }
 }

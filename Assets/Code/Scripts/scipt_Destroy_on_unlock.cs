@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class DoorInteraction : MonoBehaviour
 {
-    // Cette méthode est appelée lorsque la porte entre en collision avec un autre objet
+    /// <summary>
+    /// This method is called when another collider enters the trigger zone of the door.
+    /// </summary>
+    /// <param name="other">The collider that entered the trigger zone.</param>
     private void OnTriggerEnter(Collider other)
     {
-        // Vérifie si l'objet avec lequel on entre en collision a le tag "key"
+        // Checks if the object that collided with the door has the tag "Key"
         if (other.CompareTag("Key"))
         {
-            // Désactive la porte et la clé en les détruisant
-            Destroy(gameObject); // La porte
-            Destroy(other.gameObject); // La clé
+            // Destroys both the door and the key when the collision occurs
+            Destroy(gameObject); // Destroy the door
+            Destroy(other.gameObject); // Destroy the key
         }
     }
 }
