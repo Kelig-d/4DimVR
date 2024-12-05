@@ -47,11 +47,26 @@ public class RadialSelection : MonoBehaviour
         */
     }
     
-    public void ButtonWasPressed(InputAction.CallbackContext context){
-        SceneManager.LoadScene("MenuScene");
+    public void ButtonWasPressed(InputAction.CallbackContext context)
+    {
+        StartCoroutine(LoadNewDimension());
+        
         //SpawnRadialPart();
         select = true;
 
+    }
+
+    private IEnumerator LoadNewDimension()
+    {
+        string oldscene = SceneManager.GetActiveScene().name;
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MenuScene", LoadSceneMode.Additive);
+        // Désactiver l'ancienne scène
+        while (asyncLoad != null && !asyncLoad.isDone)
+        {
+            yield return null; // Attendre la prochaine frame
+        }
+
+        SceneManager.UnloadSceneAsync(oldscene);
     }
     /*
     public void ButtonWasReleased(InputAction.CallbackContext context){
