@@ -1,36 +1,53 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// Handles the interaction with a ball, applying an upward force when the object is activated.
+/// </summary>
 public class BallInteraction : MonoBehaviour
 {
-    public Rigidbody bounceBall; // L'objet auquel appliquer la force
-    public float upwardForce = 500f; // La force à appliquer vers le haut
+    /// <summary>
+    /// The rigidbody of the ball that will receive the upward force.
+    /// </summary>
+    public Rigidbody bounceBall;
 
+    /// <summary>
+    /// The amount of upward force to apply to the ball.
+    /// </summary>
+    public float upwardForce = 500f;
+
+    /// <summary>
+    /// Initializes the component and subscribes to the activation event.
+    /// </summary>
     void Start()
     {
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
 
-        // Ajouter un listener à l'événement activated pour lancer l'interaction
+        // Add a listener to the activation event to trigger the interaction
         grabbable.activated.AddListener(Interaction);
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Called every frame. Currently not used.
+    /// </summary>
     void Update()
     {
-
     }
 
-    // Méthode appelée lors de l'activation de l'objet
+    /// <summary>
+    /// Applies an upward force to the specified ball when the object is activated.
+    /// </summary>
+    /// <param name="args">Event arguments for the activation.</param>
     void Interaction(ActivateEventArgs args)
     {
         if (bounceBall != null)
         {
-            // Applique une force vers le haut à l'objet cible
+            // Apply an upward force to the target object
             bounceBall.AddForce(Vector3.up * upwardForce);
         }
         else
         {
-            Debug.LogWarning("Aucun objet cible n'a été assigné !");
+            Debug.LogWarning("No target object assigned!");
         }
     }
 }

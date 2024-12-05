@@ -1,11 +1,28 @@
 using UnityEngine;
 
+/// <summary>
+/// Manages the game state, including checking the color of spheres and changing the cube's color when all spheres are yellow.
+/// </summary>
 public class GameManager : MonoBehaviour
 {
+    /// <summary>
+    /// Singleton instance of the GameManager.
+    /// </summary>
     public static GameManager Instance;
-    public GameObject[] spheres; // Référence à toutes les sphères
-    public GameObject cube; // Cube à changer en rouge
 
+    /// <summary>
+    /// Array holding references to all the spheres in the game.
+    /// </summary>
+    public GameObject[] spheres;
+
+    /// <summary>
+    /// Reference to the cube that will change color when all spheres are yellow.
+    /// </summary>
+    public GameObject cube;
+
+    /// <summary>
+    /// Initializes the GameManager singleton instance and ensures only one instance exists.
+    /// </summary>
     void Awake()
     {
         if (Instance == null)
@@ -14,18 +31,21 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    // Vérifie si toutes les sphères sont jaunes
+    /// <summary>
+    /// Checks if all spheres are yellow. If they are, changes the cube's color to red.
+    /// </summary>
     public void CheckAllSpheres()
     {
         foreach (GameObject sphere in spheres)
         {
+            // Checks if the sphere's color is not yellow
             if (sphere.GetComponent<Renderer>().material.color != Color.yellow)
             {
-                return; // Si une sphère n'est pas jaune, on arrête la vérification
+                return; // If any sphere is not yellow, stops checking further
             }
         }
 
-        // Si toutes les sphères sont jaunes, on change la couleur du cube en rouge
+        // If all spheres are yellow, change the cube's color to red
         cube.GetComponent<Renderer>().material.color = Color.red;
     }
 }

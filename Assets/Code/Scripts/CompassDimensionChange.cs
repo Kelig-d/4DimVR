@@ -5,45 +5,66 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// Handles the functionality of a compass-like artifact to switch between dimensions.
+/// </summary>
 public class CompassDimensionChange : MonoBehaviour
 {
+    /// <summary>
+    /// The index of the current dimension.
+    /// </summary>
     private int currentDimensionIndex = 0;
-    private string[] dimensionNames = { "Berceau", "ZimmaBlue", "Mi7", "ChronoPhagos" };
-    
-    private HashSet<int> existingObjectIDs = new HashSet<int>(); // Pour suivre les IDs d'instance des objets
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// An array containing the names of all available dimensions.
+    /// </summary>
+    private string[] dimensionNames = { "Berceau", "ZimmaBlue", "Mi7", "ChronoPhagos" };
+
+    /// <summary>
+    /// Tracks the instance IDs of objects to prevent duplicates when switching dimensions.
+    /// </summary>
+    private HashSet<int> existingObjectIDs = new HashSet<int>();
+
+    /// <summary>
+    /// Initializes the component and subscribes to the activation event to trigger dimension switching.
+    /// </summary>
     void Start()
     {
         XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
 
-        // Ajouter un listener à l'événement activated pour lancer l'interaction
+        // Add a listener to the activation event to trigger dimension switching
         grabbable.activated.AddListener(ChangeDimension);
     }
-    // Update is called once per frame
+
+    /// <summary>
+    /// Triggered when the compass is activated, initiating a dimension change.
+    /// </summary>
+    /// <param name="args">Event arguments for the activation.</param>
     public void ChangeDimension(ActivateEventArgs args)
     {
         StartCoroutine(LoadNewDimension());
     }
-    
+
+    /// <summary>
+    /// Handles the asynchronous loading of a new dimension and unloading of the current one.
+    /// </summary>
+    /// <returns>An IEnumerator for coroutine execution.</returns>
     private IEnumerator LoadNewDimension()
     {
         string currentWorldKey = dimensionNames[currentDimensionIndex];
         string newWorldKey = dimensionNames[(currentDimensionIndex + 1) % dimensionNames.Length];
 
-        // Charger la nouvelle scène de manière asynchrone
+        // Load the new scene asynchronously
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(newWorldKey, LoadSceneMode.Additive);
         while (asyncLoad != null && !asyncLoad.isDone)
         {
-            yield return null; // Attendre la prochaine frame
+            yield return null; // Wait until the next frame
         }
 
-        
-        // Passer à la dimension suivante
+        // Update the current dimension index
         currentDimensionIndex = (currentDimensionIndex + 1) % dimensionNames.Length;
 
-        // Désactiver l'ancienne scène
+        // Unload the old scene
         SceneManager.UnloadSceneAsync(currentWorldKey);
     }
 }
-
