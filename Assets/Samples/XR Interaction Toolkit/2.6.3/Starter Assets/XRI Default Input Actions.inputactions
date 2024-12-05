@@ -1586,6 +1586,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PushButton",
+                    "type": "Button",
+                    "id": "0ef3626b-9c4f-49f3-8ec2-853257813943",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1762,6 +1771,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "CustomButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "febd4890-3657-4654-ab5b-2167aae30017",
+                    "path": "<XRController>{RightHand}/{GripButton}",
+                    "interactions": "Press,Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PushButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

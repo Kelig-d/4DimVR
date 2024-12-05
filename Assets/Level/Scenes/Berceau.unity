@@ -22778,7 +22778,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1057823108}
-  - component: {fileID: 1057823107}
   m_Layer: 0
   m_Name: Lampadaire
   m_TagString: Untagged
@@ -22786,19 +22785,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1057823107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057823106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec16d99d8631bc428333a8b9fb02df3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: 
 --- !u!4 &1057823108
 Transform:
   m_ObjectHideFlags: 0
@@ -30448,7 +30434,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1516517338}
-  - component: {fileID: 1516517337}
   m_Layer: 0
   m_Name: Lampadaire (1)
   m_TagString: Untagged
@@ -30456,19 +30441,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1516517337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516517336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec16d99d8631bc428333a8b9fb02df3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: 
 --- !u!4 &1516517338
 Transform:
   m_ObjectHideFlags: 0
@@ -41427,7 +41399,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2094727818}
   - component: {fileID: 2094727817}
-  - component: {fileID: 2094727816}
   m_Layer: 0
   m_Name: Maison
   m_TagString: Untagged
@@ -41435,19 +41406,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2094727816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094727815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec16d99d8631bc428333a8b9fb02df3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: 
 --- !u!54 &2094727817
 Rigidbody:
   m_ObjectHideFlags: 0
