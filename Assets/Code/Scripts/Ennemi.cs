@@ -196,7 +196,7 @@ public class Ennemi : MonoBehaviour
         if(spawnerzone != null){
             spawnerzone.nbEnnemies -=1;
         }
-        StartCoroutine(DelayOfDeath(4));     
+        StartCoroutine(DelayOfDeath(2));     
     }
 
     void findPlayer()
