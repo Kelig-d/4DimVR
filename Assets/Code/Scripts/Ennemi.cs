@@ -186,6 +186,7 @@ public class Ennemi : MonoBehaviour
     private IEnumerator DelayOfDeath(float delay)
     {
         yield return new WaitForSeconds(delay);
+        Destroy(gameObject, 1);
     }
     private void Dead()
     {
@@ -195,9 +196,7 @@ public class Ennemi : MonoBehaviour
         if(spawnerzone != null){
             spawnerzone.nbEnnemies -=1;
         }
-        StartCoroutine(DelayOfDeath(10));
-        Destroy(gameObject, 1);
-        
+        StartCoroutine(DelayOfDeath(4));     
     }
 
     void findPlayer()
