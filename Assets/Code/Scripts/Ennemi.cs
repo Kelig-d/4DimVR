@@ -16,12 +16,12 @@ public class Ennemi : MonoBehaviour
     public GameObject _Target = null;
     public SpawnerZone spawnerzone;
     
-    public float attackRange = 1.0f;
+    public float attackRange;
     public float attackRepeatTime = 1;
     public float TheDammage;
     public float enemyHealth;
-    public float detectionRange = 10f;
-    public float checkInterval = 0.5f;
+    public float detectionRange;
+    public float checkInterval;
     
     private float Distance;
     private float attackTime;
@@ -68,15 +68,7 @@ public class Ennemi : MonoBehaviour
     private void Update()
     {
         UpdateStatus();
-        //HandleDissolve();
         StartCoroutine(EnnemiBehavior());
-
-        /* Test de dégat
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ApplyDammage(1);
-        }
-        */
     }
 
     private void UpdateStatus()
@@ -109,27 +101,12 @@ public class Ennemi : MonoBehaviour
         }
     }
 
-    private void HandleDissolve()
-    {
-        if (EnemyStatus[Dissolve])
-        {
-            dissolveValue -= Time.deltaTime;
-            foreach (var renderer in meshRenderers)
-            {
-                renderer.material.SetFloat("_Dissolve", dissolveValue);
-            }
-            if (dissolveValue <= 0)
-            {
-                ennemi.enabled = false;
-            }
-        }
-    }
-
     IEnumerator EnnemiBehavior()
     {
         while (!isDead)
         {
-            if(animator.GetBool("isTakingDamages") == false){
+            if(animator.GetBool("isTakingDamages") == false)
+            {
                 findPlayer();
                 SeePlayer();
 
@@ -171,6 +148,7 @@ public class Ennemi : MonoBehaviour
         ennemi.destination = transform.position;
         animator.SetBool("isMoving", false);
         animator.SetBool("isAttacking", true);
+        //Debug.LogWarning("Degat");
         Target.transform.parent.GetComponent<Player>().TakeDamage(TheDammage);
         attackTime = Time.time + attackRepeatTime;
         StartCoroutine(ResetAttackAnimation(0.4f));
@@ -205,13 +183,21 @@ public class Ennemi : MonoBehaviour
         }
     }
 
+    private IEnumerator DelayOfDeath(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+    }
     private void Dead()
     {
         isDead = true;
         ennemi.destination = ennemi.transform.position;
         animator.SetBool("isDead", true);
-        spawnerzone.nbEnnemies -=1;
+        if(spawnerzone != null){
+            spawnerzone.nbEnnemies -=1;
+        }
+        StartCoroutine(DelayOfDeath(10));
         Destroy(gameObject, 1);
+        
     }
 
     void findPlayer()
@@ -237,18 +223,6 @@ public class Ennemi : MonoBehaviour
         //Debug.LogWarning(Target);
         Distance = minDistance;
     }
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Vérifie si le collider avec lequel on est en collision a le tag "Enemy"
-        if (collision.gameObject.CompareTag("Arme"))
-        {
-            // Affiche dans la console si l'objet en collision est un ennemi
-            //Debug.LogWarning("Collision détectée entre le tuyau et un ennemi : " + collision.gameObject.name);
-            ApplyDammage(1);
-        }
-    }
-    */
     private void OnTriggerEnter(Collider other)
     {
         // Alternative si tu utilises des triggers au lieu de colliders normaux
@@ -297,5 +271,4 @@ public class Ennemi : MonoBehaviour
             HideRedMarker();
         }
     }
-
 }
