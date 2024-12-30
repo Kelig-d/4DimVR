@@ -46,7 +46,8 @@ public class EffetZimmaBlue : MonoBehaviour
         RetourNormalColor();
     }
 
-    public void ChangeColor(Color newcolor){
+    public void ChangeColor(Color newcolor, Shader materialHit){
+
         // si pas de couleur donnée par le joueur
         if(myMaterial.GetFloat("_ShaderX") == 0.0f){
             // object prend la couleur du laser 
@@ -115,7 +116,7 @@ public class EffetZimmaBlue : MonoBehaviour
     IEnumerator timerColor(){
         while(timeColor>= 0){
             timeColor --;
-            Debug.Log("TIMER"+timeColor);
+            //Debug.Log("TIMER"+timeColor);
             yield return new WaitForSeconds(1f);
         }
     }
