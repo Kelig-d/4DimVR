@@ -8,8 +8,7 @@ using Unity;
 public class ZimmaBlueJustColor : MonoBehaviour
 {
     [SerializeField]
-    private Material myMaterial;
-
+    private Material[] myMaterial;
     private Rigidbody myRigidbody;
     private BoxCollider myObject;
 
@@ -27,10 +26,11 @@ public class ZimmaBlueJustColor : MonoBehaviour
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
-        myMaterial = GetComponent<Renderer>().material;
-        myMaterial.SetFloat("_ShaderX",0.0f);
-        myObject = GetComponent<BoxCollider>();
-        Renderer renderer = GetComponent<Renderer>();
+        myMaterial = GetComponent<Renderer>().materials;
+        foreach (var tps in myMaterial)
+        {
+            tps.SetFloat("_ShaderX", 0.0f);
+        }
 
 
     }
@@ -43,23 +43,25 @@ public class ZimmaBlueJustColor : MonoBehaviour
 
     public void ChangeColor(Color newcolor){
         // si pas de couleur donnée par le joueur
-        if(myMaterial.GetFloat("_ShaderX") == 0.0f){
+        if (myMaterial[0].GetFloat("_ShaderX") == 0.0f){
             // object prend la couleur du laser 
-            myMaterial.color = newcolor; 
-            myMaterial.SetFloat("_ShaderX",0.25f);
+            foreach (var tps in myMaterial)
+            {
+                tps.color = newcolor;
+                tps.SetFloat("_ShaderX", 0.25f);
+            }
             // commencement du timer 
             timeColor= 5f;
             StartCoroutine(timerColor());
         }
         // si objet même couleur que le laser et si il est remplis à 0.25
-        else if (myMaterial.GetFloat("_ShaderX") == 0.25f && myMaterial.color == newcolor){
-            myMaterial.SetFloat("_ShaderX",0.5f);
-            // ajoute du temps supplementaire 
-            timeColor += 5f ; 
+        else if (myMaterial[0].GetFloat("_ShaderX") == 0.25f && myMaterial[0].color == newcolor){
+            setFloat(0.5f);
         }
         // si objet même couleur que le laser et si il est remplis à 0.50
-        else if (myMaterial.GetFloat("_ShaderX") == 0.50f && myMaterial.color == newcolor){
-            myMaterial.SetFloat("_ShaderX",0.75f);
+        else if (myMaterial[0].GetFloat("_ShaderX") == 0.50f && myMaterial[0].color == newcolor){
+            setFloat(0.75f);
+          
             // ajoute du temps supplementaire 
             timeColor += 35f ; 
         }
@@ -68,11 +70,19 @@ public class ZimmaBlueJustColor : MonoBehaviour
     //La couleur de l'objet redevient à sa couleur d'orignie en fonction du temps qui passe
     public void RetourNormalColor(){
         if( timeColor == 30.0f ){
-            myMaterial.SetFloat("_ShaderX",0.5f);
-        }else if (myMaterial.GetFloat("_ShaderX") == 0.5f && timeColor == 15.0f ){
-            myMaterial.SetFloat("_ShaderX",0.25f);
-        }else if (myMaterial.GetFloat("_ShaderX") == 0.25f && timeColor == 0.0f ){
-            myMaterial.SetFloat("_ShaderX",0.0f);
+            setFloat(0.5f);
+        }else if (myMaterial[0].GetFloat("_ShaderX") == 0.5f && timeColor == 15.0f ){
+            setFloat(0.25f);
+        }else if (myMaterial[0].GetFloat("_ShaderX") == 0.25f && timeColor == 0.0f ){
+            setFloat(0.0f);
+        }
+    }
+
+    public void setFloat(float value)
+    {
+        foreach (var tps in myMaterial)
+        {
+            tps.SetFloat("_ShaderX", value);
         }
     }
   
