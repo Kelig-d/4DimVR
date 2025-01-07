@@ -41,25 +41,11 @@ public class ArtefactdeTp : MonoBehaviour
     {
         grabInteractable = GetComponent<XRGrabInteractable>();
         
-        Cercle.SetActive(false);
-
         FragBerceau = true;
         FragZima = true;
         FragMi = true;
         FragChronos = true;
-        CaillouARTMi7.SetActive(false);
-        CaillouCERMi7.SetActive(false);
-        GrabMi7.SetActive(false);
-        CaillouARTZima.SetActive(false);
-        CaillouCERZima.SetActive(false);
-        GrabZima.SetActive(false);
-        CaillouARTCp.SetActive(false);
-        CaillouCERCp.SetActive(false);
-        GrabCp.SetActive(false);
-        CaillouARTBerceau.SetActive(false);
-        CaillouCERBearcea.SetActive(false);
-        GrabBerceau.SetActive(false);
-        
+     
         
         if (grabInteractable != null)
         {
