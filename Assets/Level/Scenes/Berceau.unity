@@ -17677,11 +17677,11 @@ Transform:
   m_GameObject: {fileID: 645978341}
   serializedVersion: 2
   m_LocalRotation: {x: -0.50000006, y: 0.49999997, z: 0.50000006, w: 0.49999997}
-  m_LocalPosition: {x: 123, y: 1.7, z: -12.879999}
+  m_LocalPosition: {x: -45.300003, y: 6.0299997, z: 5.5200005}
   m_LocalScale: {x: 3.5000005, y: 0.06977212, z: 6.0300565}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1978549214}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &645978349
 MeshCollider:
@@ -17717,7 +17717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec16d99d8631bc428333a8b9fb02df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectName: 
+  objectName: PorteCP
 --- !u!1 &659407222
 GameObject:
   m_ObjectHideFlags: 0
@@ -42829,7 +42829,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1686738168}
-  - component: {fileID: 1686738167}
   m_Layer: 0
   m_Name: tree (1)
   m_TagString: Untagged
@@ -42837,19 +42836,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1686738167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686738166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec16d99d8631bc428333a8b9fb02df3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: 
 --- !u!4 &1686738168
 Transform:
   m_ObjectHideFlags: 0
@@ -50540,7 +50526,6 @@ Transform:
   - {fileID: 206795498}
   - {fileID: 1248457892}
   - {fileID: 799405984}
-  - {fileID: 645978348}
   - {fileID: 228915622}
   - {fileID: 341940674}
   m_Father: {fileID: 0}
@@ -56257,3 +56242,4 @@ SceneRoots:
   - {fileID: 1293368003}
   - {fileID: 1845713987}
   - {fileID: 2134684580}
+  - {fileID: 645978348}

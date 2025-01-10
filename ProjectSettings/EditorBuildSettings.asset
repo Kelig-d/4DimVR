@@ -41,6 +41,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/Mi7/BerceauMI7TEST.unity
     guid: d5fc9bdb6ae88c04e9d99a9cbd7e46de
+  - enabled: 1
+    path: Assets/Level/Scenes/Berceau.unity
+    guid: 9af127f664b3d1147b6c0c8b1466fd07
+  - enabled: 1
+    path: Assets/Level/Scenes/ChronoPhagos.unity
+    guid: 6a737925b0bb0e74ea794cfef3b3a03c
+  - enabled: 1
+    path: Assets/Level/Scenes/ZimmaBlue.unity
+    guid: 000cedd8a9302384c91bd9c06829516c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fab568eedd5b1604fb6bb75db6482638,
       type: 2}
