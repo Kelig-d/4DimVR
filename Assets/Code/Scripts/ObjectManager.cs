@@ -26,11 +26,4 @@ public class ObjectManager : Singleton<ObjectManager>
         _registeredObjects.TryGetValue(objectName, out GameObject obj);
         return obj;
     }
-
-    public void VoidObjects()
-    {
-        GameObject player = _registeredObjects["Player"];
-        _registeredObjects.Clear();
-        _registeredObjects.Add("Player", player);
-    }
 }

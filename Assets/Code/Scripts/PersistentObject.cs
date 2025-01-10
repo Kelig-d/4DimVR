@@ -8,7 +8,7 @@ namespace Code.Scripts
 
         private void Awake()
         {
-            if(objectName == null) objectName = gameObject.name;
+            objectName = gameObject.name;
             if (!string.IsNullOrEmpty(objectName))
             {
                 ObjectManager.instance.RegisterObject(objectName, gameObject);

@@ -17,6 +17,7 @@ public class ChoiceColor : MonoBehaviour
         
     }
     public void OnTriggerEnter(Collider other) {
+            Debug.Log("OnTriggerEnter");
             Pressed();
         
     }
