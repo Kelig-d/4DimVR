@@ -17546,6 +17546,7 @@ GameObject:
   - component: {fileID: 645978344}
   - component: {fileID: 645978343}
   - component: {fileID: 645978349}
+  - component: {fileID: 645978350}
   m_Layer: 0
   m_Name: PorteCP
   m_TagString: Untagged
@@ -17704,6 +17705,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7881772524925978270, guid: 07cf7bb98c422744b8eea665f9623f01, type: 3}
+--- !u!114 &645978350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645978341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec16d99d8631bc428333a8b9fb02df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectName: 
 --- !u!1 &659407222
 GameObject:
   m_ObjectHideFlags: 0
