@@ -865,6 +865,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &25187590
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1089,6 +1090,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &32608829
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3131,6 +3133,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &76881400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3539,6 +3542,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &89193154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3981,6 +3985,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &115315886
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4520,6 +4525,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &136708036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4630,6 +4636,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &145257911
 GameObject:
   m_ObjectHideFlags: 0
@@ -5364,6 +5371,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &172638631
 GameObject:
   m_ObjectHideFlags: 0
@@ -6662,6 +6670,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &224937594
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8818,6 +8827,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &287651601
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9628,6 +9638,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &316284434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9785,6 +9796,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &321037018
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10280,6 +10292,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &342900607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10720,6 +10733,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &359173113
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11006,6 +11020,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &362172399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11231,6 +11246,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &368791063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11788,6 +11804,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &397930000
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12495,6 +12512,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &427620583
 GameObject:
   m_ObjectHideFlags: 0
@@ -13507,6 +13525,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &456181747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14061,6 +14080,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &475218541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15673,6 +15693,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &530459952
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16278,6 +16299,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!65 &561383519
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16508,6 +16530,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &564859064
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18668,6 +18691,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &653176606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19265,6 +19289,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &677574584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20086,6 +20111,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &705802587
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21219,6 +21245,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &739791183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21503,6 +21530,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &758811841
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22954,6 +22982,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &825083671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23699,6 +23728,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &862471452
 GameObject:
   m_ObjectHideFlags: 0
@@ -23977,6 +24007,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &877791186
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24112,6 +24143,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &879116992
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24331,6 +24363,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!23 &880225299
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25017,6 +25050,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &901205500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25288,6 +25322,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &909499383
 GameObject:
   m_ObjectHideFlags: 0
@@ -25340,6 +25375,7 @@ MonoBehaviour:
   targetMin: 0.09
   targetHeight: 10.07
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &909499386
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -25631,6 +25667,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!23 &913840926
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26565,6 +26602,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &938154926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28843,6 +28881,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1032336642
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30338,6 +30377,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1093554981
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30481,6 +30521,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &1097399700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30668,6 +30709,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &1100444088
 GameObject:
   m_ObjectHideFlags: 0
@@ -30812,6 +30854,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &1106607482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31238,6 +31281,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &1127552948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32081,6 +32125,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1156748600
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33031,6 +33076,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &1194416975
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34154,6 +34200,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &1249723384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34889,6 +34936,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1264440366
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35174,6 +35222,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &1285690746
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36767,6 +36816,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1372348149
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36919,6 +36969,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1375890479
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37786,6 +37837,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1417288709
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39235,6 +39287,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1467902473
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39392,6 +39445,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &1472316815
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -39535,6 +39589,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &1473303595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39662,6 +39717,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &1473340358
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -40920,6 +40976,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &1516777627
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41127,6 +41184,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &1519465771
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41251,6 +41309,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1521286308
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -41884,6 +41943,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &1549747002
 GameObject:
   m_ObjectHideFlags: 0
@@ -41936,6 +41996,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1549747005
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -43051,6 +43112,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1593942994
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45129,6 +45191,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &1646866374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45505,6 +45568,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &1666082690
 GameObject:
   m_ObjectHideFlags: 0
@@ -45557,6 +45621,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1666082693
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45850,6 +45915,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &1669950831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46614,6 +46680,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1702417378
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46879,6 +46946,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &1721370123
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47493,6 +47561,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &1737296239
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47928,6 +47997,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1752370684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -48845,6 +48915,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1788814604
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49493,6 +49564,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &1814880561
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50747,6 +50819,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1876409744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50899,6 +50972,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1876671139
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51042,6 +51116,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &1877487724
 GameObject:
   m_ObjectHideFlags: 0
@@ -51094,6 +51169,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1877487727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52604,6 +52680,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &1926080221
 GameObject:
   m_ObjectHideFlags: 0
@@ -52694,6 +52771,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1927075908
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -53226,6 +53304,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &1952256483
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54856,6 +54935,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1001 &2017618779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55595,6 +55675,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &2038752331
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55813,6 +55894,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &2044815709
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -56358,6 +56440,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!54 &2072795802
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -57850,6 +57933,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!1 &2102981499
 GameObject:
   m_ObjectHideFlags: 0
@@ -58066,6 +58150,7 @@ MonoBehaviour:
   targetMin: 0.5
   targetHeight: 5
   moveSpeed: 1
+  spawnerzonezimablue: {fileID: 0}
 --- !u!64 &2104301238
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -58756,7 +58841,7 @@ PrefabInstance:
     - target: {fileID: 8761272085175896727, guid: a31209d18970aa84b9a1e45da41a313b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.9
+      value: 10.3
       objectReference: {fileID: 0}
     - target: {fileID: 8761272085175896727, guid: a31209d18970aa84b9a1e45da41a313b,
         type: 3}
@@ -58766,7 +58851,7 @@ PrefabInstance:
     - target: {fileID: 8761272085175896727, guid: a31209d18970aa84b9a1e45da41a313b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -346.07
+      value: -357.7
       objectReference: {fileID: 0}
     - target: {fileID: 8761272085175896727, guid: a31209d18970aa84b9a1e45da41a313b,
         type: 3}

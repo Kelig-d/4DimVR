@@ -29,7 +29,7 @@ public class ZimmaBlueArtefact : MonoBehaviour
     private int GetSubMeshIndex(Mesh mesh, int triangleIndex)
     {
         int subMeshCount = mesh.subMeshCount;
-        Debug.Log("subMeshCount : " + subMeshCount);
+        //Debug.Log("subMeshCount : " + subMeshCount);
 
         int globalTriangleIndex = 0;
 
@@ -41,17 +41,17 @@ public class ZimmaBlueArtefact : MonoBehaviour
             // Chaque sous-mesh a un certain nombre de triangles.
             int triangleCount = triangles.Length / 3;
 
-            // Vérifier si le triangleIndex appartient à ce sous-mesh.
+            // Vï¿½rifier si le triangleIndex appartient ï¿½ ce sous-mesh.
             if (triangleIndex >= globalTriangleIndex && triangleIndex < globalTriangleIndex + triangleCount)
             {
                 return i; // Retourner l'indice du sous-mesh.
             }
 
-            // Mettre à jour l'indice global du triangle pour le prochain sous-mesh.
+            // Mettre ï¿½ jour l'indice global du triangle pour le prochain sous-mesh.
             globalTriangleIndex += triangleCount;
         }
 
-        return -1; // Aucun sous-mesh trouvé.
+        return -1; // Aucun sous-mesh trouvï¿½.
     }
 
     public void Shoot(ActivateEventArgs arg){
@@ -68,7 +68,7 @@ public class ZimmaBlueArtefact : MonoBehaviour
 
                 Mesh mesh = meshCollider.sharedMesh;
 
-                // Obtenir l'indice du triangle touché.
+                // Obtenir l'indice du triangle touchï¿½.
                 int triangleIndex = hit.triangleIndex;
 
                 // Identifier le sous-mesh correspondant.
