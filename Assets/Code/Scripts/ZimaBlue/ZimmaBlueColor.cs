@@ -35,7 +35,9 @@ public class ZimmaBlueColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnerzonezimablue = GameObject.Find("Spawner").GetComponent<SpawnerZoneZimaBlue>();
+        if(spawnerzonezimablue){
+            spawnerzonezimablue = GameObject.Find("Spawner").GetComponent<SpawnerZoneZimaBlue>();
+        }
         myRigidbody = GetComponent<Rigidbody>();
         myMaterial = GetComponent<Renderer>().materials;
         timer = new float[myMaterial.Length];
@@ -153,7 +155,9 @@ public class ZimmaBlueColor : MonoBehaviour
 
             if (tpsShaderX == 0.75f && tpstimeColor <= 10f)
             {
-                spawnerzonezimablue.nbMaxEnnemies += 1;
+                if(spawnerzonezimablue != null){
+                    spawnerzonezimablue.nbMaxEnnemies += 1;
+                }
                 myMaterial[i].SetFloat("_ShaderX", 0.5f);
             }
             else if (tpsShaderX == 0.5f && tpstimeColor <= 5f)
