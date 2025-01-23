@@ -18,6 +18,14 @@ public class Player : MonoBehaviour
     public GameObject healthBar;
     private HealthBar healthBarScript;
 
+    public Vector3 SpawnPoint = new Vector3(0,0,0);
+
+
+    public void ChangeSpawnPoint(GameObject newSpawnPoint)
+    {
+        this.SpawnPoint = newSpawnPoint.transform.position;
+    }
+
     private void Start()
     {
         healthBarScript = healthBar.GetComponent<HealthBar>();
@@ -33,7 +41,7 @@ public class Player : MonoBehaviour
         }
         if (xOrigin.transform.position.y < -10)
         {
-            xOrigin.transform.position = new Vector3(10, 15, 10);
+            xOrigin.transform.position = SpawnPoint;
         }
 
         if (dead)
@@ -51,7 +59,7 @@ public class Player : MonoBehaviour
 
     private void Revive()
     {
-        xOrigin.transform.position = new Vector3(2, 5, 2);
+        xOrigin.transform.position = SpawnPoint;
         health = 100;
         dead = false;
         healthBarScript.UpdateHealth(health);
