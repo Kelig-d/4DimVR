@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class CouleurAmbianceMi7 : MonoBehaviour
 {
     public Light directionalLight; // Référence à la lumière
@@ -29,30 +29,38 @@ public class CouleurAmbianceMi7 : MonoBehaviour
 
     private void Update()
     {
-        if (directionalLight != null)
-        {
-            // Transition fluide entre color1 et color2
-            if (goingToColor2)
+        //if (SceneManager.GetActiveScene().name == "Mi7")
+        //{
+            gameObject.SetActive(true); // Active l'objet LumiereAmbianceMi7.
+            if (directionalLight != null)
             {
-                t += Time.deltaTime * colorCycleSpeed; // Augmente la valeur d'interpolation
-                if (t >= 1f)
+                // Transition fluide entre color1 et color2
+                if (goingToColor2)
                 {
-                    t = 1f; // Limite la valeur de t
-                    goingToColor2 = false; // Change de direction
+                    t += Time.deltaTime * colorCycleSpeed; // Augmente la valeur d'interpolation
+                    if (t >= 1f)
+                    {
+                        t = 1f; // Limite la valeur de t
+                        goingToColor2 = false; // Change de direction
+                    }
                 }
-            }
-            else
-            {
-                t -= Time.deltaTime * colorCycleSpeed; // Diminue la valeur d'interpolation
-                if (t <= 0f)
+                else
                 {
-                    t = 0f; // Limite la valeur de t
-                    goingToColor2 = true; // Change de direction
+                    t -= Time.deltaTime * colorCycleSpeed; // Diminue la valeur d'interpolation
+                    if (t <= 0f)
+                    {
+                        t = 0f; // Limite la valeur de t
+                        goingToColor2 = true; // Change de direction
+                    }
                 }
-            }
 
-            // Interpolation linéaire entre les deux couleurs
-            directionalLight.color = Color.Lerp(color1, color2, t);
-        }
+                // Interpolation linéaire entre les deux couleurs
+                directionalLight.color = Color.Lerp(color1, color2, t);
+            }
+        /**}
+        else
+        {
+            gameObject.SetActive(false); // Désactive l'objet LumiereAmbianceMi7.
+        }**/
     }
 }
