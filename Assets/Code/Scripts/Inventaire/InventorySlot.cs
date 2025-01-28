@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -8,34 +10,28 @@ public class InventorySlot : MonoBehaviour
 {
     public GameObject flotingposition;
     GameObject stored = null;
-    Vector3 size = Vector3.zero;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 3) // id de layer grabable
         {
-            if (stored == null && other.GetComponent<XRGrabInteractable>().isSelected)
+            if (stored == null && !other.GetComponent<XRGrabInteractable>().isSelected)
             {
-                other.GetComponent<XRGrabInteractable>().enabled = false;
-                Debug.Log($"{other.gameObject.name} est entré dans le trigger !");
+                other.GetComponent<XRGrabInteractable>().enabled = false; // Lache de force l'objet 
+                other.GetComponent<XRGrabInteractable>().enabled = true; // Permet de pouvoir re ratraper l'objet
 
-                stored = other.gameObject;
+                stored = other.gameObject; // on enregistre l'objet pour la comparaison 
+                other.transform.SetParent(transform); // On le met en fils pour qu'il puisse bouger facilement ! 
+                transform.localScale /= 3;
 
-                stored.transform.SetParent(transform);
-                stored.isStatic = true;
-
-                var rb = stored.GetComponent<Rigidbody>();
-                var vvv = stored.GetComponent<XRGrabInteractable>();
-  
+                // Reset toute les déplacement ! 
+                var rb = other.GetComponent<Rigidbody>();
                 rb.useGravity = false;
                 rb.velocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
-
-                stored.transform.position = flotingposition.transform.position;
-
-                size = stored.transform.localScale ;
-                stored.isStatic = false;
-                other.GetComponent<XRGrabInteractable>().enabled = true;
+                
+                DropInventory module = other.gameObject.GetComponent<DropInventory>() ?? other.AddComponent<DropInventory>();
+                module.inInventory = true;
 
             }
         }
@@ -43,18 +39,48 @@ public class InventorySlot : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
-        if (stored == other.gameObject)
+        // Vérifie si l'objet qui sort du trigger est bien "stored"
+        /*if (stored == other.gameObject)
         {
-            Debug.Log($"{other.gameObject.name} est sortie dans le trigger !");
-            stored.transform.localScale = size;
-            stored.transform.SetParent(null);
-
-            stored = null;
-
             
-        }
 
+            // Vérifie si l'objet est actuellement grab
+            if (other.GetComponent<XRGrabInteractable>().isSelected)
+            {
+                other.GetComponent<XRGrabInteractable>().enabled = false; // Lache de force l'objet 
+                other.transform.SetParent(null,true);
+                var rb = other.GetComponent<Rigidbody>();
+                rb.useGravity = true;
+                other.GetComponent<XRGrabInteractable>().enabled = true;
+                 // Permet de pouvoir re ratraper l'objet
+
+                // Réinitialise l'échelle de l'objet
+                // other.transform.localScale = Vector3;
+
+
+
+                // Détache l'objet de son parent
+          
+                // other.transform.SetParent(null); Je ne comprend pas pk mais on peut pas le fair dedans !
+
+                stored = null;
+            }
+            else
+            {
+                other.transform.SetParent(transform); // On le met en fils pour qu'il puisse bouger facilement ! 
+                other.transform.position = flotingposition.transform.position; // Centre l'objet
+                Debug.Log("EXIT: Objet recentré");
+            }
+        }*/
+
+        if (!other.GetComponent<XRGrabInteractable>().isSelected)
+        {
+            other.transform.position = flotingposition.transform.position; // Centre l'objet
+        }
+        else
+        {
+            stored = null;
+        }
     }
 
 }
