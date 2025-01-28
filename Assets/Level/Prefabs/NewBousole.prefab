@@ -1123,7 +1123,6 @@ GameObject:
   - component: {fileID: 4872255704428045492}
   - component: {fileID: 5334534152507294197}
   - component: {fileID: 1544848077033652615}
-  - component: {fileID: 4933247312512826840}
   m_Layer: 0
   m_Name: GrainSable.003
   m_TagString: Untagged
@@ -1196,28 +1195,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4933247312512826840
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2452218255424793406}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7253620583399839216, guid: ca667ee6d0eb43146b0bd0f662a8094b, type: 3}
 --- !u!1 &2860624421469493417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1206,6 @@ GameObject:
   - component: {fileID: 5788401195905840124}
   - component: {fileID: 4514571390162737350}
   - component: {fileID: 2393537735437477050}
-  - component: {fileID: 6564925647063461309}
   m_Layer: 3
   m_Name: Sablier
   m_TagString: Untagged
@@ -1303,28 +1279,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6564925647063461309
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2860624421469493417}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -653713125693388634, guid: ca667ee6d0eb43146b0bd0f662a8094b, type: 3}
 --- !u!1 &2965073053906710634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,7 +1779,6 @@ GameObject:
   - component: {fileID: 8451425153498474357}
   - component: {fileID: 5738856809824169986}
   - component: {fileID: 7049583476674138323}
-  - component: {fileID: 2186220448326851847}
   m_Layer: 0
   m_Name: GrainSable.004
   m_TagString: Untagged
@@ -1898,28 +1851,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2186220448326851847
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3326858643140611795}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -385111908150157437, guid: ca667ee6d0eb43146b0bd0f662a8094b, type: 3}
 --- !u!1 &4647356333689097867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,7 +2448,6 @@ GameObject:
   - component: {fileID: 6065416727600552957}
   - component: {fileID: 1532672240879572128}
   - component: {fileID: 8743792333923274673}
-  - component: {fileID: 4109135268546268275}
   m_Layer: 0
   m_Name: GrainSable.002
   m_TagString: Untagged
@@ -2590,28 +2520,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4109135268546268275
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6252234247509111731}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6539440528375715046, guid: ca667ee6d0eb43146b0bd0f662a8094b, type: 3}
 --- !u!1 &7262840465001999164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,7 +2834,6 @@ GameObject:
   - component: {fileID: 2426141837282111291}
   - component: {fileID: 3410569805821153266}
   - component: {fileID: 238283166041162998}
-  - component: {fileID: 9029080137068944823}
   m_Layer: 0
   m_Name: GrainSable
   m_TagString: Untagged
@@ -2999,28 +2906,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &9029080137068944823
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7324710826022519831}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 9107936197344984587, guid: ca667ee6d0eb43146b0bd0f662a8094b, type: 3}
 --- !u!1 &7712994735652490088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,7 +2917,6 @@ GameObject:
   - component: {fileID: 363818648237967976}
   - component: {fileID: 8636200641513620899}
   - component: {fileID: 4881344461297443150}
-  - component: {fileID: 1569456105203948681}
   m_Layer: 0
   m_Name: GrainSable.001
   m_TagString: Untagged
@@ -3105,28 +2989,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1569456105203948681
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7712994735652490088}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5852621905789938158, guid: ca667ee6d0eb43146b0bd0f662a8094b, type: 3}
 --- !u!1 &7957829215497257747
 GameObject:
   m_ObjectHideFlags: 0

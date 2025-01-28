@@ -29,7 +29,7 @@ public class DropInventory : MonoBehaviour
         if(inInventory)
         {
             this.gameObject.transform.SetParent(null, true);
-            this.transform.localScale *= 3;
+            this.transform.localScale *= 5;
             inInventory = false;
 
             var rb = this.GetComponent<Rigidbody>();
