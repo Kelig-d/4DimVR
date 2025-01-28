@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -19,11 +20,22 @@ public class Player : MonoBehaviour
     private HealthBar healthBarScript;
 
     public Vector3 SpawnPoint = new Vector3(0,0,0);
+    public Vector3 SpawnPointMenu = new Vector3(0,0,0);
 
+    public bool InMenu = true;
 
-    public void ChangeSpawnPoint(GameObject newSpawnPoint)
+    public void ChangeSpawnPoint(GameObject newSpawnPoint, bool Menu)
     {
-        this.SpawnPoint = newSpawnPoint.transform.position;
+        this.InMenu = Menu;
+        if (Menu)
+        {
+            this.SpawnPointMenu = newSpawnPoint.transform.position;
+        }
+        else
+        {
+            this.SpawnPoint = newSpawnPoint.transform.position;
+
+        }
     }
 
     private void Start()

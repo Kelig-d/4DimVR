@@ -7,12 +7,18 @@ public class NewSpawnPoint : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject spawnPoint;
+    public bool Menu = false;
     private void OnTriggerEnter(Collider other)
     {
-        Player var  = GameObject.Find("Player SANS BUG").GetComponent<Player>();
 
-        var.ChangeSpawnPoint(spawnPoint);
-        Console.WriteLine("change Spawn");
+        Player var = other.gameObject.GetComponent<Player>();
+        
+        if(var != null)
+        {
+            var.ChangeSpawnPoint(spawnPoint, Menu);
+            Console.WriteLine("change Spawn");
+        }
+
 
     }
 }
