@@ -9,8 +9,9 @@ public class DropInventory : MonoBehaviour
 {
     private XRGrabInteractable grabInteractable;
     public bool inInventory = false;
-    public GameObject newItem = null;
-    public GameObject referenceObject = null;
+    public InventorySlot inventorySlot;
+    
+    public GameObject item = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,24 +19,18 @@ public class DropInventory : MonoBehaviour
 
         if (grabInteractable != null)
         {
-            grabInteractable.selectEntered.AddListener(OnGrab);
             grabInteractable.selectExited.AddListener(OnRelease);
 
         }
     }
-    private void OnGrab(SelectEnterEventArgs args)
-    {
-   
-    }
+
         private void OnRelease(SelectExitEventArgs args) 
     { 
         if(inInventory)
         {
-            newItem.SetActive(true);
-            newItem.transform.position = this.transform.position;
-           // Destroy(newItem.GetComponent<DropInventory>());
-
-            Destroy(referenceObject);
+            item.SetActive(true);
+            item.transform.position = transform.position;
+            inventorySlot.reloaditem();
            /* this.gameObject.transform.SetParent(null, true);
             this.transform.localScale *= 5;
             inInventory = false;
