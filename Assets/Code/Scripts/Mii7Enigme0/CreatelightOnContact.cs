@@ -1,22 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CreatelightOnContact : MonoBehaviour
 {
-    public GameObject item;
+    private GameObject _item;
     public GameObject BouleAFacette;
     private Mi7Light mi7Light;
+
+    private void Start()
+    {
+        _item = gameObject;
+    }
+
     void OnCollisionEnter(Collision collision)
     {
-        // Récupérer la vitesse relative au moment de l'impact
+        // Rï¿½cupï¿½rer la vitesse relative au moment de l'impact
         Vector3 relativeVelocity = collision.relativeVelocity;
 
         // Calculer la magnitude (vitesse scalaire)
         float impactSpeed = relativeVelocity.magnitude;
 
 
-        BouleAFacette.transform.position = item.transform.position;
+        BouleAFacette.transform.position = _item.transform.position;
 
         GameObject init =  Instantiate(BouleAFacette);
 
