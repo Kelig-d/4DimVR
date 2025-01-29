@@ -8,15 +8,19 @@ public class MainMenuCorect : MonoBehaviour
 
     public bool Berceau = false;
 
-    public void PlayGame()
+    public void PlayGame(GameObject player)
     {
-        if ( Berceau)
-            SceneManager.LoadScene("Berceau");
+        if (Berceau)
+        {
+            SceneManager.LoadScene("Garage0");
+            player.transform.position = new Vector3(1.5f,0f,6f);
+        }
+            
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        PlayGame();
+        PlayGame(collision.gameObject);
     }
 
 }
