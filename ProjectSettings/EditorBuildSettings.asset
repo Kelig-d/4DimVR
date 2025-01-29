@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level/Scenes/ZimmaBlue.unity
     guid: 000cedd8a9302384c91bd9c06829516c
+  - enabled: 1
+    path: Assets/Level/Scenes/TestEau.unity
+    guid: ae965e617ebd6014e9a53a4e2bb5e2c9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fab568eedd5b1604fb6bb75db6482638,
       type: 2}
