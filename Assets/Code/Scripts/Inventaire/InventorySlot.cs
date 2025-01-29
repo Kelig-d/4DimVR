@@ -15,6 +15,7 @@ public class InventorySlot : MonoBehaviour
     public GameObject center;
     public GameObject itemslot;
     public DropInventory module;
+    public bool toDestroy;
 
     public void reloaditem()
     {
@@ -36,20 +37,35 @@ public class InventorySlot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 3 && other.GetComponent<XRGrabInteractable>().isSelected) // id de layer grabable
+        if (other.gameObject.layer == 3 && !other.GetComponent<XRGrabInteractable>().isSelected) // id de layer grabable
         {
             if (!itemslot.active)
             {
+                toDestroy = other.gameObject.GetComponent<GetPrefab>() != null;
 
-                Debug.Log($"{other.gameObject.name} est entré dans le trigger !");
+
+                if (toDestroy)
+                {
+                    Debug.Log("To Destroy enter");
+                    itemslot.SetActive(true);
+                    module.toDestroy = other.gameObject;
+                    module.inInventory = true;
+                    module.item = other.GetComponent<GetPrefab>().Prefab;
+                    other.transform.position = new Vector3(-666, -666, -666);
+                   
+                }
+                else
+                {
+                    Debug.Log("To -Destroy enter");
+                    itemslot.SetActive(true);
+                    module.inInventory = true;
+                    module.item = other.gameObject;
+                    module.item.SetActive(false);
+                    module.item.transform.SetParent(transform);
+                }
 
 
-                itemslot.SetActive(true);
 
-              
-                module.inInventory = true;
-                module.item = other.gameObject;
-                module.item.SetActive(false);
             }
         }
     }

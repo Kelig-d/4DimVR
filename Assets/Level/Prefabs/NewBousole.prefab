@@ -3291,6 +3291,7 @@ GameObject:
   - component: {fileID: 3806329048839111474}
   - component: {fileID: 256691896017475121}
   - component: {fileID: 8991282646713952404}
+  - component: {fileID: 6516646819528291954}
   m_Layer: 3
   m_Name: NewBousole
   m_TagString: Untagged
@@ -3581,3 +3582,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectName: boussole
+--- !u!114 &6516646819528291954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084317198218440813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ebfea3dc841be49ac7262dcac28172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 9084317198218440813}

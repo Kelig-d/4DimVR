@@ -9,6 +9,7 @@ public class DropInventory : MonoBehaviour
 {
     private XRGrabInteractable grabInteractable;
     public bool inInventory = false;
+    public GameObject toDestroy = null;
     public InventorySlot inventorySlot;
     
     public GameObject item = null;
@@ -28,9 +29,25 @@ public class DropInventory : MonoBehaviour
     { 
         if(inInventory)
         {
-            item.SetActive(true);
-            item.transform.position = transform.position;
-            inventorySlot.reloaditem();
+            if (toDestroy!=null)
+            {
+                //GameObject tps =  Instantiate(item);
+                toDestroy.transform.position = transform.position;
+                var rb = toDestroy.GetComponent<Rigidbody>();
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                inventorySlot.reloaditem();
+                //Destroy(toDestroy);
+
+            }
+            else
+            {
+                item.SetActive(true);
+                item.transform.position = transform.position;
+                item.transform.SetParent(null);
+                inventorySlot.reloaditem();
+            }
+           
            /* this.gameObject.transform.SetParent(null, true);
             this.transform.localScale *= 5;
             inInventory = false;
