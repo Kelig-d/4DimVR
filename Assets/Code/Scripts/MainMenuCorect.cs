@@ -12,7 +12,8 @@ public class MainMenuCorect : MonoBehaviour
     {
         if (Berceau)
         {
-            SceneManager.LoadScene("Garage0");
+            Debug.Log(GlobalManager.Instance.tutorialDone);
+            SceneManager.LoadScene(GlobalManager.Instance.tutorialDone ? "Berceau" : "Garage0" );
             player.transform.position = new Vector3(1.5f,0f,6f);
         }
             
@@ -22,5 +23,6 @@ public class MainMenuCorect : MonoBehaviour
     {
         PlayGame(collision.gameObject);
     }
+    
 
 }

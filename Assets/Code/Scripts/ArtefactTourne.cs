@@ -51,11 +51,12 @@ public class ArtefactTourne : MonoBehaviour
         FixedUpdate();
     }
 
-    bool setTP = true;
+    static bool setTP = true;
     private IEnumerator SetTp()
     {
         if (setTP)
         {
+            GlobalManager.Instance.tutorialDone = true;
             print("top");
             setTP = false;
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Berceau", LoadSceneMode.Additive);
