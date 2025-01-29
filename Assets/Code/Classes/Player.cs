@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public GameObject healthBar;
     private HealthBar healthBarScript;
 
+    
+    
     private void Start()
     {
         healthBarScript = healthBar.GetComponent<HealthBar>();

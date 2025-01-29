@@ -58,7 +58,6 @@ public class ArtefactTourne : MonoBehaviour
         if (setTP)
         {
             GlobalManager.Instance.tutorialDone = true;
-            print("top");
             setTP = false;
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Berceau", LoadSceneMode.Additive);
             
