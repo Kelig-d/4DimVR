@@ -1136,7 +1136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3423535667
+  GlobalObjectIdHash: 2266053178
   InScenePlacedSourceGlobalObjectIdHash: 3421194764
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -2152,15 +2152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnButton: {fileID: 1721790384668752499, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
-  numberOfRadialPart: 2
-  radialPartPrefab: {fileID: 5448092772280025455, guid: 352ba2c91c506e14dabe024ac9660a30,
-    type: 3}
-  radialPartCanvas: {fileID: 0}
-  handTransform: {fileID: 2050621925335003996}
-  angleBetweenPart: 10
-  OnPartSelected:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8338034296068992852
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -51,9 +51,10 @@ public class ArtefactTourne : MonoBehaviour
         FixedUpdate();
     }
 
-    static bool setTP = true;
+    bool setTP = true;
     private IEnumerator SetTp()
     {
+        Debug.Log(setTP);
         if (setTP)
         {
             GlobalManager.Instance.tutorialDone = true;
