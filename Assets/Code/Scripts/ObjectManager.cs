@@ -9,13 +9,15 @@ public class ObjectManager : Singleton<ObjectManager>
     // Enregistre un objet et l'associe à son nom
     public void RegisterObject(string objectName, GameObject obj)
     {
+
+        
         if (!_registeredObjects.ContainsKey(objectName))
         {
             _registeredObjects.Add(objectName, obj);
             DontDestroyOnLoad(obj); // Marque cet objet comme persistant
         }
         else
-        {
+        { 
             Destroy(obj); // Si l'objet est déjà enregistré, détruit le doublon
         }
     }
