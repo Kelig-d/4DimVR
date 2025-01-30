@@ -8,6 +8,7 @@ TagManager:
   - Ennemy
   - txtMenu
   - sol
+  - Key
   layers:
   - Default
   - TransparentFX
