@@ -45,7 +45,8 @@ public class ZimmaBlueColor : MonoBehaviour
         {
             tps.SetFloat("_ShaderX", 0.0f);
         }
-
+        Renderer renderer = GetComponent<Renderer>();
+        originalScale = transform.localScale;
 
     }
 
@@ -152,6 +153,7 @@ public class ZimmaBlueColor : MonoBehaviour
         {
             float tpstimeColor = timer[i];
             float tpsShaderX = myMaterial[i].GetFloat("_ShaderX");
+            GetComponent<Renderer>().enabled = true;
 
             if (tpsShaderX == 0.75f && tpstimeColor <= 10f)
             {
@@ -167,6 +169,7 @@ public class ZimmaBlueColor : MonoBehaviour
             else if (tpsShaderX == 0.25f && tpstimeColor <= 0.0f)
             {
                 myMaterial[i].SetFloat("_ShaderX", 0.0f);
+                ResetSize();
             }
 
 
