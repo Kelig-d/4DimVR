@@ -1,11 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyLightOnContact : MonoBehaviour
+namespace Code.Scripts.Mii7Enigme0
 {
+    public class DestroyLightOnContact : MonoBehaviour
+    {
 
-    public Light light;
+        public new Light light;
 
-    private void OnTriggerEnter(Collider other) {this.light.transform.localScale = Vector3.zero;}
+        private void OnTriggerEnter(Collider other) {this.light.transform.localScale = Vector3.zero;}
+    }
 }

@@ -54,15 +54,19 @@ public class ArtefactTourne : MonoBehaviour
     bool setTP = true;
     private IEnumerator SetTp()
     {
+        Debug.Log(setTP);
         if (setTP)
         {
-            print("top");
+            GlobalManager.Instance.tutorialDone = true;
             setTP = false;
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("BerceauUpgrade", LoadSceneMode.Additive);
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Berceau", LoadSceneMode.Additive);
+            
             while (!asyncLoad.isDone)
             {
                 yield return null; // Attendre la prochaine frame
             }
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.transform.position = new Vector3(53.05f, 1.482f, -13.981f);
             SceneManager.UnloadSceneAsync("Garage0");
         }
 
@@ -127,7 +131,7 @@ public class ArtefactTourne : MonoBehaviour
 
         if( Activer0 && Activator1 && Activer2 && Activer3)
         {
-           // StartCoroutine(SetTp());
+           StartCoroutine(SetTp());
         }
     }
 }
