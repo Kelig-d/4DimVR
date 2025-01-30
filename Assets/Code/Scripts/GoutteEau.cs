@@ -5,37 +5,29 @@ using UnityEngine;
 public class GoutteEau : MonoBehaviour
 {
     public GameObject GoutteDeau;
-    public GameObject SpownPoint;
+    //public GameObject SpownPoint;
 
-    private float currentTime = 0;
+    private float currentTime = 5f;
     private bool tomber = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(DropRoutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator DropRoutine()
     {
-        if (tomber == false && currentTime == 0f)
+        while (true)
         {
-            currentTime = 60f;
             tombe();
+            yield return new WaitForSeconds(currentTime);
         }
     }
 
     public void tombe()
     {
-        tomber = true;
-        GameObject Goutte = Instantiate(GoutteDeau);
-        Goutte.transform.position = SpownPoint.transform.position;
-        do
-        {
-            currentTime -= Time.deltaTime;
-        } while (currentTime > 45f);
-        Goutte.GetComponent<Rigidbody>().useGravity = true;
-        Destroy(Goutte, 5f);
-       
+        Instantiate(GoutteDeau, transform.position, Quaternion.identity);
+        //Goutte.transform.position = SpownPoint.transform.position;
+        //Goutte.GetComponent<Rigidbody>().useGravity = true;
     }
 }
