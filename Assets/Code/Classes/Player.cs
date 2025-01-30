@@ -14,7 +14,9 @@ public class Player : MonoBehaviour
     public GameObject healthBar;
     private HealthBar healthBarScript;
 
-    
+    public bool InMenu = true;  
+    public Vector3 SpawnPoint = new Vector3(0,0,0);
+    public Vector3 SpawnPointMenu = new Vector3(0,0,0);
     
     private void Start()
     {
@@ -53,6 +55,20 @@ public class Player : MonoBehaviour
         health = 100;
         dead = false;
         healthBarScript.UpdateHealth(health);
+    }
+    
+    public void ChangeSpawnPoint(GameObject newSpawnPoint, bool Menu)
+    {
+        this.InMenu = Menu;
+        if (Menu)
+        {
+            this.SpawnPointMenu = newSpawnPoint.transform.position;
+        }
+        else
+        {
+            this.SpawnPoint = newSpawnPoint.transform.position;
+
+        }
     }
     
 }

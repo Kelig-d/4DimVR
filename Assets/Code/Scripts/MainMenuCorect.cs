@@ -12,9 +12,16 @@ public class MainMenuCorect : MonoBehaviour
     {
         if (Berceau)
         {
-            Debug.Log(GlobalManager.Instance.tutorialDone);
-            SceneManager.LoadScene(GlobalManager.Instance.tutorialDone ? "Berceau" : "Garage0" );
-            player.transform.position = new Vector3(1.5f,0f,6f);
+            if (GlobalManager.Instance.tutorialDone)
+            {
+                SceneManager.LoadScene("Berceau");
+                player.transform.position = new Vector3(24.112f,1.757f,3.1f);
+            }
+            else
+            {
+                SceneManager.LoadScene("Garage0");
+                player.transform.position = new Vector3(1.5f,0f,6f);
+            }
         }
             
     }
