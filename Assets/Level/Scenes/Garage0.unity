@@ -192,17 +192,17 @@ PrefabInstance:
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
       propertyPath: m_fontColor.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
       propertyPath: m_fontColor.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
       propertyPath: m_fontColor.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
@@ -282,11 +282,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4400817885643757369, guid: bdf57f795ff3e5f4da89f4ce42d78108,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdf57f795ff3e5f4da89f4ce42d78108, type: 3}
 --- !u!1001 &206643313
 PrefabInstance:
@@ -311,17 +307,17 @@ PrefabInstance:
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
       propertyPath: m_fontColor.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
       propertyPath: m_fontColor.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
       propertyPath: m_fontColor.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
@@ -386,11 +382,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4400817885643757369, guid: bdf57f795ff3e5f4da89f4ce42d78108,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdf57f795ff3e5f4da89f4ce42d78108, type: 3}
 --- !u!1001 &226404412
 PrefabInstance:
@@ -1136,17 +1128,17 @@ PrefabInstance:
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
       propertyPath: m_fontColor.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
       propertyPath: m_fontColor.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
       propertyPath: m_fontColor.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
         type: 3}
@@ -1226,11 +1218,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4400817885643757369, guid: bdf57f795ff3e5f4da89f4ce42d78108,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdf57f795ff3e5f4da89f4ce42d78108, type: 3}
 --- !u!1001 &679619361
 PrefabInstance:
@@ -3435,7 +3423,7 @@ MonoBehaviour:
   Touche: {fileID: 40379393622422265}
   colorBase: {r: 1, g: 1, b: 1, a: 0}
   colorNotif: {r: 1, g: 0, b: 0, a: 0}
-  song: {fileID: 8300000, guid: dec941522d2e40e45bbe7229f1ac1756, type: 3}
+  song: {fileID: 8300000, guid: 5933286853899d441a0976c6148f4b37, type: 3}
   tel: {fileID: 8884751253871780085}
 --- !u!1001 &2096224775
 PrefabInstance:
