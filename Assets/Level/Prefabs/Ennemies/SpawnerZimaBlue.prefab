@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6844596286752329955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4214562534102125989}
+  - component: {fileID: 3546184647182342504}
+  - component: {fileID: 4036159020714368382}
+  m_Layer: 0
+  m_Name: SpawnerZimaBlue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4214562534102125989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6844596286752329955}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.25, y: 3.83, z: -353.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3546184647182342504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6844596286752329955}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9d85875a0450441bf84b6fafb21ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ghost: {fileID: 19588385245968726, guid: 8ee08d04ad5df46fbb2e97260b63420b, type: 3}
+  spawner1: {x: -7, y: 3, z: 21}
+  spawner2: {x: 7, y: 3, z: 21}
+  spawner3: {x: 0, y: 3, z: 29}
+  spawner4: {x: 0, y: 0, z: 0}
+  spawner5: {x: 0, y: 0, z: 0}
+  spawner6: {x: 0, y: 0, z: 0}
+  spawner7: {x: 0, y: 0, z: 0}
+  spawner8: {x: 0, y: 0, z: 0}
+  spawner9: {x: 0, y: 0, z: 0}
+  spawner10: {x: 7, y: 3, z: 21}
+  nbEnnemies: 0
+  nbMaxEnnemies: 0
+  timeToWaitAtTheStart: 4
+  timeToWaitRespawn: 4
+--- !u!114 &4036159020714368382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6844596286752329955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ea52e8f7e7d864e90423c6a5730604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ghost: {fileID: 0}
+  spawner1: {x: 43.25, y: 3.83, z: -353.01}
+  spawner2: {x: 0, y: 0, z: 0}
+  spawner3: {x: 0, y: 0, z: 0}
+  spawner4: {x: 0, y: 0, z: 0}
+  spawner5: {x: 0, y: 0, z: 0}
+  spawner6: {x: 0, y: 0, z: 0}
+  spawner7: {x: 0, y: 0, z: 0}
+  spawner8: {x: 0, y: 0, z: 0}
+  spawner9: {x: 0, y: 0, z: 0}
+  spawner10: {x: 0, y: 0, z: 0}
+  nbEnnemies: 0
+  nbMaxEnnemies: 0
+  nbObjectColored: 0
+  timeToWaitAtTheStart: 4
+  timeToWaitRespawn: 4
