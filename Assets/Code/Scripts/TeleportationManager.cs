@@ -35,8 +35,37 @@ namespace Code.Scripts
                 SceneManager.UnloadSceneAsync(currentWorldKey);
                 GameObject player = gameObject.GetComponentInChildren<XROrigin>().gameObject;
                 player.transform.position =(Vector3)position;
+                FixInteractors();
                 Debug.Log("Loaded new dimension !");
             }
         }
+        
+        public void FixInteractors()
+        {
+            // Trouver le XRInteractionManager dans la scène
+            XRInteractionManager xrManager = FindObjectOfType<XRInteractionManager>();
+
+            if (xrManager != null)
+            {
+                // Réassigner le manager à tous les interactors (Ray Interactor, Direct Interactor, etc.)
+                foreach (var interactor in FindObjectsOfType<XRBaseInteractor>())
+                {
+                    interactor.interactionManager = xrManager;
+                }
+
+                // Réassigner le manager à tous les objets grabbables
+                foreach (var interactable in FindObjectsOfType<XRBaseInteractable>())
+                {
+                    interactable.interactionManager = xrManager;
+                }
+
+                Debug.Log("✅ XR Interaction Manager réassigné aux interactors et objets grabbables !");
+            }
+            else
+            {
+                Debug.LogError("❌ Aucun XRInteractionManager trouvé dans la scène !");
+            }
+        }
+
     }
 }

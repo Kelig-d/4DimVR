@@ -7,6 +7,8 @@ public class ArtefactTourne : MonoBehaviour
 {
     public GameObject Artefact;
 
+    private bool teleported = false;
+    
     bool rotatY = false;
     double rotateY = 0;
 
@@ -36,14 +38,6 @@ public class ArtefactTourne : MonoBehaviour
     public GameObject Activator3;
     public bool up3;
     bool Activer3;
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        FixedUpdate();
-    }
-
 
     bool CheckUpdateColor(GameObject test, Color colortot, bool up, GameObject ItemVerif)
     {
@@ -101,11 +95,12 @@ public class ArtefactTourne : MonoBehaviour
         Activer2 = CheckUpdateColor(Cone2 , C2, up2, Activator2);
         Activer3 = CheckUpdateColor(Cone3 , C3, up3, Activator3);
 
-        if( Activer0 && Activator1 && Activer2 && Activer3)
+        if( Activer0 && Activator1 && Activer2 && Activer3 && teleported == false)
         {
+            
             GlobalManager.Instance.tutorialDone = true;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<TeleportationManager>().ChangeDimension("Berceau",new Vector3(53.05f, 1.482f, -13.981f));
-
+            GameObject.FindGameObjectWithTag("Player").transform.parent.GetComponent<TeleportationManager>().ChangeDimension("Berceau",new Vector3(53.05f, 1.482f, -13.981f));
+            teleported = true;
         }
     }
 }
