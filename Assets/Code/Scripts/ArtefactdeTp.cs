@@ -148,24 +148,5 @@ public class ArtefactdeTp : MonoBehaviour
         }
     }
 
-    public void ChangeDimension(string dimensionName)
-    {
-        StartCoroutine(LoadNewDimension(dimensionName));
-    }
     
-    private IEnumerator LoadNewDimension(string dimensionName)
-    {
-        Debug.Log("Loading new dimension...");
-        string currentWorldKey = SceneManager.GetActiveScene().name;
-
-        // Charger la nouvelle scène de manière asynchrone
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(dimensionName, LoadSceneMode.Additive);
-        while (asyncLoad != null && !asyncLoad.isDone)
-        {
-            yield return null; // Attendre la prochaine frame
-        }
-        // Désactiver l'ancienne scène
-        SceneManager.UnloadSceneAsync(currentWorldKey);
-        Debug.Log("Loaded new dimension !");
-    }
 }
