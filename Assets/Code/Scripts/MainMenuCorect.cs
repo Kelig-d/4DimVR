@@ -1,35 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class MainMenuCorect : MonoBehaviour
+namespace Code.Scripts
 {
-
-    public bool Berceau = false;
-
-    public void PlayGame(GameObject player)
+    public class MainMenuCorect : MonoBehaviour
     {
-        if (Berceau)
+    
+        public void PlayGame(GameObject player)
         {
+
             if (GlobalManager.Instance.tutorialDone)
             {
-                SceneManager.LoadScene("Berceau");
-                player.transform.position = new Vector3(24.112f,1.757f,3.1f);
+                player.GetComponent<TeleportationManager>().ChangeDimension("Berceau",new Vector3(24.112f,1.757f,3.1f));
             }
             else
             {
-                SceneManager.LoadScene("Garage0");
-                player.transform.position = new Vector3(1.5f,0f,6f);
+                player.GetComponent<TeleportationManager>().ChangeDimension("Garage0",new Vector3(10,1.7f,10f));
             }
-        }
             
-    }
+        }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        PlayGame(collision.gameObject);
-    }
+        void OnCollisionEnter(Collision collision)
+        {
+            PlayGame(collision.gameObject.transform.parent.gameObject);
+        }
     
 
+    }
 }
