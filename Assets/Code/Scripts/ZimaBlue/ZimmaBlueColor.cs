@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -35,8 +36,14 @@ public class ZimmaBlueColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        spawnerzonezimablue = GameObject.Find("SpawnerZimaBlue").GetComponent<SpawnerZoneZimaBlue>();
+        try
+        {
+            spawnerzonezimablue = GameObject.Find("SpawnerZimaBlue").GetComponent<SpawnerZoneZimaBlue>();
+        }
+        catch (NullReferenceException _)
+        {
+            
+        }
         
         myRigidbody = GetComponent<Rigidbody>();
         myMaterial = GetComponent<Renderer>().materials;

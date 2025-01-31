@@ -1,4 +1,5 @@
 using System.Collections;
+using Code.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,8 @@ public class ArtefactTourne : MonoBehaviour
 {
     public GameObject Artefact;
 
+    private bool teleported = false;
+    
     bool rotatY = false;
     double rotateY = 0;
 
@@ -35,43 +38,6 @@ public class ArtefactTourne : MonoBehaviour
     public GameObject Activator3;
     public bool up3;
     bool Activer3;
-
-
-
-
-    void Start()
-    {
-         
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        FixedUpdate();
-    }
-
-    bool setTP = true;
-    private IEnumerator SetTp()
-    {
-        Debug.Log(setTP);
-        if (setTP)
-        {
-            GlobalManager.Instance.tutorialDone = true;
-            setTP = false;
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Berceau", LoadSceneMode.Additive);
-            
-            while (!asyncLoad.isDone)
-            {
-                yield return null; // Attendre la prochaine frame
-            }
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            player.transform.position = new Vector3(53.05f, 1.482f, -13.981f);
-            SceneManager.UnloadSceneAsync("Garage0");
-        }
-
-
-    }
 
     bool CheckUpdateColor(GameObject test, Color colortot, bool up, GameObject ItemVerif)
     {
@@ -129,9 +95,12 @@ public class ArtefactTourne : MonoBehaviour
         Activer2 = CheckUpdateColor(Cone2 , C2, up2, Activator2);
         Activer3 = CheckUpdateColor(Cone3 , C3, up3, Activator3);
 
-        if( Activer0 && Activator1 && Activer2 && Activer3)
+        if( Activer0 && Activator1 && Activer2 && Activer3 && teleported == false)
         {
-           StartCoroutine(SetTp());
+            
+            GlobalManager.Instance.tutorialDone = true;
+            GameObject.FindGameObjectWithTag("Player").transform.parent.GetComponent<TeleportationManager>().ChangeDimension("Berceau",new Vector3(53.05f, 1.482f, -13.981f));
+            teleported = true;
         }
     }
 }

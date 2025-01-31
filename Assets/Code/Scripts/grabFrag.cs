@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Code.Scripts;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -12,10 +13,11 @@ public class grabFrag : MonoBehaviour
     public Name Dimension;
     public GameObject anchor;
     private XRGrabInteractable grabInteractable;
-    public ArtefactdeTp script;
+    private TeleportationManager script;
 
     void Start()
     {
+        script = GameObject.FindGameObjectWithTag("Player").transform.parent.GetComponent<TeleportationManager>();
         grabInteractable = GetComponent<XRGrabInteractable>();
 
         if (grabInteractable != null)
@@ -35,12 +37,12 @@ public class grabFrag : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} tp a ete saisi !");
         
-        script.ChangeDimension(Dimension.ToString() );
+        script.ChangeDimension(Dimension.ToString());
     }
 
     private void OnRelease(SelectExitEventArgs args)
     { 
-        this.transform.position = anchor.transform.position;
+        transform.position = anchor.transform.position;
     }
 
         // Update is called once per frame
