@@ -292,7 +292,7 @@ public class EnnemiMi7 : MonoBehaviour
     }
 
     private void deplacementOndeLumineuse(bool actif, bool attackMod){
-        if(actif){
+        if(actif || (!actif && goingUp)){
             // Déplace l'objet selon la direction
             if (goingUp)
             {
