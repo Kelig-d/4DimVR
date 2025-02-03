@@ -1,5 +1,6 @@
 using System.Collections;
 using Code.Scripts;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,21 +15,18 @@ public class ArtefactTourne : MonoBehaviour
 
     public GameObject Cone0;
     public GameObject Activator0;
-    public bool up0;
     public  Color C0;
     bool Activer0;
 
     public GameObject Cone1;
     public Color C1;
     public GameObject Activator1;
-    public bool up1;
     bool Activer1;
 
 
     public GameObject Cone2;
     public Color C2;
     public GameObject Activator2;
-    public bool up2;
     bool Activer2;
 
 
@@ -36,47 +34,18 @@ public class ArtefactTourne : MonoBehaviour
     public GameObject Cone3;
     public Color C3;
     public GameObject Activator3;
-    public bool up3;
     bool Activer3;
 
-    bool CheckUpdateColor(GameObject test, Color colortot, bool up, GameObject ItemVerif)
+    bool CheckActivation(GameObject cone, Color color, GameObject activator)
     {
-        if (up)
+        if (activator.gameObject.GetComponentInChildren<activateLever>().activated)
         {
-            if(ItemVerif.transform.eulerAngles.x >270 && ItemVerif.transform.eulerAngles.x < 315)
-            {
-                test.GetComponent<Renderer>().material.color = colortot;
-                return true;
-
-            }
-            else
-            {
-                test.GetComponent<Renderer>().material.color = Color.white;
-                return false;
-
-            }
-
-
+            Debug.Log(activator.gameObject.GetComponentInChildren<activateLever>().activated);
+            cone.GetComponent<Renderer>().material.color = color;
+            return true;
         }
-        else
-        {
-            if (ItemVerif.transform.eulerAngles.x > 30 && ItemVerif.transform.eulerAngles.x < 60)
-            {
-                test.GetComponent<Renderer>().material.color = colortot;
-                return true;
 
-
-            }
-            else
-            {
-                test.GetComponent<Renderer>().material.color = Color.white;
-                return false;
-
-
-            }
-
-
-        }
+        return false;
     }
 
     void FixedUpdate()
@@ -90,12 +59,12 @@ public class ArtefactTourne : MonoBehaviour
         }
         Artefact.transform.localRotation = Quaternion.Euler(0, (float)rotateY, 0);
 
-        Activer0 = CheckUpdateColor(Cone0 , C0, up0, Activator0);
-        Activer1 = CheckUpdateColor(Cone1 , C1, up1, Activator1);
-        Activer2 = CheckUpdateColor(Cone2 , C2, up2, Activator2);
-        Activer3 = CheckUpdateColor(Cone3 , C3, up3, Activator3);
+        Activer0 = CheckActivation(Cone0 , C0, Activator0);
+        Activer1 = CheckActivation(Cone1 , C1, Activator1);
+        Activer2 = CheckActivation(Cone2 , C2, Activator2);
+        Activer3 = CheckActivation(Cone3 , C3, Activator3);
 
-        if( Activer0 && Activator1 && Activer2 && Activer3 && teleported == false)
+        if( Activer0 && Activer1 && Activer2 && Activer3 && teleported == false)
         {
             
             GlobalManager.Instance.tutorialDone = true;

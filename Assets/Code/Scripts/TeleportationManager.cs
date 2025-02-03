@@ -20,7 +20,7 @@ namespace Code.Scripts
             string oldscene = SceneManager.GetActiveScene().name;
             if (oldscene != dimensionName)
             {
-                position = position == null ? gameObject.transform.position : position;
+                position = position == null ? gameObject.GetComponentInChildren<XROrigin>().gameObject.transform.position : position;
                 Debug.Log("Loading new dimension...");
                 string currentWorldKey = SceneManager.GetActiveScene().name;
 
@@ -58,12 +58,6 @@ namespace Code.Scripts
                 {
                     interactable.interactionManager = xrManager;
                 }
-
-                Debug.Log("✅ XR Interaction Manager réassigné aux interactors et objets grabbables !");
-            }
-            else
-            {
-                Debug.LogError("❌ Aucun XRInteractionManager trouvé dans la scène !");
             }
         }
 
