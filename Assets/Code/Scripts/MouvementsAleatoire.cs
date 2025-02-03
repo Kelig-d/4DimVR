@@ -30,7 +30,7 @@ public class MouvementsAleatoire : MonoBehaviour
     {   
         if(ennemiScript != null)
         {///// C'est ici que ca merde PUTAIN
-            if(ennemiScript.IsAttacking == false && ennemiScript.IsTakingDamages == false && ennemiScript.IsDead == false)
+            if(ennemiScript.isAttacking == false && ennemiScript.isTakingDamages == false && ennemiScript.IsDead == false)
             {
                 if(Time.time > checkNextMove)
                 {

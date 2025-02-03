@@ -12,8 +12,6 @@ public class NewSpawnPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision détectée avec : " + other.gameObject.name);
-
         Transform parentTransform = other.gameObject.transform.parent;
 
         if (parentTransform != null)
