@@ -1,26 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
-using Code.Scripts;
+using Unity.XR.CoreUtils;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class backToMenuHandler : MonoBehaviour
+namespace Code.Scripts
 {
-    public InputActionReference spawnButton;
-    
-    // Start is called before the first frame update
-    void Start()
+    public class BackToMenuHandler : MonoBehaviour
     {
-        spawnButton.action.started += ButtonWasPressed;
-    }
+        public InputActionReference spawnButton;
     
-    public void ButtonWasPressed(InputAction.CallbackContext context)
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<TeleportationManager>().ChangeDimension("MenuScene");
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+            spawnButton.action.started += ButtonWasPressed;
+        }
     
+        public void ButtonWasPressed(InputAction.CallbackContext context)
+        {
+            if(SceneManager.GetActiveScene().name =="MenuScene") gameObject.GetComponentInChildren<XROrigin>().gameObject.transform.position = Vector3.zero;
+            else gameObject.GetComponent<TeleportationManager>().ChangeDimension("MenuScene",Vector3.zero);
+        }
+    
+    }
 }
