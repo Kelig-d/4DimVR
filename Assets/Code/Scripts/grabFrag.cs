@@ -17,7 +17,7 @@ public class grabFrag : MonoBehaviour
 
     void Start()
     {
-        script = GameObject.FindGameObjectWithTag("Player").transform.parent.GetComponent<TeleportationManager>();
+        script = FindObjectOfType<TeleportationManager>();
         grabInteractable = GetComponent<XRGrabInteractable>();
 
         if (grabInteractable != null)

@@ -68,7 +68,7 @@ public class ArtefactTourne : MonoBehaviour
         {
             
             GlobalManager.Instance.tutorialDone = true;
-            GameObject.FindGameObjectWithTag("Player").transform.parent.GetComponent<TeleportationManager>().ChangeDimension("Berceau",new Vector3(53.05f, 1.482f, -13.981f));
+            FindObjectOfType<TeleportationManager>().ChangeDimension("Berceau",new Vector3(53.05f, 1.482f, -13.981f));
             teleported = true;
         }
     }
