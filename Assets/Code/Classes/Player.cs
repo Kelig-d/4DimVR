@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         }
         if (xOrigin.transform.position.y < -10)
         {
-            xOrigin.transform.position = new Vector3(10, 15, 10);
+            xOrigin.transform.position = this.SpawnPoint;
         }
 
         if (dead)
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
 
     private void Revive()
     {
-        xOrigin.transform.position = new Vector3(2, 5, 2);
+        xOrigin.transform.position = this.SpawnPoint;
         health = 100;
         dead = false;
         healthBarScript.UpdateHealth(health);

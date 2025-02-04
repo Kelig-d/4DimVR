@@ -648,7 +648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphere1: {fileID: 510815090}
   sphere2: {fileID: 1331083644}
-  joueur: {fileID: 628500606}
+  joueur: {fileID: 0}
 --- !u!54 &377449166
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -798,7 +798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphere1: {fileID: 1841402668}
   sphere2: {fileID: 510815090}
-  joueur: {fileID: 628500606}
+  joueur: {fileID: 0}
 --- !u!54 &420919250
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1483,95 +1483,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &628500605
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 943790987648876936, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5732973570582785851, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5732973570582785851, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -39.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -131.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698942231625681173, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7701110313617352807, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-        type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 2833776422
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f7e4dbca1bc21ce4a99d1779c3b384d3, type: 3}
---- !u!1 &628500606 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5732973570582785851, guid: f7e4dbca1bc21ce4a99d1779c3b384d3,
-    type: 3}
-  m_PrefabInstance: {fileID: 628500605}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &629661457 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3102673550567396458, guid: 1828f75156bd63240be0e8aa6a777b18,
@@ -2439,7 +2350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphere1: {fileID: 1841402668}
   sphere2: {fileID: 1240323603}
-  joueur: {fileID: 628500606}
+  joueur: {fileID: 0}
 --- !u!54 &1112969613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5281,7 +5192,6 @@ SceneRoots:
   - {fileID: 420919254}
   - {fileID: 780392796}
   - {fileID: 1705708980}
-  - {fileID: 628500605}
   - {fileID: 644285772}
   - {fileID: 1901427391}
   - {fileID: 1621107815}

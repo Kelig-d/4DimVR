@@ -11,7 +11,6 @@ public class EnnemiSkeletonMinion : MonoBehaviour
     public GameObject sonEnnemi;
     public NavMeshAgent ennemi;
     private Animator animator;
-    public LayerMask playerLayer;
     public GameObject Target = null;
     public GameObject _Target = null;
     public SpawnerZone spawnerzone;
@@ -21,17 +20,12 @@ public class EnnemiSkeletonMinion : MonoBehaviour
     public float TheDammage;
     public float enemyHealth;
     public float detectionRange = 10f;
-    public float checkInterval = 0.5f;
     
     private float Distance;
     private float attackTime;
     private float nextCheckTime;
     private bool isDead = false;
     
-    private static readonly int IdleState = Animator.StringToHash("Base Layer.idle");
-    private static readonly int MoveState = Animator.StringToHash("Base Layer.move");
-    private static readonly int AttackState = Animator.StringToHash("Base Layer.attack_shift");
-    private static readonly int DissolveState = Animator.StringToHash("Base Layer.dissolve");
     private static readonly int SurprisedState = Animator.StringToHash("Base Layer.surprised");
     private static readonly int AttackTag = Animator.StringToHash("Attack");
 
@@ -39,7 +33,7 @@ public class EnnemiSkeletonMinion : MonoBehaviour
     private const int Attack = 2;
     private const int Surprised = 3;
     
-    private Dictionary<int, bool> EnemyStatus = new Dictionary<int, bool>
+    private Dictionary<int, bool> EnemyStatus = new()
     {
         { Dissolve, false },
         { Attack, false },
@@ -48,9 +42,6 @@ public class EnnemiSkeletonMinion : MonoBehaviour
 
     private float dissolveValue = 1f;
     [SerializeField] private SkinnedMeshRenderer[] meshRenderers;
-    public bool IsAttacking => EnemyStatus[Attack];
-    public bool IsTakingDamages => EnemyStatus[Surprised];
-    public bool IsDead => EnemyStatus[Dissolve];
 
 
     void Start()
@@ -64,22 +55,8 @@ public class EnnemiSkeletonMinion : MonoBehaviour
         attackTime = Time.time;
         StartCoroutine(EnnemiBehavior());
     }
-
+    
     private void Update()
-    {
-        UpdateStatus();
-        //HandleDissolve();
-        StartCoroutine(EnnemiBehavior());
-
-        /* Test de dégat
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ApplyDammage(1);
-        }
-        */
-    }
-
-    private void UpdateStatus()
     {
         if (isDead && enemyHealth <= 0)
         {

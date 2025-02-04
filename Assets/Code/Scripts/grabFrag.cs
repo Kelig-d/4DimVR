@@ -17,7 +17,7 @@ public class grabFrag : MonoBehaviour
 
     void Start()
     {
-        script = GameObject.FindGameObjectWithTag("Player").transform.parent.GetComponent<TeleportationManager>();
+        script = FindObjectOfType<TeleportationManager>();
         grabInteractable = GetComponent<XRGrabInteractable>();
 
         if (grabInteractable != null)
@@ -35,7 +35,6 @@ public class grabFrag : MonoBehaviour
     // M�thode appel�e lorsque l'objet est saisi
     private void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log($"{gameObject.name} tp a ete saisi !");
         
         script.ChangeDimension(Dimension.ToString());
     }
