@@ -69,6 +69,12 @@ public class EffetZimmaBlue : MonoBehaviour
             // ajoute du temps supplementaire 
             timeColor += 35f ; 
         }
+        // si objet touché par rouge on annule la couleur d'avant 
+        else if (newcolor.ToString() == colorRed.ToString())
+        {
+            myMaterial.SetFloat("_ShaderX", 0.0f);
+            timeColor= 0.0f;
+        }
     }
 
     public void EffetColor(){
@@ -90,6 +96,7 @@ public class EffetZimmaBlue : MonoBehaviour
             else if(myMaterial.color.ToString() == colorWhite.ToString()){
                 GetComponent<Renderer>().enabled = false;  // Cache le cube
             }
+
         }
     }
 
