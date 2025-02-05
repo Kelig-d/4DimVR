@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2317662169085799188}
+  - component: {fileID: 698465039655389487}
   m_Layer: 6
   m_Name: mixamorig:LeftHand
   m_TagString: Untagged
@@ -37,6 +38,20 @@ Transform:
   - {fileID: 1350930858341800683}
   m_Father: {fileID: 9153668498482680541}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &698465039655389487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250111706522735493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb1dee2b52f984b4297eeac939cd01f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationInputs: []
+  animator: {fileID: 0}
 --- !u!1 &510574498103317675
 GameObject:
   m_ObjectHideFlags: 0
@@ -6038,7 +6053,7 @@ GameObject:
   - component: {fileID: 3608031021048548882}
   - component: {fileID: 2660990246348457274}
   - component: {fileID: 8087313344900196456}
-  - component: {fileID: 5714493613096661420}
+  - component: {fileID: 2199370789418216764}
   m_Layer: 6
   m_Name: Y Bot
   m_TagString: Untagged
@@ -6215,7 +6230,7 @@ MonoBehaviour:
   headConstraint: {fileID: 4951347366450292459}
   headBodyOffset: {x: 0, y: -0.5, z: 0}
   turnSmoothness: 5
---- !u!114 &5714493613096661420
+--- !u!114 &2199370789418216764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6224,66 +6239,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9048482291869968894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61a144f4019577a4684e3c370e321322, type: 3}
+  m_Script: {fileID: 11500000, guid: cb1dee2b52f984b4297eeac939cd01f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationInputs:
-  - animationPropertyName: Right Pinch
-    action:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Action
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: f7346826-e448-4556-b3f9-e63798e9f7e2
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-        m_Flags: 0
-      m_Reference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
-        type: 3}
-  - animationPropertyName: Right Grab
-    action:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Action
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: f7346826-e448-4556-b3f9-e63798e9f7e2
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-        m_Flags: 0
-      m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
-        type: 3}
-  - animationPropertyName: Left Pinch
-    action:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Action
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: f7346826-e448-4556-b3f9-e63798e9f7e2
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-        m_Flags: 0
-      m_Reference: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
-        type: 3}
-  - animationPropertyName: Left Grab
-    action:
-      m_UseReference: 1
-      m_Action:
-        m_Name: Action
-        m_Type: 0
-        m_ExpectedControlType: 
-        m_Id: f7346826-e448-4556-b3f9-e63798e9f7e2
-        m_Processors: 
-        m_Interactions: 
-        m_SingletonActionBindings: []
-        m_Flags: 0
-      m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
-        type: 3}
+  animationInputs: []
   animator: {fileID: 4864575832969440741}
 --- !u!1 &9054137217195053692
 GameObject:
