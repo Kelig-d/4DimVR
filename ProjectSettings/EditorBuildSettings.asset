@@ -5,26 +5,38 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Level/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Level/Scenes/Berceau.unity
-    guid: d73ebbbe4bb660c48b16c98a41da9236
-  - enabled: 1
-    path: Assets/Level/Scenes/ZimmaBlue.unity
-    guid: 84eec9e33f468634aa3f4d4ef60f26db
+    path: Assets/Level/Scenes/MenuScene.unity
+    guid: 4dfbd67154947694ca0e45234d7293c1
   - enabled: 1
     path: Assets/Level/Scenes/Mi7.unity
     guid: 51871f6556a63c549ac15f7917f743df
   - enabled: 1
     path: Assets/Level/Scenes/ChronoPhagos.unity
-    guid: 57123c6776c97ed428417b6d407a95f6
+    guid: 6a737925b0bb0e74ea794cfef3b3a03c
   - enabled: 1
-    path: Assets/Level/Scenes/Ennemi.unity
-    guid: 2f96701894d7fdc4b9e26232e4fc80e0
+    path: Assets/Level/Scenes/Garage0.unity
+    guid: 007dbd1efe897d844a4c77546045f94e
+  - enabled: 0
+    path: Assets/Level/Scenes/Artefact-tp.unity
+    guid: 30ffc652e2a0f244c8c356513034bd0c
+  - enabled: 1
+    path: Assets/Level/Scenes/Berceau.unity
+    guid: 1eb13145b2a9f1a4f9641966c75c8b76
+  - enabled: 1
+    path: Assets/Level/Scenes/ZimmaBlue.unity
+    guid: 000cedd8a9302384c91bd9c06829516c
+  - enabled: 1
+    path: Assets/Level/Scenes/TestEau.unity
+    guid: ae965e617ebd6014e9a53a4e2bb5e2c9
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fab568eedd5b1604fb6bb75db6482638,
       type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 9a2101c519888f447a7a6cc832614827,
+      type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: c16441f8f7ce44840acab1b062a47da2,
+      type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ddb435ce0cfc80b47933567055b0e3e7,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 45486d1380f42fb44a368cfb5f1684da,
       type: 2}

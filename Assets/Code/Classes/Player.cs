@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class Player : MonoBehaviour
 {
@@ -18,6 +14,10 @@ public class Player : MonoBehaviour
     public GameObject healthBar;
     private HealthBar healthBarScript;
 
+    public bool InMenu = true;  
+    public Vector3 SpawnPoint = new Vector3(0,0,0);
+    public Vector3 SpawnPointMenu = new Vector3(0,0,0);
+    
     private void Start()
     {
         healthBarScript = healthBar.GetComponent<HealthBar>();
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         }
         if (xOrigin.transform.position.y < -10)
         {
-            xOrigin.transform.position = new Vector3(10, 15, 10);
+            xOrigin.transform.position = this.SpawnPoint;
         }
 
         if (dead)
@@ -51,10 +51,24 @@ public class Player : MonoBehaviour
 
     private void Revive()
     {
-        xOrigin.transform.position = new Vector3(2, 5, 2);
+        xOrigin.transform.position = this.SpawnPoint;
         health = 100;
         dead = false;
         healthBarScript.UpdateHealth(health);
+    }
+    
+    public void ChangeSpawnPoint(GameObject newSpawnPoint, bool Menu)
+    {
+        this.InMenu = Menu;
+        if (Menu)
+        {
+            this.SpawnPointMenu = newSpawnPoint.transform.position;
+        }
+        else
+        {
+            this.SpawnPoint = newSpawnPoint.transform.position;
+
+        }
     }
     
 }

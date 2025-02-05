@@ -139,8 +139,10 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.1.0
-  preloadedAssets: []
+  bundleVersion: 0.2.0
+  preloadedAssets:
+  - {fileID: 11400000, guid: 9a2101c519888f447a7a6cc832614827, type: 2}
+  - {fileID: -944628639613478452, guid: c16441f8f7ce44840acab1b062a47da2, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -162,7 +164,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.FoolQuantum.fourDimVR
-    Standalone: com.Unity-Technologies.com.unity.template.urp-blank
+    Standalone: com.FoolQuantum.fourDimVR
     iPhone: com.Unity-Technologies.com.unity.template.urp-blank
   buildNumber:
     Standalone: 0
@@ -807,7 +809,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: DOTWEEN
+    Android: DOTWEEN;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
     EmbeddedLinux: DOTWEEN
     GameCoreScarlett: DOTWEEN
     GameCoreXboxOne: DOTWEEN
@@ -817,16 +819,17 @@ PlayerSettings:
     PS5: DOTWEEN
     QNX: DOTWEEN
     Stadia: DOTWEEN
-    Standalone: DOTWEEN
+    Standalone: DOTWEEN;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
     VisionOS: DOTWEEN
     WebGL: DOTWEEN
-    Windows Store Apps: DOTWEEN
+    Windows Store Apps: DOTWEEN;USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS
     XboxOne: DOTWEEN
     iPhone: DOTWEEN
     tvOS: DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Standalone: 0
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
   managedStrippingLevel:

@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9193260631778533264
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3104617795333050261, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: e005e35b053d46f43a04571b5c6e80cc, type: 2}
+    - target: {fileID: 3104617795333050261, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: fcdee766e8ada1d4cb450b77c4fd6e2a, type: 2}
+    - target: {fileID: 5679056672577547093, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_text
+      value: 'Je ne comprends pas toutes mes couleurs ne sont plus que des onces
+        de gris.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441849351967893649, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_Name
+      value: NoteV2 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182768659155825925, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 45.182
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182768659155825925, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.118
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182768659155825925, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.387
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182768659155825925, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.017126985
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182768659155825925, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.74839985
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182768659155825925, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00455767
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182768659155825925, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.663011
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182768659155825925, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -178.877
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182768659155825925, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 83.092
+      objectReference: {fileID: 0}
+    - target: {fileID: 8182768659155825925, guid: bdf57f795ff3e5f4da89f4ce42d78108,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1.6929932
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bdf57f795ff3e5f4da89f4ce42d78108, type: 3}
